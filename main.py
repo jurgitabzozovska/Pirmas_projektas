@@ -407,12 +407,18 @@
 vardai = ["Jonas", "Petras", "Marius", "Laura"]
 pirmas_vardas = vardai.pop(2)
 print(pirmas_vardas)
-# nurodome kur ideti
+
+# Inser  (nurodome kur deti)
+
 # vardai.insert(1,"Giedrius")
 # print(vardai)
+
 # SORT
+#
 # vardai.sort(reverse=True)
 # print(vardai)
 
-vardai.remove("Laura")
-print(vardai)
+# Remove
+
+# vardai.remove("Laura")
+# print(vardai)
