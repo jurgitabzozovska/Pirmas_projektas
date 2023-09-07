@@ -376,25 +376,40 @@
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
 
-# Studentai = {
-#     "Jurgis": 8,
-#     "Antanas": 5,
-#     "Aloyzas": 10,
-#     "Martynas": 7
-#     }
-# for vardas, pazymys in Studentai:
-#     if vardas, pazymys = Studentai:
-# #         print("vardas yra sarase")
+# Studentai = ["Jurgis", 8,"Antanas", 5, "Aloyzas", 10, "Martynas",  7]
+# studentas = {}
+# for studentas in Studentai
+# print(f"{studentas}: vardas")
+#
 
 
+ # Zodziai = ["saule", "menulis", "dangus", "Vilnius", "Jurga","Gyvenimas", "kur"]
+# # zodynas = {}
+# # for zodis in Zodziai:
+# #     zodynas[zodis] = len(zodis)
+# # for zodis, ilgis in zodynas.items():
+# #     if ilgis > 6:
+# #         print(f"{zodis}: {ilgis} raides")
 
 # 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
-
+#
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos. V
 # artotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
-
+#
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams, išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
+
+# pop operatorius
+
+vardai = ["Jonas", "Petras", "Marius", "Laura"]
+pirmas_vardas = vardai.pop(2)
+print(pirmas_vardas)
+# nurodome kur ideti
+# vardai.insert(1,"Giedrius")
+# print(vardai)
+
+# vardai.sort(reverse=True)
+# print(vardai)
