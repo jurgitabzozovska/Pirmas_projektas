@@ -410,6 +410,9 @@ print(pirmas_vardas)
 # nurodome kur ideti
 # vardai.insert(1,"Giedrius")
 # print(vardai)
-
+# SORT
 # vardai.sort(reverse=True)
 # print(vardai)
+
+vardai.remove("Petras")
+print(vardai)
