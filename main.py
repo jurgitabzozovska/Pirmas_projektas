@@ -402,6 +402,19 @@
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams, išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
 
+ # 1. is saraso isfiltruot lyginius sk
+#
+sarasas = [2,5,11,14,20]
+lyginiai_sk = []
+nelyginiai_sk = []
+for skaicius in sarasas:
+    if skaicius %2 == 0:
+        lyginiai_sk.append(skaicius)
+print("lyginiai_sk ", lyginiai_sk)
+#
+
+
+# 09-07
 # POP
 
 # vardai = ["Jonas", "Petras", "Marius", "Laura"]
@@ -447,6 +460,13 @@
 #     content = file.read()
 #     print(content)
 
-with open("failo_pav.txt", "r", encoding="utf-8") as file:
-    for eilute in file:
-        print(eilute.strip())
+# with open("failo_pav.txt", "r", encoding="utf-8") as file:
+#     for eilute in file:
+#         print(eilute.strip())
+
+vaisiai = []
+
+# with open('vaisiai.txt', 'r', encoding='utf-8') as file:
+#     file:write('obuolys, \nkriause, \nbananas, \nbraske')
+#     vaisiai = file.readlines()
+#     print(vaisiai)
