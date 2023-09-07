@@ -402,23 +402,42 @@
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams, išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
 
-# pop operatorius
+# POP
 
-vardai = ["Jonas", "Petras", "Marius", "Laura"]
-pirmas_vardas = vardai.pop(2)
-print(pirmas_vardas)
+# vardai = ["Jonas", "Petras", "Marius", "Laura"]
+# pirmas_vardas = vardai.pop(2)
+# print(pirmas_vardas)
 
 # Inser  (nurodome kur deti)
-
+# vardai = ["Jonas", "Petras", "Marius", "Laura"]
 # vardai.insert(1,"Giedrius")
 # print(vardai)
 
 # SORT
-#
+# vardai = ["Jonas", "Petras", "Marius", "Laura"]
 # vardai.sort(reverse=True)
 # print(vardai)
 
 # Remove
-
+# vardai = ["Jonas", "Petras", "Marius", "Laura"]
 # vardai.remove("Laura")
 # print(vardai)
+
+# Su tokiais skliaustais () sarase reiksmiu pakeist negalima
+
+#
+# vaisiai = ['obuolys', 'kriause', 'bananas', 'braske']
+
+# # vaisiai2 = {
+# # "obuolus, "
+# # ""kriause", "
+# # ""bananas", "
+# # ""braske"
+# # }
+#
+# vaisiai3 = vaisiai2[0]
+#            print (vaisiai3)
+
+# Sunumeruoja
+# for indeksas, vaisius in enumerate(vaisiai, start=1):
+#     print(f'{indeksas}. {vaisius}')
