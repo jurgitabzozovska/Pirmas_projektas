@@ -414,5 +414,5 @@ print(pirmas_vardas)
 # vardai.sort(reverse=True)
 # print(vardai)
 
-vardai.remove("Petras")
+vardai.remove("Marius")
 print(vardai)
