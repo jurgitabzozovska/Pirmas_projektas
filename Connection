@@ -1,0 +1,19 @@
+--select * from products
+-- insert into products (product_id, product_name, price) values (1,'gps',38)
+--update products
+-- set product_name = 'bananas', price = 15
+-- where product_ID = 1;
+--select film_id from film_category;
+--select category_id, count(*) from film_category group by category_id ASC;
+--select title as pavadinimas from film category
+--select staff_id,sum(amount) as mokejimu_suma
+--from payment
+--group by staff_id
+--order by mokejimu_suma desc 
+Sugrupuokite pagal filmo pavadinimą ir surikiuokite pagal vidutinį filmo trukmę naudojant AVG 
+--select title, avg(length) as vid_trukme
+--from film
+--group by title
+--order by vid_trukme desc 
+
+select rating as reitingas, count(*) as įvertinimas from film group by reitingas order by reitingas ASC

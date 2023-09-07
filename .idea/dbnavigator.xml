@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DBNavigator.Project.DataEditorManager">
+    <record-view-column-sorting-type value="BY_INDEX" />
+    <value-preview-text-wrapping value="false" />
+    <value-preview-pinned value="false" />
+  </component>
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
+  </component>
+  <component name="DBNavigator.Project.DatabaseConsoleManager">
+    <connection id="3f57ff5f-84b9-4cae-a140-97ca5c1aef65">
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[--select payment_date, amount from payment
+----where payment_date between '2022-01-01' and '2022-12-31'order by amount desc ;
+
+select country_id, count(*)miestu_skaicius from city group by country_id
+order by miestu_skaicius asc;]]></console>
+      <console name="Connection 1" type="STANDARD" schema="public" session="Main"><![CDATA[select last_name as pavardė from actor group]]></console>
+    </connection>
+    <connection id="d1075529-7086-43e9-b2f0-48471b2ce22a">
+      <console name="Actoriai" type="STANDARD" schema="public" session="Main"><![CDATA[----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--------select payment_date, amount 
+------from payment
+--------where payment_date between '2022-01-01' and '2022-12-31'
+------order by payment_date DESC;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--------select country_id, count(*) as miestu_skaicius 
+------from city 
+--------group by country_id
+--------order by miestu_skaicius cesc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select last_name as pavarde, count(*) as aktoriu_sk 
+------from actor 
+------group by pavarde 
+------order by pavarde desc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select category_id, count(*) as filmu_sk 
+------from film_category 
+------group by category_id order by filmu_sk asc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select first_name as vardas, count(*) as aktoriu_sk 
+------from actor 
+------group by vardas 
+------order by vardas desc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--------select title as pavadinimas, count(*) as filmu_sk 
+------from film 
+------group by pavadinimas where pavadinimas have two words;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+--select customer.first_name, customer.last_name, payment.amount
+--from customer
+--join payment on customer.customer_id = payment.customer_id;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select rental.rental_id, customer.first_name, customer.last_name
+------from rental
+------join customer on rental.customer_id = customer.customer_id;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select film.title, category.name
+------from film
+------join film_category on film.film_id = film_category.film_id
+------join category on film_category.category_id = category.category_id;
+----xxxxxxxxxxxxxxxxxxxxx
+------select customer.first_name, customer.last_name
+------from customer
+------join payment on customer.customer_id = payment.customer_id
+------where payment.payment_date >= '2022-07-01';
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+----Raskite visus filmų pavadinimus ir jų trukmę, kurie yra priskirti bent vienai kategorijai.
+------select film.title, film.length
+------from film
+------join film_category on film.film_id = film_category.film_id;
+----xxxxxxxxxxxxxxxxxxx
+----Raskite visus aktorių vardus ir pavardes, kurie vaidino bent vieną filmą kategorijoje "Drama".
+------select actor.first_name, actor.last_name
+------from actor
+------join film_actor on actor.actor_id = film_actor.actor_id
+------join film on film_actor.film_id = film.film_id
+------join film_category on film.film_id = film_category.film_id
+------join category on film_category.category_id = category.category_id
+------where category.name = 'Drama';
+----xxxxxxxxxxxxxxxxxxxxxxxxxxx
+----Raskite visus aktorius, kurie vaidino bent viename filme su "PENELOPE" (vardas) arba "GUINESS" (pavardė) naudokite sąlygoje OR kuris reiškia 'arba'; (edited) 
+----select actor.first_name, actor.last_name, film.title
+----from actor
+----join film_actor on actor.actor_id = film_actor.actor_id
+----join film on film_actor.film_id = film.film_id
+----where actor.first_name = 'PENELOPE' or actor.last_name = 'GUINESS';
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+------select film.title, film.rental_rate from film
+------join film_category on film.film_id = film_category.film_id
+------join category on film_category.category_id = category.category_id
+------where category.name = 'Comedy' and film.rental_rate > 4.5;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+----Parašykite SQL užklausą, kuri grąžina kliento vardo (first_name) ir pavardės (last_name) informaciją kartu su filmo pavadinimu (title), kurį klientas yra įsigijęs. 
+----Rezultatus rikiuokite didėjimo tvarka pagal kliento pavardę.
+------ select customer.first_name, customer.last_name, film.title
+------ from customer
+------ join rental on customer.customer_id = rental.customer_id
+------ join inventory on rental.inventory_id = inventory.inventory_id
+------ join film on inventory.film_id = film.film_id
+------ order by last_name ASC;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+----Parašykite SQL užklausą, kuri grąžina kategorijos pavadinimą (name) kartu su šios kategorijos filmų kiekiu. 
+----Rikiuokite rezultatus mažėjimo tvarka pagal filmų kiekį.
+---- select category.name, count(*) as filmu_kiekis
+---- from category
+---- join film_category on category.category_id = film_category.category_id
+---- group by category.name
+---- order by filmu_kiekis desc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxx
+----Parašykite SQL užklausą, kuri grąžina aktoriaus vardą (first_name) ir pavardę (last_name) kartu su jų dalyvavimo filmų skaičiumi.
+---- Rikiuokite rezultatus mažėjimo tvarka pagal filmų skaičių.
+------select actor.first_name, actor.last_name, count(*) filmu_sk
+------from actor
+------join film_actor on film_actor.actor_id = actor.actor_id
+------group by actor.first_name, actor.last_name 
+------order by actor.first_name, actor.last_name asc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+----NAMU DARBAI su JOIN
+----1. Parašykite SQL užklausą, kuri grąžina visus filmus iš film lentelės, kurie priklauso kategorijai "Horror".
+------select film.title 
+------from film
+------join film_category on film.film_id = film_category.film_id
+------join category on film_category.category_id = category.category_id
+------where category.name = 'Horror';
+----xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+----2. Parašykite SQL užklausą, kuri grąžina šalies pavadinimą (country) kartu su šalies turimu miestų skaičiumi
+------select country.country, count(*) as miestų_skaičius
+------from country
+------join city on city.country_id = country.country_id
+------group by country.country;
+----xxxxxxxxxxxxxxxxxxxxxx
+----3. Parašykite SQL užklausą, kuri grąžina visus filmų pavadinimus iš film lentelės, kurie yra komedijos(category_id lygu 5).
+----Rikiuokite filmus pagal pavadinimą didėjimo tvarka.
+------select film.title
+------from film
+------join film_category on film.film_id = film_category.film_id
+------join category on film_category.category_id = category.category_id
+------where category.name = 'Comedy' 
+------croup by film.title
+------order by asc;
+----xxxxxxxxxxxxxxxxxxxxxxxxxx
+----4. Parašykite SQL užklausą, kuri grąžina visus klientus (vardą ir pavardę) ir atliktas mokėjimų sumas.
+----select customer.first_name, customer.last_name, count(payment.amount) as visa_mokejimu_suma
+----from customer
+----join payment on customer.customer_id = payment.customer_id
+----group by customer.first_name, customer.last_name;
+----xxxxxxxxxxxxxxxxxxxxx
+----5. Parašykite SQL užklausą, kuri grąžina filmo pavadinimą, trukmę ir išnuomavimo kiekį. 
+----Rikiuokite rezultatus pagal išnuomavimo kiekį didėjimo tvarka.
+------select film.title, film.length, count(inventory.inventory_id) as isnuomuotas_kiekis
+------from film
+------join inventory on film.film_id = inventory.film_id 
+------join rental on inventory.inventory_id = rental.inventory_id
+------group by film.title, film.length
+------order by isnuomuotas_kiekis asc;
+----
+----
+------Raskite visus filmų pavadinimus ir jų trukmę, kurie yra priskirti bent vienai kategorijai.
+------select film.title, film.length
+------from film
+------join film_category on film.film_id = film_category.film_id;
+----
+---- JOIN LEFT
+----1
+------select customer.first_name, customer.last_name, count(rental.rental_id) as pasibaigusios_nuomos
+------from customer
+------left join rental on customer.customer_id = rental.rental_id
+------where rental.return_date is not null
+------group by customer.first_name, customer.last_name;
+----2
+------select actor.first_name, actor.last_name, count(film_actor.film_id) as vadinimu_sk
+------from actor
+------Left join film_actor on actor.actor_id = film_actor.actor_id
+------group by actor.first_name, actor.last_name;
+----3.
+------select film.title, film.length, count(inventory.inventory_id) as patikrinimu_sk
+------from film
+------left join inventory on film.film_id = inventory.film_id
+------group by film.title, film."length";
+----xxxxxxx
+------ grazins visu kategoriju pavadinimus su filmu skaicium, jei jos nera, tuomet vis tiek itraukiam
+----
+-------select category.name, count(film_category.film_id) as filmu_sk
+--------from category
+--------left join film_category on category.category_id = film_category.category_id
+--------group by category.name
+--
+----JOIN RIGHT
+----1.
+----select rental.rental_id, rental.return_date, customer.first_name, customer.last_name
+----from rental
+----right join customer on rental.customer_id = customer.customer_id;
+--
+----xxxxxxxxxxxxxxxxxx
+----select payment.payment_id, payment.amount, staff.first_name, staff.last_name
+----from payment
+----right join staff on payment.staff_id = staff.staff_id;
+----xxxxxxxxxx
+----1.SQL užklausą, kuri grąžina kliento vardo (first_name) ir pavardės (last_name) informaciją kartu su visais užsakymais, 
+----kuriuos klientas yra padaręs. Jei klientas neturi jokių užsakymų, taip pat turi būti rodomi šio kliento duomenys. 
+----Rikiuokite rezultatus didėjimo tvarka pagal kliento pavardę.
+------select customer.first_name, customer.last_name, count(rental.rental_id) as uzsakymu_sk
+------from customer
+------left join rental on customer.customer_id = rental.customer_id
+------group by customer.first_name, customer.last_name order by customer.last_name asc;
+----xxxxxxxxxxxxxxxxxxxxxx
+----2. SQL užklausą, kuri grąžina visus kategorijos pavadinimus (category.name), kartu su jų atitinkamais filmų kiekiais.
+----Jei kategorija neturi jokių priskirtų filmų, taip pat turi būti rodomas kategorijos pavadinimas. 
+----Rikiuokite rezultatus pagal kategorijos pavadinimą mažėjimo tvarka.
+------select category.name, count(film_category.film_id) as filmu_kiekis
+------from category
+------left join film_category on category.category_id = film_category.category_id
+------group by category.name order by filmu_kiekis desc
+---- xxxxxxxxxxxxxxxxxxxxxxxx
+---- 3. SQL užklausą, kuri grąžina visus aktorius (actor.first_name, actor.last_name) ir filmus (film.title), kuriuose šie aktoriai vaidina. 
+----Jei aktorius netur filmų, kuriuose vaidina, turi būti rodomi tik aktoriaus vardas ir pavardė. 
+----Rikiuokite rezultatus pagal aktorių pavardę
+---- select actor.first_name, actor.last_name, film.title
+---- from actor
+---- left join film_actor on actor.actor_id = film_actor.film_id
+---- left join film on film_actor.actor_id = film.film_id
+---- order by actor.last_name;
+----xxxxxxxxxxxxxxxx
+----4. Raskite visus klientus ir jų atliktus mokėjimus, bet pateikite tik tuos mokėjimus, kurie buvo atlikti po 2022-04-16. 
+----Pateikite kliento vardą, pavardę ir mokėjimo datą.
+----select customer.first_name, customer.last_name, payment.payment_date
+----from customer
+----left join payment on customer.customer_id = payment.customer_id
+----
+--
+--
+----NAMŲ DARBAI su JOIN LEFT/JOIN RIGHT
+----1.Raskite visus filmus ir susijusius aktorius. Jei filmas neturi priskirtų aktorių, pateikite tik filmo pavadinimą.
+----select film.title, actor.first_name, actor.last_name
+----from film
+----left join film_actor on film.film_id = film_actor.film_id
+----left join actor on film_actor.actor_id = actor.actor_id
+--
+--
+-- --xxxxxxxxxxxxxxxxxxxx
+----2.Raskite visus filmus ir susijusius aktorius, kurie turi trukmę mažesnę nei 90 minučių.
+------select film.title, actor.first_name, actor.last_name
+------from film
+------left join film_actor on film.film_id = film_actor.film_id
+------left join actor on film.film_id = actor.actor_id
+------where length <= '90';
+--
+----xxxxxxxxxxxxxxxxxx
+----3.Raskite visus aktorius ir juos priskirtus filmus, kartu su informacija apie filmų išleidimo metus. 
+----Rezultatus rikiuokite pagal filmų išleidimo metus nuo seniausių iki naujausių
+----select actor.first_name, actor.last_name, film.title, film.release_year
+----from actor
+----left join film_actor on actor.actor_id = film_actor.actor_id 
+----left join film on film_actor.film_id = film.film_id
+----order by film.release_year desc 
+--
+----xxxxxxxxxxxxxxxxxxxxx
+----4.Raskite visus filmus ir aktorius, kurie vaidino šiuose filmuose. 
+----Rikiuokite rezultatus pagal filmo pavadinimą didėjimo tvarka.
+----Select film.title, actor.first_name, actor.last_name
+----from film
+----left join film_actor on film.film_id = film_actor.film_id
+----left join actor on film_actor.actor_id = actor.actor_id
+----order by film.title asc
+--
+----xxxxxxxxxxxxxxxxxxxxx
+----5.Raskite visus filmus ir juose vaidinusių aktorių filmų vaidinimo trukmę. Jei filmas neturi aktorių, trukmė bus 0.
+----select film.title, sum(film.length) as total_length 
+----from film
+----left join film_actor on film.film_id = film_actor.film_id
+----left join actor on film_actor.actor_id = actor.actor_id
+----group by film.film_id
+--
+--
+----xxxxxxxxxxxxxxxxxxx
+----6.Raskite visus aktorius ir visus jų vaidinamus filmus, bet pateikite tik tuos aktorius, kurie vaidino filme "WYOMING STORM". 
+----Pateikite aktoriaus vardą, pavardę ir filmo pavadinimą.
+----select actor.first_name, actor.last_name, film.title
+----from actor
+----left join film_actor on actor.actor_id = film_actor.actor_id
+----left join film on film_actor.film_id = film.film_id
+----where film.title = 'WYOMING STORM'
+--
+--
+----xxxxxxxxxxxxxxxxxxx
+----7.Raskite visus filmus ir aktorius, kurie vaidino juose, ir filmus, kurie yra komedijos žanras ir jų trukmė yra ilgesnė nei 100. 
+----Pateikite filmo pavadinimą, aktoriaus vardą ir pavardę. Jei filmas neturi tokio aktoriaus, turi būti rodomas tik filmo pavadinimas. 
+----Rikiuokite rezultatus pagal filmo pavadinimus.
+----NESUGAUNA - MANO
+--
+----select film.title, actor.first_name, actor.last_name
+----from film
+----left join film_actor on film.film_id = film_actor.film_id
+----left join actor on film_actor.actor_id = actor.actor_id
+----left join film_category on film.film_id = film_category.film_id
+----left join category on film_category.category_id = category.category_id
+----where category.name = 'Comedy' and film.length > 100
+----order by film.title
+--
+----5 pamoka
+----Distinct komanda
+------select distinct title
+------from film
+----
+----Like komanda - naudojamas daužniausiai su where
+------jei %W% (is abiejų pusių) ieško w betkur
+------jei 'W% - iesko pirmo
+------jei '%W' - paskutines
+------select title
+----from film
+----where title like '%W%'
+--
+----KLASĖS DARBAI
+----1. Raskite visas unikalias kategorijas, kurie yra priskirti bent vienam filmui.
+------select distinct name
+------from category
+------join film_category on category.category_id = film_category.category_id
+----
+----2. Raskite visus aktorius, kurių pavardė baigiasi junginiu "ROW". Pateikite vardą ir pavardę. 
+------select first_name, last_name
+------from actor
+------where actor.last_name like '%ROW'
+----
+----3. Raskite visus klientus, kurių el. paštas biagiasi "@sakilacustomer.org". Pateikite vardą, pavardę ir el. paštą
+----select first_name, last_name, email
+----from customer
+----where email like '%@sakilacustomer.org'
+--
+----4. Raskite visus unikalias filmų kategorijas ir filmus, kurie priskirti šiems žanrams. 
+----Pateikite kategorijos pavadinimą ir susijusių filmų pavadinimus;
+--select category.name, film.title
+--from category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+----
+----5. Raskite visas unikalias klientų pavardes ir jų užsakymų skaičių.
+----select distinct customer.last_name, count(rental.rental_id) as užsakymų_sk
+----from customer
+----join rental on customer.customer_id = rental.customer_id
+----group by customer.last_name
+--
+----having naudojamas su group by - naudojema norint išfiltruoti rezultatus
+--
+----select customer.customer_id, customer.first_name, customer.last_name, count(payment.payment_id) as užsakymai
+----from customer
+----join payment on customer.customer_id = payment.customer_id
+----group by customer.customer_id
+----having count(payment.payment_id) > 30
+--
+----viso film kategorijo kurio turi f\daugiau nei 10 filmu
+--select category.name, count(film_category.film_id) as filmu_skaicius
+--from category
+--join film_category on category.category_id = film_category.category_id
+--group by category.name
+--having count(film_category.film_id) > 10
+--
+----surast vis klin kuriu uzsakytu filmu vid >120 min
+----select customer.customer_id, customer.first_name, customer.last_name, avg(film.length) as filmu_trukme
+----from customer
+----join rental on customer.customer_id = rental.customer_id
+----join inventory on rental.inventory_id = inventory.inventory_id
+----join film on inventory.film_id = film.film_id
+----group by customer.customer_id
+----having avg(film.length) > 120
+--
+--Klasės darbas
+----1. Raskite visus aktorius, kurie vaidino bent viename filme, kurio trukmė yra trumpesnė nei 60 minučių.
+----select actor.actor_id, actor.first_name, actor.last_name, min(film.length) as shortest
+----from actor
+----join film_actor on actor.actor_id = film_actor.actor_id
+----join film on film_actor.film_id = film.film_id
+----group by actor.actor_id
+----having min(film.length) < 60;
+--
+----2. Raskite visas filmų kategorijas, kurių ilgiausias filmas yra ilgesnis nei 150 minučių;
+----select category.name, max(film.length) as ilgiausias
+----from category
+----join film_category on category.category_id = film_category.category_id
+----join film on film_category.film_id = film.film_id
+----group by category.name
+----having max(film.length)  > 150
+
+--3. Raskite visas filmų kategorijas, kurios turi daugiau nei 5 filmus ir bendra jų trukmė viršija 1000.
+--select category.name, count(film_category.film_id) as total_film, sum(film.length) as total_length
+--from category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+--group by category.name
+--having count (film_category.film_id) > 5 and sum(film.length) > 1000;
+------viso film kategorijo kurio turi f\daugiau nei 10 filmu
+
+----4. Raskite visus aktorius, kurie vaidino bent trijuose filmuose, o šių filmų bendra trukmė viršija 300 minučių.
+--select actor.first_name, actor.last_name, count(film.film_id) as filmu_sk, sum(film.length) as trukme
+--from actor
+--join film_actor on actor.actor_id = film_actor.actor_id
+--join film on film_actor.film_id = film.film_id
+--group by actor.first_name, actor.last_name
+--having count(film.film_id) >= 3 and sum(film.length) > 300
+--
+--
+--5. Raskite visus aktorius, kurie vaidino bent viename filme, kurio pavadinime yra žodis "WRATH" ir jų vaidinimo trukmė šiuose filmuose yra ilgesnė nei 120 minučių.
+---- select actor.first_name, actor.last_name, film.title, sum(film.length) as filmu_trukme
+---- from actor
+---- join film_actor on actor.actor_id = film_actor.actor_id
+---- join film on film_actor.film_id = film.film_id
+---- where film.title like '%WRATH%'
+---- group by actor.first_name, actor.last_name, film.film_id
+---- having sum(film.length) > 120
+---- ORDER BY filmu_trukme
+
+
+--08-29 NAMŲ DARBAI
+--1. Parašykite SQL užklausą, kuri atvaizduotų visus nuomos filmus (rental films) su jų pavadinimais ir kategorijomis.
+--select film.title, category.name
+-- from film
+-- join film_category on film.film_id = film_category.film_id
+-- join category on film_category.category_id = category.category_id
+-- join inventory on film.film_id = inventory.film_id
+-- join rental on inventory.inventory_id = rental.inventory_id
+-- group by film.title, category.name
+--2. Parašykite SQL užklausą, kuri suskaičiuotų kiekvienos kategorijos filmų (category name) skaičių.
+--select name, count(film_category.category_id) as filmu_sk
+--from category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+--group by name 
+--3. Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų atliktų nuomų skaičių.
+--select first_name, last_name, COUNT(rental.rental_id) as nuomos_sk
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--group by first_name,last_name
+--4. Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir bendrą jų išleistą sumą už filmų nuomą.
+--select first_name, last_name, sum(payment.amount) as viso_isleista
+--from customer
+--join payment on customer.customer_id = payment.customer_id 
+-- group by first_name, last_name 
+--5. Parašykite SQL užklausą, kuri atvaizduotų visus filmus, kurie turi žodį "Action" aprašyme.
+--select title
+--from film
+--where film.description like '%Action%' 
+--6. Parašykite SQL užklausą, kuri atvaizduotų visus filmus ir jų vidutinį įvertinimą (average rental rate)
+--select title, avg(film.rental_rate) as vid_ivertinimas
+--from film
+--group by title 
+--7. Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų paskutinių nuomų datą.
+--select first_name, last_name, MAX(rental.rental_date) as paskutine_nuoma
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--group by first_name, last_name 
+----8. Parašykite SQL užklausą, kuri atvaizduotų 5 klientus (customers) su daugiausia nuomų.
+--select first_name, last_name, count(rental.rental_id) as viso_nuomos_sk
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--group by first_name, last_name
+--limit 5
+--9. Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir paskaičiuotų, kiek kleintų yra iš unikalių rajonų.
+--select distinct district, count(customer.customer_id) as klientu_sk
+--from address
+--join customer on address.address_id = customer.address_id 
+--group by district
+
+Perdariau, bet man tada nesąmoningas atsakymas
+--select distinct address.district, customer.first_name, customer.last_name, count(customer.customer_id) as klientu_sk
+--from address
+--join customer on address.address_id = customer.address_id 
+--group by address.district, customer.first_name, customer.last_name 
+
+--10.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers), kurie nuomojo filmus, kurie yra trukmės atžvilgiu trumpesni nei 2 valandos.
+--select customer.first_name, customer.last_name, film.title, film.length 
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--join inventory on rental.inventory_id = inventory.inventory_id
+--join film on inventory.film_id = film.film_id
+--where film.length <= 120
+--group by customer.first_name, customer.last_name, film.title, film.length order by film.length desc
+--11.Parašykite SQL užklausą, kuri atvaizduotų visus filmus ir jų vidutinį trukmės laiką (length) kiekvienai kategorijai.
+--select name, avg(film.length) as vid_trukme
+--From category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+--group by name order by vid_trukme desc
+
+PERDARIAU
+--select category.name, film.title, avg(film.length) as vid_trukme
+--From category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+--group by category.name, film.title order by vid_trukme desc
+
+--12.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų išleistą sumą už nuomą, tik jei suma yra daugiau nei 50.
+--select first_name,last_name, sum(payment.amount) as isleista_nuomai
+--from customer
+--join payment on customer.customer_id = payment.customer_id
+--join rental on payment.rental_id = rental.rental_id
+--where payment.amount <= 50
+--group by first_name, last_name order by isleista_nuomai desc
+--13.Parašykite SQL užklausą, kuri atvaizduotų visus filmus ir pateiktų juos pagal išleidimo (release) datą nuo naujausio iki seniausio.
+--select title, release_year
+--from film order by release_year desc 
+--14.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų visų  vudutinę nuomų trukmę.
+--select first_name, last_name, avg(rental.return_date - rental.rental_date) as vid_nuomos_trukme
+--from customer 
+--join rental on customer.customer_id = rental.customer_id 
+--group by first_name, last_name order by vid_nuomos_trukme desc
+--15.Parašykite SQL užklausą, kuri atvaizduotų 5 populiariausius filmus, pagal nuomų skaičių.
+--select title, count(inventory.inventory_id) as nuomos_sk
+--from film
+--join inventory on film.film_id = inventory.film_id
+--join rental on inventory.inventory_id = rental.inventory_id
+--group by title order by nuomos_sk desc
+--limit 5
+--16.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) iš Vilniaus miesto (city).
+--select customer.first_name, customer.last_name, city.city
+--from customer
+--join address on customer.address_id = address.address_id
+--join city on address.city_id = city.city_id
+--where city.city = 'Vilnius'
+--17.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers), kurių vardas prasideda raide "A", ir jų išleistą sumą už nuomą.
+--select first_name, last_name, sum(payment.amount) as viso_isleista
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--join payment on rental.customer_id = payment.customer_id
+--where customer.first_name like 'A%'
+--group by first_name, last_name order by viso_isleista desc
+--18.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų bendrą išleistą sumą už nuomą, tačiau tik tuos klientus, kurių bendra suma viršija 100.
+--select first_name, last_name, sum(payment.amount) as visa_isleista_suma
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--join payment on rental.customer_id = payment.customer_id
+--group by first_name, last_name order by visa_isleista_suma desc
+--having count(payment.amount) >= 100
+--19.Parašykite SQL užklausą, kuri atvaizduotų visus filmus, kurių trukmė yra ilgesnė nei 160 minučių, surūšiuotus pagal trukmę mažėjimo tvarka.
+--select title, min(film.length)as minimali_trukme
+--from film
+--group by title
+--having min(film.length) >= 160
+--order by minimali_trukme desc
+--20.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) ir jų pirmos nuomos datą.
+--select first_name, last_name, min(rental.rental_date) as pirma_nuoma
+--from customer
+--join rental on customer.customer_id = rental.customer_id
+--group by first_name, last_name order by pirma_nuoma desc
+--21.Parašykite SQL užklausą, kuri atvaizduotų visus filmus, kurių pavadinimas prasideda raide "C", ir jų kategorijas.
+--select film.title, category.name
+--from film
+--join film_category on film.film_id = film_category.film_id
+--join category on film_category.category_id = category.category_id
+--where film.title like 'C%' 
+--group by film.title, category.name
+
+--22.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) su jų telefono numeriais.
+--select customer.first_name, customer.last_name, address.phone
+--from customer
+--join address on customer.address_id = address.address_id
+--group by customer.first_name, customer.last_name, address.phone 
+
+--23.Parašykite SQL užklausą, kuri atvaizduotų visus žanrus (categories), kuriuose yra bent 10 filmų su vidutiniu įvertinimu virš 4.
+--select name, count(film_category.film_id) as viso_filmu, avg(film.rental_rate) as vid_ivertinimas
+--from category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.category_id = film.film_id
+--group by category.name 
+--having count(film_category.film_id) >= 10 and avg(film.rental_rate) >=4
+
+--24.Parašykite SQL užklausą, kuri atvaizduotų visus klientus (customers) su bendra nuomų sumos viršytu vidurkiu. 
+--Rezultatus surūšiuokite nuo didžiausio iki mažiausio skirtumo.
+--Select first_name, last_name, sum(payment.amount) as bendra_nuomos_suma
+--from customer
+--join payment on customer.customer_id = payment.customer_id
+--group by first_name, last_name order by bendra_nuomos_suma desc
+
+--25.Parašykite SQL užklausą, kuri atvaizduotų 5 populiariausius žanrus (categories) pagal bendrą nuomos pajamų sumą.
+--select name, sum(payment.amount) as visa_pajamu_suma
+--from category
+--join film_category on category.category_id = film_category.category_id
+--join film on film_category.film_id = film.film_id
+--join inventory on film.film_id = inventory.film_id
+--join rental on inventory.inventory_id = rental.inventory_id
+--join payment on rental.rental_id = payment.rental_id
+--group by name 
+--limit 5]]></console>
+    </connection>
+    <connection id="bbf0a820-35aa-482d-a639-747d6807baca">
+      <console name="Medeina" type="STANDARD" schema="public" session="Main"><![CDATA[--08-29 Lentelių ryšiai
+--Many to many
+--One to many
+--One to one
+
+--1.Raskite visus klientus, kurie yra iš Prancūzijos;
+--select contact_name, country
+--from customers
+--where country = 'France'
+--2. Raskite visus produktus, kurie yra iš "Beverages" kategorijos ir jų atsargos (UnitsInStock) yra mažesnės nei perkamosios kiekiai (ReorderLevel).
+--select products.product_name
+--from products
+--join categories on products.category_id = categories.category_id
+--where category_name = 'Beverages' and units_in_stock < reorder_level
+--3. Raskite visus darbuotojus, kurie turi daugiausiai padejėjų.
+--SELECT first_name, last_name, reports_to, COUNT(*) AS SubordinatesCount
+--FROM Employees
+--GROUP BY first_name, last_name, reports_to
+--ORDER BY SubordinatesCount DESC
+--LIMIT 1;
+--4. Raskite visus produktus, kurie buvo užsakyti daugiau nei 50 kartų, bet esančių mažiau nei 100 vienetų sandėlyje.
+-- select products.product_name, count(order_details.order_id) as uzsakymu_sk
+-- from products
+-- join order_details on products.product_id = order_details.product_id
+--group by products.product_name, products.units_in_stock
+-- having count(order_details.order_id) > 50 and units_in_stock < 100;
+
+--08-30 pamoka
+
+--1. Raskite klientus, kurie neturi jokių užsakymų.
+--select customers.company_name, count(orders.order_id) as uzsakymu_sk 
+--from customers
+--left join orders on customers.customer_id = orders.customer_id
+--where orders.order_id is null
+--group by customers.company_name
+
+--2. Raskite visus darbuotojus, kurie buvo įdarbinti tarp 1995-01-01 ir 1998-12-31.
+--select first_name, last_name, hire_date
+--from employees
+--where hire_date between '1995-01-01' and '1998-12-31'
+--order by hire_date DESC;
+
+----3. Raskite klientus, kurie turi daugiausiai užsakymų.
+--select company_name, count(orders.order_id) as uzsakymu_sk
+--from customers
+--left join orders on customers.customer_id = orders.customer_id
+--group by company_name 
+--order by uzsakymu_sk
+--limit 1select 
+
+--4. Raskite paskutinį užsakymą, kurį padarė kiekvienas darbuotojas
+--select employees.first_name, employees.last_name, max(orders.order_date) as last_order
+--from employees
+--join orders on employees.employee_id = orders.employee_id
+--group by employees.first_name, employees.last_name
+
+--5. Raskite klientus, kurie yra padarę bent vieną didelį (daugiau nei $1000) užsakymą
+--select customers.company_name, (order_details.quantity*order_details.unit_price) as uzsakymu_sk
+--from customers
+--join orders on customers.customer_id = orders.customer_id
+--join order_details on orders.order_id = order_details.order_id
+--where (order_details.quantity*order_details.unit_price) >=1000
+--order by uzsakymu_sk
+
+--6. Raskite produktus, kurie yra populiariausi pagal užsakytų kiekių sumą.
+--select products.product_name, sum(order_details.quantity) as uzsakymu_sk
+--from products
+--join order_details on products.product_id = order_details.product_id
+--group by products.product_name order by uzsakymu_sk desc
+--LIMIT 10
+
+--7. Raskite klientus, kurie turi daugiausiai užsakymų per visą laikotarpį.
+--select customers.company_name, count(orders.order_id) as uzsakymu_sk
+--from customers
+--left join orders on customers.customer_id = orders.customer_id
+--group by customers.company_name
+--order by count(orders.order_id) desc]]></console>
+    </connection>
+    <connection id="a05102ed-5492-4d03-9a29-680379b12a0d">
+      <console name="Dellstore" type="STANDARD" schema="public" session="Main"><![CDATA[--09.04
+--1. Atvaizduokite visus produktus, kurie yra brangesni nei 23.99;
+--select title, price
+--From products
+--where products.price >= 23.99
+
+--2. Raskite visus klientus, kurie yra įsigiję bent vieną produktą kategorijoje "Family";
+--select customers.firstname, customers.lastname, categories.categoryname
+--from customers
+--join cust_hist on customers.customerid = cust_hist.customerid
+--join products on cust_hist.prod_id = products.prod_id
+--join categories on products.category = categories.category
+--where categories.categoryname like 'Family'
+--group by customers.firstname, customers.lastname, categories.categoryname
+
+--3. Raskite klientus, kurie visada perka daugiau nei vieną produktą, ir atvaizduokite jų vardą ir pavardę;
+--select customers.firstname, customers.lastname, count(orders.orderid) as viso_pirkimu
+--from customers
+--join orders on customers.customerid = orders.customerid
+--join cust_hist on orders.orderid = cust_hist.orderid
+--group by customers.firstname, customers.lastname order by viso_pirkimu desc
+--having count(orders.orderid) >= 1
+
+--4.Raskite visus produktus, kurių kaina yra aukščiausia tarp visų produktų;
+--select title, price
+--from products
+--order by price desc 
+--limit 1
+
+--5. Raskite klientus, kurie yra įsigiję daugiausiai skirtingų produktų (pagal produktų ID).
+--select customers.firstname, customers.lastname, count(product.prod_id) as viso_produktu
+
+
+--6. Suraskite produktus, kurie buvo užsakyti daugiau nei 5 kartus;
+--select products.title, count(orders.orderid) as uzsakymu_sk
+--from products
+--join cust_hist on products.prod_id = cust_hist.prod_id
+--join orders on cust_hist.orderid = orders.orderid
+--group by products.title order by uzsakymu_sk desc
+--having count(orders.orderid) >= 5
+
+--7. Raskite visus produktus, kurių kaina yra žemesnė nei vidutinė kaina visoje parduotuvėje.
+--select title, price, avg(orders.netamount) as vid_kaina
+--from products
+--join cust_hist on products.prod_id = cust_hist.prod_id
+--join orders on cust_hist.orderid = orders.orderid
+--group by title, price  
+--where
+
+--8.Raskite kategoriją su daugiausiai produktų;
+--select categories.categoryname, count(product.prod_id) as viso produktu
+--from categories
+--join products on categories.category = products.category
+--group by categories.categoryname order by viso produktu asc
+
+--9. Raskite 3 klientus, kurie yra daugiausiai išleidę pinigų parduotuvėje. (edited) 
+--select customers.firstname, customers.lastname, max(orders.totalamount) as max_isleido
+--from customers
+--join orders on customers.customerid = orders.customerid
+--join cust_hist on orders.orderid = cust_hist.orderid
+--join products on cust_hist.prod_id = products.prod_id
+--group by customers.firstname, customers.lastname order by max_isleido desc 
+--limit 3]]></console>
+    </connection>
+  </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
+  <component name="DBNavigator.Project.DatabaseFileManager">
+    <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.inventory" active-filter-id="">
+      <filter id="f8b977f7-7b7f-493c-accb-ebaa52aeac4f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="inventory_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.rental" active-filter-id="EMPTY_FILTER">
+      <filter id="5ae6a8f6-d602-42f1-aa75-4fd0c8a2ee74" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="rental_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.actor" active-filter-id="EMPTY_FILTER">
+      <filter id="c6792a82-d05a-4913-ac8f-4454e0388163" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="actor_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.film_category" active-filter-id="EMPTY_FILTER">
+      <filter id="8c0bfba5-ac12-413d-8ef7-106634990cc4" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="category_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.customer" active-filter-id="EMPTY_FILTER">
+      <filter id="d2cfd22f-3eb9-45b1-b27a-913a8316fd71" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="customer_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.address" active-filter-id="EMPTY_FILTER">
+      <filter id="3704c0f1-f6b7-42dd-b3ec-303c5f43cc99" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="address_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.city" active-filter-id="EMPTY_FILTER">
+      <filter id="ab7aa8b2-4ba9-41d8-a023-af3f6f26fdeb" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="city_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.products" active-filter-id="">
+      <filter id="91bf5a5c-452f-4acc-8da6-3b0128c1678a" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="product_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.category" active-filter-id="EMPTY_FILTER">
+      <filter id="1f37ef60-6da6-4dad-ac36-00c8737b928e" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="category_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.payment" active-filter-id="EMPTY_FILTER">
+      <filter id="aa9d7281-360e-4d1f-bd11-d74dee23b0d8" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="payment_date" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.film" active-filter-id="EMPTY_FILTER">
+      <filter id="0c2f375d-6611-4b3c-92b5-66c56ff80b24" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="film_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="d1075529-7086-43e9-b2f0-48471b2ce22a" dataset="public.film_actor" active-filter-id="">
+      <filter id="dba5c08a-fb49-4238-b2fe-f3407e774f3b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="actor_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.employees" active-filter-id="EMPTY_FILTER">
+      <filter id="37532bc1-5d55-4e7e-b2d6-822ce8d121f2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="employee_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.region" active-filter-id="">
+      <filter id="905904c4-9085-4f51-a257-248f94399153" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="region_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.orders" active-filter-id="EMPTY_FILTER">
+      <filter id="4a6c8eed-8bcf-4ddc-95d9-e28a0c21976f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="order_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.customers" active-filter-id="EMPTY_FILTER">
+      <filter id="7dd35713-adb5-419f-831f-216d6615fd4f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="customer_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.products" active-filter-id="">
+      <filter id="35e46f2b-2b9c-43f0-97cb-bc2cfd18a0c5" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="product_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.categories" active-filter-id="">
+      <filter id="e35fcef9-0e23-4c27-9161-e9162022f5a7" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="category_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.territories" active-filter-id="">
+      <filter id="ab9eba7c-c57e-4e9d-b1b2-4579002d477c" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="territory_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.us_states" active-filter-id="">
+      <filter id="bf108e98-eef2-4115-aec7-ab5ac02c1cf9" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="state_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.customer_customer_demo" active-filter-id="EMPTY_FILTER">
+      <filter id="a2d68bb4-b249-4ea1-8f0a-6163fa64c86b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="customer_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.order_details" active-filter-id="EMPTY_FILTER">
+      <filter id="f4e9fc96-e637-4961-a09b-ddc4320b8f19" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="order_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="bbf0a820-35aa-482d-a639-747d6807baca" dataset="public.customer_demographics" active-filter-id="EMPTY_FILTER">
+      <filter id="53bec6c6-75b7-4be3-80b9-fb7e90aa7578" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="customer_type_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="a05102ed-5492-4d03-9a29-680379b12a0d" dataset="public.customers" active-filter-id="">
+      <filter id="89fcf9a2-16f7-4f6d-b656-e09957d7150a" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="customerid" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="a05102ed-5492-4d03-9a29-680379b12a0d" dataset="public.products" active-filter-id="EMPTY_FILTER">
+      <filter id="a0f3d3de-8e23-43b6-ab05-b1bf87465c67" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="prod_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="a05102ed-5492-4d03-9a29-680379b12a0d" dataset="public.cust_hist" active-filter-id="" />
+    <filter-actions connection-id="a05102ed-5492-4d03-9a29-680379b12a0d" dataset="public.categories" active-filter-id="EMPTY_FILTER">
+      <filter id="67e90816-530d-40f0-aa27-498087b99ad2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="category" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
+  </component>
+  <component name="DBNavigator.Project.ObjectQuickFilterManager">
+    <last-used-operator value="EQUAL" />
+    <filters />
+  </component>
+  <component name="DBNavigator.Project.Settings">
+    <connections>
+      <connection id="3f57ff5f-84b9-4cae-a140-97ca5c1aef65" active="true" signed="true">
+        <database>
+          <name value="Connection" />
+          <description value="" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="15.4" />
+          <driver-source value="BUNDLED" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="5432" />
+          <database value="pagila" />
+          <tns-folder value="" />
+          <tns-profile value="" />
+          <type value="USER_PASSWORD" />
+          <user value="postgres" />
+          <deprecated-pwd value="dHJ1cHV0dWthczE5ODI=" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="30" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="d1075529-7086-43e9-b2f0-48471b2ce22a" active="true" signed="true">
+        <database>
+          <name value="Aktoriai" />
+          <description value="" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="15.4" />
+          <driver-source value="BUNDLED" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="5432" />
+          <database value="pagila" />
+          <tns-folder value="" />
+          <tns-profile value="" />
+          <type value="USER_PASSWORD" />
+          <user value="postgres" />
+          <deprecated-pwd value="dHJ1cHV0dWthczE5ODI=" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="30" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="bbf0a820-35aa-482d-a639-747d6807baca" active="true" signed="true">
+        <database>
+          <name value="Medeina" />
+          <description value="" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="15.4" />
+          <driver-source value="BUNDLED" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="5432" />
+          <database value="Medeina" />
+          <tns-folder value="" />
+          <tns-profile value="" />
+          <type value="USER_PASSWORD" />
+          <user value="postgres" />
+          <deprecated-pwd value="dHJ1cHV0dWthczE5ODI=" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="30" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="a05102ed-5492-4d03-9a29-680379b12a0d" active="true" signed="true">
+        <database>
+          <name value="Dellstore" />
+          <description value="" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="15.4" />
+          <driver-source value="BUNDLED" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="5432" />
+          <database value="Dellstore" />
+          <tns-folder value="" />
+          <tns-profile value="" />
+          <type value="USER_PASSWORD" />
+          <user value="postgres" />
+          <deprecated-pwd value="dHJ1cHV0dWthczE5ODI=" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="30" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+    </connections>
+    <browser-settings>
+      <general>
+        <display-mode value="TABBED" />
+        <navigation-history-size value="100" />
+        <show-object-details value="false" />
+      </general>
+      <filters>
+        <object-type-filter>
+          <object-type name="SCHEMA" enabled="true" />
+          <object-type name="USER" enabled="true" />
+          <object-type name="ROLE" enabled="true" />
+          <object-type name="PRIVILEGE" enabled="true" />
+          <object-type name="CHARSET" enabled="true" />
+          <object-type name="TABLE" enabled="true" />
+          <object-type name="VIEW" enabled="true" />
+          <object-type name="MATERIALIZED_VIEW" enabled="true" />
+          <object-type name="NESTED_TABLE" enabled="true" />
+          <object-type name="COLUMN" enabled="true" />
+          <object-type name="INDEX" enabled="true" />
+          <object-type name="CONSTRAINT" enabled="true" />
+          <object-type name="DATASET_TRIGGER" enabled="true" />
+          <object-type name="DATABASE_TRIGGER" enabled="true" />
+          <object-type name="SYNONYM" enabled="true" />
+          <object-type name="SEQUENCE" enabled="true" />
+          <object-type name="PROCEDURE" enabled="true" />
+          <object-type name="FUNCTION" enabled="true" />
+          <object-type name="PACKAGE" enabled="true" />
+          <object-type name="TYPE" enabled="true" />
+          <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+          <object-type name="ARGUMENT" enabled="true" />
+          <object-type name="DIMENSION" enabled="true" />
+          <object-type name="CLUSTER" enabled="true" />
+          <object-type name="DBLINK" enabled="true" />
+        </object-type-filter>
+      </filters>
+      <sorting>
+        <object-type name="COLUMN" sorting-type="NAME" />
+        <object-type name="FUNCTION" sorting-type="NAME" />
+        <object-type name="PROCEDURE" sorting-type="NAME" />
+        <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
+      </sorting>
+      <default-editors>
+        <object-type name="VIEW" editor-type="SELECTION" />
+        <object-type name="PACKAGE" editor-type="SELECTION" />
+        <object-type name="TYPE" editor-type="SELECTION" />
+      </default-editors>
+    </browser-settings>
+    <navigation-settings>
+      <lookup-filters>
+        <lookup-objects>
+          <object-type name="SCHEMA" enabled="true" />
+          <object-type name="USER" enabled="false" />
+          <object-type name="ROLE" enabled="false" />
+          <object-type name="PRIVILEGE" enabled="false" />
+          <object-type name="CHARSET" enabled="false" />
+          <object-type name="TABLE" enabled="true" />
+          <object-type name="VIEW" enabled="true" />
+          <object-type name="MATERIALIZED VIEW" enabled="true" />
+          <object-type name="INDEX" enabled="true" />
+          <object-type name="CONSTRAINT" enabled="true" />
+          <object-type name="DATASET TRIGGER" enabled="true" />
+          <object-type name="DATABASE TRIGGER" enabled="true" />
+          <object-type name="SYNONYM" enabled="false" />
+          <object-type name="SEQUENCE" enabled="true" />
+          <object-type name="PROCEDURE" enabled="true" />
+          <object-type name="FUNCTION" enabled="true" />
+          <object-type name="PACKAGE" enabled="true" />
+          <object-type name="TYPE" enabled="true" />
+          <object-type name="DIMENSION" enabled="false" />
+          <object-type name="CLUSTER" enabled="false" />
+          <object-type name="DBLINK" enabled="true" />
+        </lookup-objects>
+        <force-database-load value="false" />
+        <prompt-connection-selection value="true" />
+        <prompt-schema-selection value="true" />
+      </lookup-filters>
+    </navigation-settings>
+    <dataset-grid-settings>
+      <general>
+        <enable-zooming value="true" />
+        <enable-column-tooltip value="true" />
+      </general>
+      <sorting>
+        <nulls-first value="true" />
+        <max-sorting-columns value="4" />
+      </sorting>
+      <audit-columns>
+        <column-names value="" />
+        <visible value="true" />
+        <editable value="false" />
+      </audit-columns>
+    </dataset-grid-settings>
+    <dataset-editor-settings>
+      <text-editor-popup>
+        <active value="false" />
+        <active-if-empty value="false" />
+        <data-length-threshold value="100" />
+        <popup-delay value="1000" />
+      </text-editor-popup>
+      <values-actions-popup>
+        <show-popup-button value="true" />
+        <element-count-threshold value="1000" />
+        <data-length-threshold value="250" />
+      </values-actions-popup>
+      <general>
+        <fetch-block-size value="100" />
+        <fetch-timeout value="30" />
+        <trim-whitespaces value="true" />
+        <convert-empty-strings-to-null value="true" />
+        <select-content-on-cell-edit value="true" />
+        <large-value-preview-active value="true" />
+      </general>
+      <filters>
+        <prompt-filter-dialog value="true" />
+        <default-filter-type value="BASIC" />
+      </filters>
+      <qualified-text-editor text-length-threshold="300">
+        <content-types>
+          <content-type name="Text" enabled="true" />
+          <content-type name="Properties" enabled="true" />
+          <content-type name="XML" enabled="true" />
+          <content-type name="DTD" enabled="true" />
+          <content-type name="HTML" enabled="true" />
+          <content-type name="XHTML" enabled="true" />
+          <content-type name="SQL" enabled="true" />
+          <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JSON" enabled="true" />
+          <content-type name="JSON5" enabled="true" />
+          <content-type name="YAML" enabled="true" />
+        </content-types>
+      </qualified-text-editor>
+      <record-navigation>
+        <navigation-target value="VIEWER" />
+      </record-navigation>
+    </dataset-editor-settings>
+    <code-editor-settings>
+      <general>
+        <show-object-navigation-gutter value="false" />
+        <show-spec-declaration-navigation-gutter value="true" />
+        <enable-spellchecking value="true" />
+        <enable-reference-spellchecking value="false" />
+      </general>
+      <confirmations>
+        <save-changes value="false" />
+        <revert-changes value="true" />
+      </confirmations>
+    </code-editor-settings>
+    <code-completion-settings>
+      <filters>
+        <basic-filter>
+          <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
+          <filter-element type="RESERVED_WORD" id="function" selected="true" />
+          <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
+          <filter-element type="RESERVED_WORD" id="datatype" selected="true" />
+          <filter-element type="RESERVED_WORD" id="exception" selected="true" />
+          <filter-element type="OBJECT" id="schema" selected="true" />
+          <filter-element type="OBJECT" id="role" selected="true" />
+          <filter-element type="OBJECT" id="user" selected="true" />
+          <filter-element type="OBJECT" id="privilege" selected="true" />
+          <user-schema>
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="false" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
+          </user-schema>
+          <public-schema>
+            <filter-element type="OBJECT" id="table" selected="false" />
+            <filter-element type="OBJECT" id="view" selected="false" />
+            <filter-element type="OBJECT" id="materialized view" selected="false" />
+            <filter-element type="OBJECT" id="index" selected="false" />
+            <filter-element type="OBJECT" id="constraint" selected="false" />
+            <filter-element type="OBJECT" id="trigger" selected="false" />
+            <filter-element type="OBJECT" id="synonym" selected="false" />
+            <filter-element type="OBJECT" id="sequence" selected="false" />
+            <filter-element type="OBJECT" id="procedure" selected="false" />
+            <filter-element type="OBJECT" id="function" selected="false" />
+            <filter-element type="OBJECT" id="package" selected="false" />
+            <filter-element type="OBJECT" id="type" selected="false" />
+            <filter-element type="OBJECT" id="dimension" selected="false" />
+            <filter-element type="OBJECT" id="cluster" selected="false" />
+            <filter-element type="OBJECT" id="dblink" selected="false" />
+          </public-schema>
+          <any-schema>
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="true" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
+          </any-schema>
+        </basic-filter>
+        <extended-filter>
+          <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
+          <filter-element type="RESERVED_WORD" id="function" selected="true" />
+          <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
+          <filter-element type="RESERVED_WORD" id="datatype" selected="true" />
+          <filter-element type="RESERVED_WORD" id="exception" selected="true" />
+          <filter-element type="OBJECT" id="schema" selected="true" />
+          <filter-element type="OBJECT" id="user" selected="true" />
+          <filter-element type="OBJECT" id="role" selected="true" />
+          <filter-element type="OBJECT" id="privilege" selected="true" />
+          <user-schema>
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="true" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
+          </user-schema>
+          <public-schema>
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="true" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
+          </public-schema>
+          <any-schema>
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="true" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
+          </any-schema>
+        </extended-filter>
+      </filters>
+      <sorting enabled="true">
+        <sorting-element type="RESERVED_WORD" id="keyword" />
+        <sorting-element type="RESERVED_WORD" id="datatype" />
+        <sorting-element type="OBJECT" id="column" />
+        <sorting-element type="OBJECT" id="table" />
+        <sorting-element type="OBJECT" id="view" />
+        <sorting-element type="OBJECT" id="materialized view" />
+        <sorting-element type="OBJECT" id="index" />
+        <sorting-element type="OBJECT" id="constraint" />
+        <sorting-element type="OBJECT" id="trigger" />
+        <sorting-element type="OBJECT" id="synonym" />
+        <sorting-element type="OBJECT" id="sequence" />
+        <sorting-element type="OBJECT" id="procedure" />
+        <sorting-element type="OBJECT" id="function" />
+        <sorting-element type="OBJECT" id="package" />
+        <sorting-element type="OBJECT" id="type" />
+        <sorting-element type="OBJECT" id="dimension" />
+        <sorting-element type="OBJECT" id="cluster" />
+        <sorting-element type="OBJECT" id="dblink" />
+        <sorting-element type="OBJECT" id="schema" />
+        <sorting-element type="OBJECT" id="role" />
+        <sorting-element type="OBJECT" id="user" />
+        <sorting-element type="RESERVED_WORD" id="function" />
+        <sorting-element type="RESERVED_WORD" id="parameter" />
+      </sorting>
+      <format>
+        <enforce-code-style-case value="true" />
+      </format>
+    </code-completion-settings>
+    <execution-engine-settings>
+      <statement-execution>
+        <fetch-block-size value="200" />
+        <execution-timeout value="20" />
+        <debug-execution-timeout value="600" />
+        <focus-result value="false" />
+        <prompt-execution value="false" />
+      </statement-execution>
+      <script-execution>
+        <command-line-interfaces />
+        <execution-timeout value="300" />
+      </script-execution>
+      <method-execution>
+        <execution-timeout value="30" />
+        <debug-execution-timeout value="600" />
+        <parameter-history-size value="10" />
+      </method-execution>
+    </execution-engine-settings>
+    <operation-settings>
+      <transactions>
+        <uncommitted-changes>
+          <on-project-close value="ASK" />
+          <on-disconnect value="ASK" />
+          <on-autocommit-toggle value="ASK" />
+        </uncommitted-changes>
+        <multiple-uncommitted-changes>
+          <on-commit value="ASK" />
+          <on-rollback value="ASK" />
+        </multiple-uncommitted-changes>
+      </transactions>
+      <session-browser>
+        <disconnect-session value="ASK" />
+        <kill-session value="ASK" />
+        <reload-on-filter-change value="false" />
+      </session-browser>
+      <compiler>
+        <compile-type value="KEEP" />
+        <compile-dependencies value="ASK" />
+        <always-show-controls value="false" />
+      </compiler>
+      <debugger>
+        <debugger-type value="JDBC" />
+        <use-generic-runners value="true" />
+      </debugger>
+    </operation-settings>
+    <ddl-file-settings>
+      <extensions>
+        <mapping file-type-id="VIEW" extensions="vw" />
+        <mapping file-type-id="TRIGGER" extensions="trg" />
+        <mapping file-type-id="PROCEDURE" extensions="prc" />
+        <mapping file-type-id="FUNCTION" extensions="fnc" />
+        <mapping file-type-id="PACKAGE" extensions="pkg" />
+        <mapping file-type-id="PACKAGE_SPEC" extensions="pks" />
+        <mapping file-type-id="PACKAGE_BODY" extensions="pkb" />
+        <mapping file-type-id="TYPE" extensions="tpe" />
+        <mapping file-type-id="TYPE_SPEC" extensions="tps" />
+        <mapping file-type-id="TYPE_BODY" extensions="tpb" />
+      </extensions>
+      <general>
+        <lookup-ddl-files value="true" />
+        <create-ddl-files value="false" />
+        <synchronize-ddl-files value="true" />
+        <use-qualified-names value="false" />
+        <make-scripts-rerunnable value="true" />
+      </general>
+    </ddl-file-settings>
+    <general-settings>
+      <regional-settings>
+        <date-format value="MEDIUM" />
+        <number-format value="UNGROUPED" />
+        <locale value="SYSTEM_DEFAULT" />
+        <use-custom-formats value="false" />
+      </regional-settings>
+      <environment>
+        <environment-types>
+          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-12296320" readonly-code="false" readonly-data="false" />
+          <environment-type id="integration" name="Integration" description="Integration environment" color="-2621494/-12163514" readonly-code="true" readonly-data="false" />
+          <environment-type id="production" name="Production" description="Productive environment" color="-11574/-10271420" readonly-code="true" readonly-data="true" />
+          <environment-type id="other" name="Other" description="" color="-1576/-10724543" readonly-code="false" readonly-data="false" />
+        </environment-types>
+        <visibility-settings>
+          <connection-tabs value="true" />
+          <dialog-headers value="true" />
+          <object-editor-tabs value="true" />
+          <script-editor-tabs value="false" />
+          <execution-result-tabs value="true" />
+        </visibility-settings>
+      </environment>
+    </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+  </component>
+</project>
