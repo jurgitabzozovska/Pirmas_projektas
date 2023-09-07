@@ -398,20 +398,50 @@
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos. V
 # artotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
-#
-# 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
-# Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams, išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
+# gerimas = input('irasykite gerimo pavadinima')
+# gerimu_sarasas = {
+#     'kava': 1.50,
+#     'fanta': 0.99,
+#     'vynas': 10,
+#     'pienas': 1,
+#     'sultys': 2.50,
+#     'alus': 1.99
+# }
+# gerimas_is_saraso = {}
+# for gerimas, kaina in gerimu_sarasas.item():
+#     if gerimas == gerimas_is_saraso:
+#         gerimas_is_sarasas [gerimas] = kaina
+#      print('gerimu_sarasas')
+# else:
+#     print('gerimas nerastas')
 
- # 1. is saraso isfiltruot lyginius sk
+
+# Studentai = {
+#     "Petras": 32,
+#     "Antanas": 15,
+#     "Jurgis": 18
+#     }
+# Atrinkti_studentai = {}
+# for Vardas, Amzius in Studentai.items():
+#     if Amzius >= 18:
+#         Atrinkti_studentai[Vardas] = Amzius
+# print(Atrinkti_studentai)
+
+# 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
+# Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams,
+# išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
+
+# skaiciai = [2, 5, 11, 14, 20, 35]
+# lyginiai = []
+# nelyginiai = []
 #
-sarasas = [2,5,11,14,20]
-lyginiai_sk = []
-nelyginiai_sk = []
-for skaicius in sarasas:
-    if skaicius %2 == 0:
-        lyginiai_sk.append(skaicius)
-print("lyginiai_sk ", lyginiai_sk)
-#
+# for sk in skaiciai:
+#     if sk % 2 == 0:
+#         lyginiai.append(sk)
+#     else:
+#         nelyginiai.append(sk)
+# print('lyginiai skaiciai:', lyginiai)
+# print('nelyginiai skaiciai:', nelyginiai)
 
 
 # 09-07
