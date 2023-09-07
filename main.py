@@ -376,6 +376,18 @@
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
 
+# Studentai = {
+#     "Jurgis": 8,
+#     "Antanas": 5,
+#     "Aloyzas": 10,
+#     "Martynas": 7
+#     }
+# for vardas, pazymys in Studentai:
+#     if vardas, pazymys = Studentai:
+# #         print("vardas yra sarase")
+
+
+
 # 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
