@@ -443,7 +443,6 @@
 #     print(f'{indeksas}. {vaisius}')
 
 # OPEN
-
 # with open("failo_pav.txt", "w", encoding="utf-8") as file:
 #     content = file.write("kuriam nauja faila")
 #     print(content)
