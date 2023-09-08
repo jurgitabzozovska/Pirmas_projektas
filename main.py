@@ -399,7 +399,9 @@
 # 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
-#
+# tuscias sarasas = input('iveskite skaiciu:')
+
+# KAZKAS NETAIP ???????????????
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos.
 # Vartotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
@@ -413,10 +415,10 @@
 #     'alus': 2
 # }
 # gerimas_is_saraso = {}
-# for gerimas, kaina in gerimai.items():
-#     if gerimas == gerimas_is_saraso:
+# for G in gerimai.items():
+#     if G == gerimas_is_saraso:
 #         print(kaina)
-# else:
+# # else:
 #     print('tokio gerimo neturime')
 
 
