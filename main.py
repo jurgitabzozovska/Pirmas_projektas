@@ -370,7 +370,7 @@
 #         print("vardas yra sarase")
 
 # 09-06 NAMU daibai
-#                 ****PADARYTA****
+#                 ****PADARYTAS****
 # 1. Sukurkite sąrašą temperatūros su temperatūromis. Patikrinkite kiekvieną temperatūrą sąraše ir išveskite "šilta"
 # (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau) temperatura
 
@@ -385,16 +385,33 @@
 # salta.append(temp)
 # print('salta:', salta)
 
+
+#        ********PADARYTAS************
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
 
-# Studentai = ["Jurgis", 8,"Antanas", 5, "Aloyzas", 10, "Martynas",  7]
-# studentas = {}
-# for studentas in Studentai
-# print(f"{studentas}: vardas")
+# Studentai = ['Jurgis': 5, 4, 'Antanas': 5, 4, 'Aloyzas': 10, 10, 'Martynas': 7, 2]
+# zodynas = {}
+# for st in Studentai
+#     print(st)
+
+Studentai = {
+    'Jurgis': 1,
+    'Antanas': 4
+}
+for stu in Studentai:
+    print(f'Studentas: {Studentai}')
+
+
+### # sarasas = [1,2,3,4,5]
+# # for elementas in sarasas:
+# #     print("elementas: ", elementas)
 #
-
-
+# # for i in range(2, 8):
+# #     print(i)
+#
+# # for i in range(5, 0, -1):
+# #     print(i)
 # 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
