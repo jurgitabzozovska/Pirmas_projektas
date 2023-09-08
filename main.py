@@ -403,7 +403,6 @@ gerimai ={
 gerimas_is_saraso = {}
 for gerimas, kaina in gerimai.items():
     if gerimas == gerimas_is_saraso:
-        gerimas_is_saraso[gerimas] = kaina
         print(kaina)
 # else:
 #     print('tokio gerimo neturime')
