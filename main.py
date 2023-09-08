@@ -372,8 +372,7 @@
 # 09-06 NAMU daibai
 #                 ****PADARYTA****
 # 1. Sukurkite sąrašą temperatūros su temperatūromis. Patikrinkite kiekvieną temperatūrą sąraše ir išveskite "šilta"
-# (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau).
-# temperatura
+# (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau) temperatura
 
 # temperaturos = [25,20,5,30,-5]
 # silta = []
@@ -401,10 +400,12 @@
 # Ciklą nutraukite, kai vartotojas įveda 0.
 # tuscias sarasas = input('iveskite skaiciu:')
 
-# KAZKAS NETAIP ???????????????
+
+# ***************PADARYTAS*******
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos.
 # Vartotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
+
 # drinkas = input('irasykite gerimo pavadinima:')
 # gerimai ={
 #     'kava': 1,
@@ -414,11 +415,10 @@
 #     'sultys': 3,
 #     'alus': 2
 # }
-# gerimas_is_saraso = {}
-# for G in gerimai.items():
-#     if G == gerimas_is_saraso:
-#         print(kaina)
-# # else:
+# if drinkas in gerimai:
+#     kaina = gerimai[drinkas]
+#     print(kaina)
+# else:
 #     print('tokio gerimo neturime')
 
 
@@ -584,3 +584,12 @@
 # didesni_sk = didesnis(listas, n)
 # print(f'sarase skaiciai didesni uz {n} yra {didesni_sk}')
 
+# Namų darbai:
+#
+# 1. Parašykite funkciją, kuri priimtų sąrašą studento pažymių ir grąžintų vidurkį;
+# 2. Sukurkite funkciją pirminiai_skaiciai(n), kuri priima sveikąjį skaičių n ir grąžina visus pirminius skaičius nuo 2 iki n;
+# 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
+# 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
+# 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
+# 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą. Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
+# 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
