@@ -370,7 +370,7 @@
 #         print("vardas yra sarase")
 
 # 09-06 NAMU daibai
-#                 ****PADARYTAS****
+#                    ****PADARYTAS****
 # 1. Sukurkite sąrašą temperatūros su temperatūromis. Patikrinkite kiekvieną temperatūrą sąraše ir išveskite "šilta"
 # (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau) temperatura
 
@@ -385,34 +385,20 @@
 # salta.append(temp)
 # print('salta:', salta)
 
-
-#        ********PADARYTAS************
+#               *****PADARYTAS****
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
-
-# Studentai = ['Jurgis': 5, 4, 'Antanas': 5, 4, 'Aloyzas': 10, 10, 'Martynas': 7, 2]
-# zodynas = {}
-# for st in Studentai
-#     print(st)
-
-Studentai = {
-    'Jurgis': 1,
-    'Antanas': 4
-}
-for stu in Studentai:
-    print(f'Studentas: {Studentai}')
-
-
-### # sarasas = [1,2,3,4,5]
-# # for elementas in sarasas:
-# #     print("elementas: ", elementas)
 #
-# # for i in range(2, 8):
-# #     print(i)
-#
-# # for i in range(5, 0, -1):
-# #     print(i)
-# 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
+# Studentai = {
+#     'Jurgis': (5,6,7),
+#     'Antanas': (5,7,2),
+#     'Aloyzas': (10,10,9),
+#     'Martynas': (2,2,2)
+# }
+# print(Studentai)
+
+
+## 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
 # tuscias sarasas = input('iveskite skaiciu:')
@@ -432,14 +418,14 @@ for stu in Studentai:
 #     'sultys': 3,
 #     'alus': 2
 # }
-# if drinkas in gerimai:
+# # if drinkas in gerimai:
 #     kaina = gerimai[drinkas]
 #     print(kaina)
-# else:
+# # else:
 #     print('tokio gerimo neturime')
 
 
-#              ***PADARYTA***
+#                  ***PADARYTA***
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams,
 # išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
