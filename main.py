@@ -507,14 +507,16 @@
 # print(sveikinimas)
 
 # def ar_lyginis(skaicius):
-#     if skaicius % 2 == 0:
+#     if skaicius %2 == 0:
+#         return True
 #     else:
 #         return False
-#     skaicius = 7
-#     if ar_lyginis(skaicius):
-#         print(f'{skaicius} yra lyginis')
-#     else:
-#         print(f'{skaicius} yra nelyginis'
+#
+# skaicius = 8
+# if ar_lyginis(skaicius):
+#     print(f'{skaicius} yra lyginis')
+# else:
+#     print(f'{skaicius} yra nelyginis')
 
 # def suma(a, b):
 #     rezultatas = a +b
