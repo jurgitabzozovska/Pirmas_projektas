@@ -498,6 +498,7 @@
 #     print(vaisiai)
 
 # 09-08 - FUNKCIJOS
+# 1.
 # def pasisveikinimas(vardas):
 #     sveikinimas = f"sveiki, {vardas}"
 #     return sveikinimas
@@ -506,18 +507,19 @@
 # sveikinimas = pasisveikinimas(vardas)
 # print(sveikinimas)
 
+# 2.
 # def ar_lyginis(skaicius):
 #     if skaicius %2 == 0:
 #         return True
 #     else:
 #         return False
-#
-# skaicius = 8
+## skaicius = 8
 # if ar_lyginis(skaicius):
 #     print(f'{skaicius} yra lyginis')
 # else:
 #     print(f'{skaicius} yra nelyginis')
 
+# 3.
 # def suma(a, b):
 #     rezultatas = a +b
 #     return rezultatas
@@ -525,5 +527,59 @@
 # y = 3
 # sumos_rezultatas = suma(x, y)
 # print(f'{x} + {y} = {sumos_rezultatas}')
+
+# 4.
+# def vidurkis(skaiciai):
+#     suma = sum(skaiciai)
+#     avg = suma / len(skaiciai)
+#     return avg
+#
+# sarasas = [10, 15, 20, 25, 30]
+# rezultatas = vidurkis(sarasas)
+# print(f'saraso vidurkis: {rezultatas}')
+
+#
+# 5.
+# ar_teigiamas(skaicius)
+# def ar_teigiamas(skaicius):
+#         if skaicius > 0:
+#                 return True
+#         else:
+#                 return False
+#
+# skaicius = -1
+# if ar_teigiamas(skaicius):
+#         print(f"{skaicius} yra teikiagas")
+# else:
+#         print(f"{skaicius} yra neigiamas")
+
+# 6.
+# did skaicius sarase
+
+# def didziausias_sk(skaicius):
+#     didziausias = skaicius[0]
+#     for sk in skaicius:
+#         if sk > didziausias:
+#             didziausias = sk
+#     return didziausias
+#
+# sarasas = [10, 658, 12, -2]
+# didziausias = didziausias_sk(sarasas)
+# print(f'didziausias yra {didziausias}')
+
+# 7.
+# f-ja sujungia du sarasus
+# def sujungti_sarasai (sarasas_1, sarasas_2):
+#     sujungtas_sarasas = sarasas_1 + sarasas_2
+#     return sujungtas_sarasas
+# s_1 = [1, 2, 3]
+# s_2 = [4, 5, 6]
+# rezultatas = sujungti_sarasai(s_1, s_2)
+# print(rezultatas)
+
+# 8.
+# rasti didesni sk nei yra sarase
+
+def didesnis (skaicius):
 
 
