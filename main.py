@@ -422,8 +422,6 @@
 #     print('tokio gerimo neturime')
 
 
-
-
 #              ***PADARYTA***
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams,
@@ -439,7 +437,6 @@
 #         nelyginiai.append(sk)
 # print('lyginiai skaiciai:', lyginiai)
 # print('nelyginiai skaiciai:', nelyginiai)
-
 
 
 
@@ -493,9 +490,38 @@
 #     for eilute in file:
 #         print(eilute.strip())
 
-vaisiai = []
+# vaisiai = []
 
 # with open('vaisiai.txt', 'r', encoding='utf-8') as file:
 #     file:write('obuolys, \nkriause, \nbananas, \nbraske')
 #     vaisiai = file.readlines()
 #     print(vaisiai)
+
+# 09-08 - FUNKCIJOS
+# def pasisveikinimas(vardas):
+#     sveikinimas = f"sveiki, {vardas}"
+#     return sveikinimas
+#
+# vardas = input("iveskite varda")
+# sveikinimas = pasisveikinimas(vardas)
+# print(sveikinimas)
+
+# def ar_lyginis(skaicius):
+#     if skaicius % 2 == 0:
+#     else:
+#         return False
+#     skaicius = 7
+#     if ar_lyginis(skaicius):
+#         print(f'{skaicius} yra lyginis')
+#     else:
+#         print(f'{skaicius} yra nelyginis'
+
+# def suma(a, b):
+#     rezultatas = a +b
+#     return rezultatas
+# x = 5
+# y = 3
+# sumos_rezultatas = suma(x, y)
+# print(f'{x} + {y} = {sumos_rezultatas}')
+
+
