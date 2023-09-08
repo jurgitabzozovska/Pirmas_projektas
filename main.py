@@ -175,14 +175,14 @@
 #
 # # 7. Isvesti fizz skaicius, kurie dalijasi is 3, buzz skaiciamd kurie dalinasi is 5, fizzbuzz, kurie dalijasi is 3 ir is 5
 # # internavas nuo 1 iki 100
-# # for skaicius in range(1, 101):
-# #     if skaicius % 3 ==0 and skaicius % 5 ==0:
-# #         print("fizzbuzz")
-# #     elif skaicius % 3 ==0:
-# #         print("fizz")
-# #     elif skaicius % 5 ==0:
-# #         print("buzz")
-# #     else:print(skaicius)
+# for skaicius in range(1, 101):
+#     if skaicius % 3 ==0 and skaicius % 5 ==0:
+#         print("fizzbuzz")
+#     elif skaicius % 3 ==0:
+#         print("fizz")
+#     elif skaicius % 5 ==0:
+#         print("buzz")
+#     else:print(skaicius)
 #
 #
 # # 8. sukurti skaiciu spejimo zaidima, o vartotojas turi atspeti
@@ -372,6 +372,7 @@
 # 09-06 NAMU daibai
 # 1. Sukurkite sąrašą temperatūros su temperatūromis. Patikrinkite kiekvieną temperatūrą sąraše ir išveskite "šilta"
 # (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau).
+# temperatura
 
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
@@ -383,54 +384,38 @@
 #
 
 
- # Zodziai = ["saule", "menulis", "dangus", "Vilnius", "Jurga","Gyvenimas", "kur"]
-# # zodynas = {}
-# # for zodis in Zodziai:
-# #     zodynas[zodis] = len(zodis)
-# # for zodis, ilgis in zodynas.items():
-# #     if ilgis > 6:
-# #         print(f"{zodis}: {ilgis} raides")
-
 # 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
 #
-# 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos. V
-# artotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
+# 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos.
+# Vartotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
-# gerimas = input('irasykite gerimo pavadinima')
-# gerimu_sarasas = {
-#     'kava': 1.50,
-#     'fanta': 0.99,
-#     'vynas': 10,
-#     'pienas': 1,
-#     'sultys': 2.50,
-#     'alus': 1.99
-# }
-# gerimas_is_saraso = {}
-# for gerimas, kaina in gerimu_sarasas.item():
-#     if gerimas == gerimas_is_saraso:
-#         gerimas_is_sarasas [gerimas] = kaina
-#      print('gerimu_sarasas')
+drinkas = input('irasykite gerimo pavadinima:')
+gerimai ={
+    'kava': 1,
+    'fanta': 1,
+    'vynas': 10,
+    'pienas': 2,
+    'sultys': 3,
+    'alus': 2
+}
+gerimas_is_saraso = {}
+for gerimas, kaina in gerimai.items():
+    if gerimas == gerimas_is_saraso:
+        gerimas_is_saraso[gerimas] = kaina
+        print(kaina)
 # else:
-#     print('gerimas nerastas')
+#     print('tokio gerimo neturime')
 
 
-# Studentai = {
-#     "Petras": 32,
-#     "Antanas": 15,
-#     "Jurgis": 18
-#     }
-# Atrinkti_studentai = {}
-# for Vardas, Amzius in Studentai.items():
-#     if Amzius >= 18:
-#         Atrinkti_studentai[Vardas] = Amzius
-# print(Atrinkti_studentai)
+
+
 
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams,
 # išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
-
+#
 # skaiciai = [2, 5, 11, 14, 20, 35]
 # lyginiai = []
 # nelyginiai = []
@@ -442,6 +427,8 @@
 #         nelyginiai.append(sk)
 # print('lyginiai skaiciai:', lyginiai)
 # print('nelyginiai skaiciai:', nelyginiai)
+
+
 
 
 # 09-07
