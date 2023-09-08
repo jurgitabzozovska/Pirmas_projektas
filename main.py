@@ -370,9 +370,21 @@
 #         print("vardas yra sarase")
 
 # 09-06 NAMU daibai
+#                 ****PADARYTA****
 # 1. Sukurkite sąrašą temperatūros su temperatūromis. Patikrinkite kiekvieną temperatūrą sąraše ir išveskite "šilta"
 # (jei temperatūra virš 20) arba "šalta" (jei temperatūra 20 ar mažiau).
 # temperatura
+
+# temperaturos = [25,20,5,30,-5]
+# silta = []
+# salta = []
+# for temp in temperaturos:
+#     if temp >=20:
+#         silta.append(temp)
+# print('silta:', silta)
+# #    else:
+# salta.append(temp)
+# print('salta:', salta)
 
 # 2. Turite žodyną su studentų vardais ir jų pažymiais. Parašykite "for" ciklą,
 # kuris išveda kiekvieno studento vardą ir jo pažymį.
@@ -391,26 +403,26 @@
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos.
 # Vartotojas įveda gėrimo pavadinimą, o jūs patikrinkite, ar tokio pavadinimo gėrimas yra žodyne.
 # Jei taip, išveskite jo kainą; jei ne, išveskite pranešimą "Gėrimas nerastas".
-drinkas = input('irasykite gerimo pavadinima:')
-gerimai ={
-    'kava': 1,
-    'fanta': 1,
-    'vynas': 10,
-    'pienas': 2,
-    'sultys': 3,
-    'alus': 2
-}
-gerimas_is_saraso = {}
-for gerimas, kaina in gerimai.items():
-    if gerimas == gerimas_is_saraso:
-        print(kaina)
+# drinkas = input('irasykite gerimo pavadinima:')
+# gerimai ={
+#     'kava': 1,
+#     'fanta': 1,
+#     'vynas': 10,
+#     'pienas': 2,
+#     'sultys': 3,
+#     'alus': 2
+# }
+# gerimas_is_saraso = {}
+# for gerimas, kaina in gerimai.items():
+#     if gerimas == gerimas_is_saraso:
+#         print(kaina)
 # else:
 #     print('tokio gerimo neturime')
 
 
 
 
-
+#              ***PADARYTA***
 # 5. Patikrinkite, ar skaičiai sąraše yra lyginiai arba nelyginiai.
 # Sukurkite du tuščius sąrašus: vienas lyginiams ir kitą nelyginiams skaičiams,
 # išrūšiuokite lyginius ir nelyginius skaičius iš skaičiai sąrašo.
@@ -418,8 +430,7 @@ for gerimas, kaina in gerimai.items():
 # skaiciai = [2, 5, 11, 14, 20, 35]
 # lyginiai = []
 # nelyginiai = []
-#
-# for sk in skaiciai:
+## for sk in skaiciai:
 #     if sk % 2 == 0:
 #         lyginiai.append(sk)
 #     else:
