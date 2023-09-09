@@ -397,12 +397,23 @@
 # }
 # print(Studentai)
 
-
+***************PADARYTAS*******
 ## 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
-# tuscias sarasas = input('iveskite skaiciu:')
 
+# ivesti_sk = []
+# while True:
+#
+#     skaicius = int(input('Prasome ivesti skaiciu:'))
+#     if skaicius == 0:
+#         break
+#
+#         ivesti_sk.append(skaicius)
+#         print('ivesti_skaicius:')
+#         for skaicius in ivesti_sk:
+#
+#             print(ivesti_sk)
 
 # ***************PADARYTAS*******
 # 4. Turite žodyną, kuriame saugomi gėrimų pavadinimai ir jų kainos.
@@ -590,9 +601,16 @@
 # Namų darbai:
 #
 # 1. Parašykite funkciją, kuri priimtų sąrašą studento pažymių ir grąžintų vidurkį;
+
 # 2. Sukurkite funkciją pirminiai_skaiciai(n), kuri priima sveikąjį skaičių n ir grąžina visus pirminius skaičius nuo 2 iki n;
+
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
+
 # 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
+
 # 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
-# 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą. Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
+
+# 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą.
+# Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
+
 # 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
