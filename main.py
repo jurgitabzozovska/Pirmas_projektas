@@ -616,38 +616,64 @@
 # def pirminiai_sk(n):
 #      if n == 1:
 #          return False
-#
-#      elif n > 1:
+##      elif n > 1:
 #         for sk in range(2, n):
 #             if (n%sk) == 0:
 #                 return False
-#
-#         else:
+##         else:
 #             return True
 # n = 12
 # if pirminiai_sk(n):
 #     print(f'{n} yra pirminis')
 # else:
 #     print(f'{n} yra nepirminis')
-
 #
 #---------------PADARYTAS______________
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
+
 # Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # def zodziu_kiekis(sakinys):
 #     kiekis = len(sakinys.split())
 #     return kiekis
-#
-# print('Sakinys:', Tekstas)
+## print('Sakinys:', Tekstas)
 # print('Zodziu kiekys sakinyje yra:', zodziu_kiekis(Tekstas))
 
-
+#---------------PADARYTAS______________
 # 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
+
+# def didz_elementas(sarasas):
+#     max = sarasas[0]
+#     for skaicius in sarasas:
+#         if skaicius > max:
+#             max = skaicius
+#     print('Didziausias rastas skaicius sarase yra:', max)
+# sk_sarasas = [9, 7, 4, 2, 3, 6, 8, 10, 21, 5]
+# print(sk_sarasas)
+# didz_elementas(sk_sarasas)
+
+
 
 # 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
 
+#---------------PADARYTAS______________
 # 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą.
 # Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
 
-# 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
+# def suma_saraso(x):
+#     viso = 0
+#     for sarasas in x:
+#         viso = viso + sarasas
+#     return viso
+# sarasas_sk = [1,2,3,4,5,1,4,5]
+# print('Skaiciu saraso suma yra:', suma_saraso(sarasas_sk))
 
+#---------------PADARYTAS______________
+# 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
+#
+# def mano_sarasas(sarasas):
+#    sandauga = 1
+#    for skaicius in sarasas:
+#         sandauga = sandauga * skaicius
+#    return sandauga
+# sk_sarasas = [2, 4, 6, 8, 10]
+# print('Saraso skaiciu sandauga lygi:',mano_sarasas (sk_sarasas))
