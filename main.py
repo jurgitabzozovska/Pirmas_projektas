@@ -631,12 +631,11 @@
 #---------------PADARYTAS______________
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
 
-# Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
+Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # def zodziu_kiekis(sakinys):
 #     kiekis = len(sakinys.split())
 #     return kiekis
-## print('Sakinys:', Tekstas)
-# print('Zodziu kiekys sakinyje yra:', zodziu_kiekis(Tekstas))
+# print('Zodziu sakinyje yra:', zodziu_kiekis(Tekstas))
 
 #---------------PADARYTAS______________
 # 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
