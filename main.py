@@ -651,9 +651,19 @@
 # print(sk_sarasas)
 # didz_elementas(sk_sarasas)
 
-
-
+#---------------PADARYTAS______________
 # 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
+# 1 VARIANTAS
+# kvadrato_krastine = 10
+# kvadrato_plotas = kvadrato_krastine*kvadrato_krastine
+# print('kvadrato plotas yra:', kvadrato_plotas)
+
+# 2 VARIANTAS
+# def kvadrato_plotas(S):
+#     return S * S
+# S = 10
+# plotas = kvadrato_plotas(S)
+# print('Kvadrato plotas yra:', (plotas))
 
 #---------------PADARYTAS______________
 # 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą.
