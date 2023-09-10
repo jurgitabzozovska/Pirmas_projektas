@@ -397,7 +397,7 @@
 # }
 # print(Studentai)
 
-***************PADARYTAS*******
+# ***************PADARYTAS*******
 ## 3. Sukurkite tuščią sąrašą sarasas ir leiskite vartotojui įvesti skaičius.
 # Naudojant "while" ciklą, pridėkite kiekvieną įvestą skaičių prie sąrašo.
 # Ciklą nutraukite, kai vartotojas įveda 0.
@@ -598,11 +598,39 @@
 # didesni_sk = didesnis(listas, n)
 # print(f'sarase skaiciai didesni uz {n} yra {didesni_sk}')
 
-# Namų darbai:
+# 09-08 Namų darbai:
 #
 # 1. Parašykite funkciją, kuri priimtų sąrašą studento pažymių ir grąžintų vidurkį;
 
+# def vidurkis(pazymiai):
+#     suma = sum(pazymiai)
+#     avg = suma/len(pazymiai)
+#     return avg
+# st_pazymiai = [2,10,5,6,8,4,9]
+# rezultatas = vidurkis(st_pazymiai)
+# print(f'pazymiu_vidurkis: {rezultatas}')
+
+
 # 2. Sukurkite funkciją pirminiai_skaiciai(n), kuri priima sveikąjį skaičių n ir grąžina visus pirminius skaičius nuo 2 iki n;
+
+# def pirminiai_sk(n):
+#      if n == 1:
+#          return False
+#
+#      elif n > 1:
+#         for sk in range(2, n):
+#             if (n%sk) == 0:
+#                 return False
+#
+#         else:
+#             return True
+# n =12
+# if pirminiai_sk(n):
+#     print(f'{n} yra pirminis')
+# else:
+#     print(f'{n} yra nepirminis')
+
+#
 
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
 
@@ -614,3 +642,6 @@
 # Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
 
 # 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
+
+x = 5.2
+print(type(x))
