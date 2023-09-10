@@ -599,7 +599,7 @@
 # print(f'sarase skaiciai didesni uz {n} yra {didesni_sk}')
 
 # 09-08 Namų darbai:
-#
+#---------------PADARYTAS______________
 # 1. Parašykite funkciją, kuri priimtų sąrašą studento pažymių ir grąžintų vidurkį;
 
 # def vidurkis(pazymiai):
@@ -610,7 +610,7 @@
 # rezultatas = vidurkis(st_pazymiai)
 # print(f'pazymiu_vidurkis: {rezultatas}')
 
-
+#---------------PADARYTAS______________
 # 2. Sukurkite funkciją pirminiai_skaiciai(n), kuri priima sveikąjį skaičių n ir grąžina visus pirminius skaičius nuo 2 iki n;
 
 # def pirminiai_sk(n):
@@ -631,8 +631,16 @@
 #     print(f'{n} yra nepirminis')
 
 #
-
+#---------------PADARYTAS______________
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
+# Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
+# def zodziu_kiekis(sakinys):
+#     kiekis = len(sakinys.split())
+#     return kiekis
+#
+# print('Sakinys:', Tekstas)
+# print('Zodziu kiekys sakinyje yra:', zodziu_kiekis(Tekstas))
+
 
 # 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
 
@@ -643,5 +651,3 @@
 
 # 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
 
-x = 5.2
-print(type(x))
