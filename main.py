@@ -624,7 +624,7 @@
 #
 #         else:
 #             return True
-# n =12
+# n = 12
 # if pirminiai_sk(n):
 #     print(f'{n} yra pirminis')
 # else:
