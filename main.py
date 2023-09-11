@@ -691,19 +691,19 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # ***********************1. UZDUOTIS
 ##     sukuriama klase
 # class Zmogus:
-
+#
 ##     sukuriamas konstruktorius
 #     def __init__(self, vardas, amzius):
 #         self.vardas = vardas
 #         self.amzius = amzius
-
+#
 ##      sukuriami metodai
 #     def sveikinimas(self):
 #         return f"Sveiki, as esu {self.vardas} ir man yra {self.amzius} metu"
-
-
-# #     sukuriamas objektas
-## zmogus1 = Zmogus("Migle", 30)
+#
+#
+##     sukuriamas objektas
+# zmogus1 = Zmogus("Migle", 30)
 # zmogus2 = Zmogus("Antanas", 45)
 # print(zmogus1.sveikinimas())
 # print(zmogus2.sveikinimas())
@@ -715,17 +715,17 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #         self.marke = marke
 #         self.modelis = modelis
 #         self.greitis = 0
-
-##     def akseleratorius(self):
+#
+#     def akseleratorius(self):
 #         self.greitis += 10
-
-##     def stabdis(self):
+#
+#     def stabdis(self):
 #         self.greitis -= 5
-
-##     def info(self):
+#
+#     def info(self):
 #         return f'{self.marke} {self.modelis}, greitis: {self.greitis} km/h'
-
-## auto1=Automobilis('Mazda', '323')
+#
+# auto1=Automobilis('Mazda', '323')
 # auto1.akseleratorius()
 # auto1.akseleratorius()
 # auto1.akseleratorius()
@@ -755,9 +755,12 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #
 # class Krepselis:
 #     def __init__(self):
-#        self.prekes = []
-#    def ideti_preke(self, preke):
+#
+#         self.prekes = []
+#
+#     def ideti_preke(self, preke):
 #         self.prekes.append(preke)
+#
 #     def krepselio_info(self):
 #         if not self.prekes:
 #             print("tokios prekes nera")
@@ -775,10 +778,12 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # preke3 = Preke('vanduo', 1.3)
 # preke4 = Preke('kava', 10.5)
 #
+#
 # krepsys.ideti_preke(preke1)
 # krepsys.ideti_preke(preke2)
 # krepsys.ideti_preke(preke3)
 # krepsys.ideti_preke(preke4)
+#
 #
 # krepsys.krepselio_info()
 #
@@ -827,3 +832,18 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 
 
 
+# Sukurkite klasę "Studentas", kuri turėtų šias savybes:
+#
+#     * vardas: studento vardas.
+#     * pazymiai: sąrašas su studento pažymiais.
+#
+# Sukurkite klasę "Mokytojas", kuri turėtų šias savybes:
+#
+#     * vardas: mokytojo vardas.
+#     * Mokytojo dėstoma tema: mokytojo dėstomas dalykas.
+#
+# Papildykite "Studentas" klasę metodu vidurkis(), kuris apskaičiuoja studento pažymių vidurkį.
+#
+# Papildykite "Mokytojas" klasę metodu ivertinimas(studentas, pazymys), kuris prideda studentui pažymį.
+#
+# Sukurkite objektus pagal "Studentas" ir "Mokytojas" klases, pridėkite pažymius ir vykdykite vidurkio apskaičiavimus bei pažymių pridėjimus.
