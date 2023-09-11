@@ -686,3 +686,4 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #    return sandauga
 # sk_sarasas = [2, 4, 6, 8, 10]
 # print('Saraso skaiciu sandauga lygi:',mano_sarasas (sk_sarasas))
+
