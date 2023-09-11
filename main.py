@@ -790,60 +790,60 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # print(f'Bendra suma: {krepsys.bendra_suma()} eurų')
 
 # ***********************5. UZDUOTIS
-# Sukurkite klasę "Saskaita", kuri turėtų šias savybes ir metodus:
+## Sukurkite klasę "Saskaita", kuri turėtų šias savybes ir metodus:
+##
+##     * saskaitos_nr: sąskaitos numeris.
+##   * balansas: sąskaitos balansas (numatytasis pradžioje yra 0).
+##     * inesti(suma): metodas, kuris prideda nurodytą sumą prie sąskaitos balanso.
+##    * isimti(suma): metodas, kuris sumažina sąskaitos balansą nurodyta suma,
+## jei yra pakankamai lėšų, arba išveda pranešimą apie nepakankamą balansą.
+##    * informacija(): metodas, kuris grąžina informaciją apie sąskaitą (sąskaitos numeris ir balansas).
 #
-#     * saskaitos_nr: sąskaitos numeris.
-#     * balansas: sąskaitos balansas (numatytasis pradžioje yra 0).
-#     * inesti(suma): metodas, kuris prideda nurodytą sumą prie sąskaitos balanso.
-#     * isimti(suma): metodas, kuris sumažina sąskaitos balansą nurodyta suma,
-# jei yra pakankamai lėšų, arba išveda pranešimą apie nepakankamą balansą.
-#     * informacija(): metodas, kuris grąžina informaciją apie sąskaitą (sąskaitos numeris ir balansas).
-#
-# Sukurkite bent du objektus pagal šią klasę ir atlikite operacijas, tokiu kaip lėšų įnešimas ir išėmimas, bei gaukite sąskaitos informaciją.
+## Sukurkite bent du objektus pagal šią klasę ir atlikite operacijas, tokiu kaip lėšų įnešimas ir išėmimas, bei gaukite sąskaitos informaciją.
+
+# class Saskaita:
+#     def __init__(self, saskaitos_nr, balansas):
+#         self.saskaitos_nr = saskaitos_nr
+#         self.balansas = balansas
 
 
 # ***********************6. UZDUOTIS
-# Sukurkite klasę "Studentas", kuri turėtų šias savybes:
-# #     * vardas: studento vardas.
-#     * pazymiai: sąrašas su studento pažymiais.
-# # Sukurkite klasę "Mokytojas", kuri turėtų šias savybes:
-# #     * vardas: mokytojo vardas.
-#     * Mokytojo dėstoma tema: mokytojo dėstomas dalykas.
-# # Papildykite "Studentas" klasę metodu vidurkis(), kuris apskaičiuoja
-# studento pažymių vidurkį.
-# # Papildykite "Mokytojas" klasę metodu ivertinimas(studentas, pazymys),
-# kuris prideda studentui pažymį.
-# # Sukurkite objektus pagal "Studentas" ir "Mokytojas" klases,
-# pridėkite pažymius ir vykdykite vidurkio apskaičiavimus bei pažymių pridėjimus.
+## Sukurkite klasę "Studentas", kuri turėtų šias savybes:
+##     * vardas: studento vardas.
+##     * pazymiai: sąrašas su studento pažymiais.
+##
+## Sukurkite klasę "Mokytojas", kuri turėtų šias savybes:
+##     * vardas: mokytojo vardas.
+##     * Mokytojo dėstoma tema: mokytojo dėstomas dalykas.
+##
+## Papildykite "Studentas" klasę metodu vidurkis(), kuris apskaičiuoja studento pažymių vidurkį.
+## Papildykite "Mokytojas" klasę metodu ivertinimas(studentas, pazymys), kuris prideda studentui pažymį.
+## Sukurkite objektus pagal "Studentas" ir "Mokytojas" klases, pridėkite pažymius ir vykdykite vidurkio apskaičiavimus bei pažymių pridėjimus.
 
 # class Studentas:
-#     def __init__(self, st_vardas, pazymiai):
+#     def __init__(self, st_vardas):
 #         self.st_vardas = st_vardas
-#         self.pazymiai = pazymiai
-#     def st_vidurkis(self):
-#         self
-#
+#         self.pazymiai = []
+#     def prideti_pazymi(self, pazymys):
+#         self.pazymiai.append(pazymys)
+#     def vidurkis(self):
+#         if not self.pazymiai:
+#             return 0
+#         return sum(self.pazymiai) / len(self.pazymiai)
 #
 # class Mokytojas:
 #     def __init__(self, mokytojo_vardas, destomas_dakykas):
 #         self.mokytojo_vardas = mokytojo_vardas
 #         self.destomas_dalykas = destomas_dakykas
-#     def ivertinimas(self, pazymys):
+#     def ivertinimas(self, studentas, pazymys):
+#         studentas.prideti_pazymi(pazymys)
+#
+# studentas1=Studentas('Petras')
+# mokytojas1=Mokytojas('Jurgis', 'informatika')
+#
+# mokytojas1.ivertinimas(studentas1, 3)
+#
+# print(f'{studentas1.st_vardas}, vidurkis: {studentas1.vidurkis()}')
 
 
 
-# Sukurkite klasę "Studentas", kuri turėtų šias savybes:
-#
-#     * vardas: studento vardas.
-#     * pazymiai: sąrašas su studento pažymiais.
-#
-# Sukurkite klasę "Mokytojas", kuri turėtų šias savybes:
-#
-#     * vardas: mokytojo vardas.
-#     * Mokytojo dėstoma tema: mokytojo dėstomas dalykas.
-#
-# Papildykite "Studentas" klasę metodu vidurkis(), kuris apskaičiuoja studento pažymių vidurkį.
-#
-# Papildykite "Mokytojas" klasę metodu ivertinimas(studentas, pazymys), kuris prideda studentui pažymį.
-#
-# Sukurkite objektus pagal "Studentas" ir "Mokytojas" klases, pridėkite pažymius ir vykdykite vidurkio apskaičiavimus bei pažymių pridėjimus.
