@@ -802,9 +802,11 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 ## Sukurkite bent du objektus pagal šią klasę ir atlikite operacijas, tokiu kaip lėšų įnešimas ir išėmimas, bei gaukite sąskaitos informaciją.
 
 # class Saskaita:
-#     def __init__(self, saskaitos_nr, balansas):
+#   def __init__(self, saskaitos_nr):
 #         self.saskaitos_nr = saskaitos_nr
-#         self.balansas = balansas
+#         self.balansas = 0
+#   def inesti_suma(self, pinigai):
+
 
 
 # ***********************6. UZDUOTIS
