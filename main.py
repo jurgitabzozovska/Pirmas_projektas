@@ -789,27 +789,8 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #
 # print(f'Bendra suma: {krepsys.bendra_suma()} eurų')
 
-# ***********************5. UZDUOTIS
-## Sukurkite klasę "Saskaita", kuri turėtų šias savybes ir metodus:
-##
-##     * saskaitos_nr: sąskaitos numeris.
-##   * balansas: sąskaitos balansas (numatytasis pradžioje yra 0).
-##     * inesti(suma): metodas, kuris prideda nurodytą sumą prie sąskaitos balanso.
-##    * isimti(suma): metodas, kuris sumažina sąskaitos balansą nurodyta suma,
-## jei yra pakankamai lėšų, arba išveda pranešimą apie nepakankamą balansą.
-##    * informacija(): metodas, kuris grąžina informaciją apie sąskaitą (sąskaitos numeris ir balansas).
-#
-## Sukurkite bent du objektus pagal šią klasę ir atlikite operacijas, tokiu kaip lėšų įnešimas ir išėmimas, bei gaukite sąskaitos informaciją.
 
-# class Saskaita:
-#   def __init__(self, saskaitos_nr):
-#         self.saskaitos_nr = saskaitos_nr
-#         self.balansas = 0
-#   def inesti_suma(self, pinigai):
-
-
-
-# ***********************6. UZDUOTIS
+# 5. UZDUOTIS***PADARYTA
 ## Sukurkite klasę "Studentas", kuri turėtų šias savybes:
 ##     * vardas: studento vardas.
 ##     * pazymiai: sąrašas su studento pažymiais.
@@ -847,5 +828,101 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #
 # print(f'{studentas1.st_vardas}, vidurkis: {studentas1.vidurkis()}')
 
+## UZDUOTIS
+## Sukurkite klasę "Saskaita", kuri turėtų šias savybes ir metodus:
+##     * 1.saskaitos_nr: sąskaitos numeris.
+##   * 2.balansas: sąskaitos balansas (numatytasis pradžioje yra 0).
+##     * inesti(suma): metodas, kuris prideda nurodytą sumą prie sąskaitos balanso.
+##    * isimti(suma): metodas, kuris sumažina sąskaitos balansą nurodyta suma,
+## jei yra pakankamai lėšų, arba išveda pranešimą apie nepakankamą balansą.
+##    * informacija(): metodas, kuris grąžina informaciją apie sąskaitą (sąskaitos numeris ir balansas).
+## Sukurkite bent du objektus pagal šią klasę ir atlikite operacijas, tokiu kaip lėšų įnešimas ir išėmimas, bei gaukite sąskaitos informaciją.
+
+# class Saskaita:
+#     def __init__(self, saskaitos_nr, balansas=0):
+#         self.saskaitos_nr = saskaitos_nr
+#         self.balansas = balansas
+#         print(f'Sveiki atvyke i savo banko saskaita!')
+#
+#     def inesimo_suma(self,suma):
+#         self.balansas += suma
+#
+#     def isemimo_suma(self,suma):
+#             if self.balansas >=suma:
+#                self.balansas -=suma
+#                print(f'Jus isemete: {suma}')
+#
+#             else:
+#                 print("Nepakankamas likutis")
+#
+#     def info(self):
+#         return f'Saskaitos numeris: {self.saskaitos_nr}, saskaitos balansas: {self.balansas}'
+#
+# saskaita1= Saskaita('LT110', 2000)
+# saskaita1.isemimo_suma(125)
+# print(saskaita1.info())
+
+## UZDUOTIS
+## Sukurkite klasę "Kava", kuri turėtų savybes "pavadinimas", "kaina", ir "talpa".
+## Parašykite metodą, kuris patikrintų, ar ši kava yra tinkama tam tikram puodeliui, pagal jo talpą.
+#
+# class Kava:
+#     def __init__(self, pavadinimas, kaina, talpa):
+#         self.pavadinimas = pavadinimas
+#         self.kaina = kaina
+#         self.talpa = talpa
+#     def ar_tinkama_puodeliui(self, puodelio_talpa):
+#         if self.talpa <= puodelio_talpa:
+#             return f'{self.pavadinimas} kava tinka puodeliui su talpa {puodelio_talpa}ml'
+#         else:
+#             return  f'{self.pavadinimas} kava netelpa {puodelio_talpa}ml'
+#
+# kava1=Kava('Latte', 2.99, 250)
+# puodelio_talpa=200
+# print(kava1.ar_tinkama_puodeliui(puodelio_talpa))
+
+## UZDUOTIS
+## Klase knygynas, kuris turi knygas, sarasa, prideti ir\
+
+# class Knygynas:
+#     def __init__(self):
+#         self.knygos = []
+#     def prideti_knyga(self,knyga):
+#         self.knygos.append (knyga)
+#
+#     def knygos_paieska(self,pavadinimas):
+#         for knyga in self.knygos:
+#             if knyga['pavadinimas'] == pavadinimas:
+#                 return knyga
+#         return None
+#
+#     def knygu_sarasas(self):
+#         if not self.knygos:
+#             print('Knygynas tuscias')
+#         else:
+#             print('Knygyno knygu sarasas:')
+#             for knyga in self.knygos:
+#                 print(f"Pavadinimas: {knyga['pavadinimas']}, Autorius: {knyga['autorius']}, Metai: {knyga['metai']}")
+# knygynas = Knygynas()
+# knygynas.prideti_knyga({'pavadinimas': 'Ruduo', 'autorius': 'Donelaitis', 'metai': 69})
+# ieskoma_knyga = knygynas.knygos_paieska('Ruduo')
+# if ieskoma_knyga:
+#     print(f'rasta knyga:{ieskoma_knyga["pavadinimas"]}')
+# else:
+#     print('knyga buvo nerasta')
+# knygynas.knygu_sarasas()
 
 
+## UZDUOTIS
+## Sukurkite klasę "Prekybininkas", kuri turi atributus "vardas" (name) ir "prekės" (items) ( prekių sąrašas).
+## Parašykite metodus, kurie leidžia pridėti prekes prie prekių sąrašo, pašalinti prekes ir paskaičiuoti prekių bendrą sumą;
+
+
+## UZDUOTIS
+## Sukurkite klasę "Darbuotojas" (Employee), kuri turi atributus "vardas" (name), "pareigos" (position), ir "atlyginimas" (salary).
+## Parašykite metodus, kurie leidžia keisti darbuotojo pareigas ir atlyginimą;
+
+
+## UZDUOTIS
+## Sukurkite klasę "Skaičiuotuvas", kuri turi metodus "sudėti" (add), "atimti" (subtract), "dauginti" (multiply) ir "dalinti" (divide).
+## Šie metodai priima du skaičius ir atlieka atitinkamą matematinę operaciją.
