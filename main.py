@@ -917,6 +917,16 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 ## Sukurkite klasę "Prekybininkas", kuri turi atributus "vardas" (name) ir "prekės" (items) ( prekių sąrašas).
 ## Parašykite metodus, kurie leidžia pridėti prekes prie prekių sąrašo, pašalinti prekes ir paskaičiuoti prekių bendrą sumą;
 
+class Prekybininkas:
+    def __init__(self, name):
+        self.name = name
+        self.prekes = []
+    def prideti_preke(self, preke):
+        self.items.append(preke)
+    def sum:
+
+
+
 
 ## UZDUOTIS
 ## Sukurkite klasę "Darbuotojas" (Employee), kuri turi atributus "vardas" (name), "pareigos" (position), ir "atlyginimas" (salary).
