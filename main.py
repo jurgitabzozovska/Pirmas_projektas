@@ -916,14 +916,23 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 ## UZDUOTIS
 ## Sukurkite klasę "Prekybininkas", kuri turi atributus "vardas" (name) ir "prekės" (items) ( prekių sąrašas).
 ## Parašykite metodus, kurie leidžia pridėti prekes prie prekių sąrašo, pašalinti prekes ir paskaičiuoti prekių bendrą sumą;
+####SUKURIAMA KLASE
+####SUKURIAMAS KONSTRUKTORIUS
+####SUKURIAMI METODAI
+####SUKURIAMAS OBJEKTAS
 
 class Prekybininkas:
-    def __init__(self, name):
+    def __init__(self,name):
         self.name = name
         self.prekes = []
-    def prideti_preke(self, preke):
-        self.items.append(preke)
-    def sum:
+    def prideti_preke(self,preke):
+        self.prekes.append(preke)
+    def pasalinti_preke(self,preke):
+        for preke in self.prekes:
+            if preke['name'] == name:
+                return preke
+
+
 
 
 
@@ -931,8 +940,25 @@ class Prekybininkas:
 ## UZDUOTIS
 ## Sukurkite klasę "Darbuotojas" (Employee), kuri turi atributus "vardas" (name), "pareigos" (position), ir "atlyginimas" (salary).
 ## Parašykite metodus, kurie leidžia keisti darbuotojo pareigas ir atlyginimą;
+####SUKURIAMA KLASE
+####SUKURIAMAS KONSTRUKTORIUS
+####SUKURIAMI METODAI
+####SUKURIAMAS OBJEKTAS
+
+
+# class Darbuotojas:
+#     def __init__(self, vardas, pareigos, alga):
+#         self.vardas = vardas
+#         self.pareigos = pareigos
+#         self.alga = alga
+
+
 
 
 ## UZDUOTIS
 ## Sukurkite klasę "Skaičiuotuvas", kuri turi metodus "sudėti" (add), "atimti" (subtract), "dauginti" (multiply) ir "dalinti" (divide).
 ## Šie metodai priima du skaičius ir atlieka atitinkamą matematinę operaciją.
+####SUKURIAMA KLASE
+####SUKURIAMAS KONSTRUKTORIUS
+####SUKURIAMI METODAI
+####SUKURIAMAS OBJEKTAS
