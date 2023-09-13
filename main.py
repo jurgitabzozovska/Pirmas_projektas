@@ -922,18 +922,44 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 ####SUKURIAMAS OBJEKTAS
 
 # class Prekybininkas:
-#     def __init__(self,name):
+#     def __init__(self, name):
 #         self.name = name
 #         self.prekes = []
-#     def prideti_preke(self,preke):
-#         self.prekes.append(preke)
-#     def pasalinti_preke(self,preke):
-#         for preke in self.prekes:
-#             if preke['name'] == name:
-#                 return preke
+#     def prideti_preke(self, preke, kiekis=1):
+#         for _ in range(kiekis):
+#             self.prekes.append(preke)
+#     def pasalinti_preke(self, preke, kiekis=1):
+#         if preke in self.prekes:
+#            for _ in range(kiekis):
+#                self.prekes.remove(preke)
+#         else:
+#             print("tokios prekes nera")
 #
-
-
+#     def prekiu_suma(self):
+#         suma=sum(preke[1] for preke in self.prekes)
+#         return suma
+#
+#
+# pardavejas=Prekybininkas("Martynas")
+# preke1=("kava", 1.0)
+# preke2=("sultys", 2.5)
+# preke3=("alus", 1.5)
+#
+# pardavejas.prideti_preke(preke1, 3)
+# pardavejas.prideti_preke(preke2)
+# pardavejas.prideti_preke(preke3,3)
+# suma=pardavejas.prekiu_suma()
+#
+# print(suma)
+#
+# pardavejas.pasalinti_preke(preke1, 2)
+# pardavejas.pasalinti_preke("preke4")
+# suma=pardavejas.prekiu_suma()
+#
+# print("prekiu sarasas: ")
+# for preke in pardavejas.prekes:
+#     print(f"{preke[0]}: {preke[1]}")
+# print(f"bendra visu prekiu suma:{suma}")
 
 
 
@@ -951,9 +977,17 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #         self.vardas = vardas
 #         self.pareigos = pareigos
 #         self.alga = alga
+#     def pakeisti_alga(self, nauja_alga):
+#         self.alga = nauja_alga
+#     def pakeisti_pareigas(self, naujos_pareigos):
+#         self.pareigos = naujos_pareigos
 #
 #
+# #
 # darbuotojas1=Darbuotojas("Jonas", "vairuotojas", 500)
+# darbuotojas1.pakeisti_alga(1500)
+# darbuotojas1.pakeisti_pareigas("vadybininkas")
+#
 # print(f"{darbuotojas1.vardas}, pareigos: {darbuotojas1.pareigos}, gaunama alga:{darbuotojas1.alga}")
 
 
@@ -976,8 +1010,19 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #     def multiply(self, a, b):
 #         return a*b
 #     def divide(self, a,b):
-#         return a/b
-# a=3
-# b=2
+#         if b == 0:
+#             return "dalyba is 0 negalima"
+#         else:
+#             return a/b
 #
-# print(add)
+# a=3
+# b=5
+#
+# a1=Skaiciuotuvas()
+# suma=a1.add(a,b)
+# skirtumas=a1.subtract(a,b)
+# dalyba=a1.multiply(a,b)
+# daugyba=a1.divide(a,b)
+#
+# print(f"{suma}, {skirtumas}, {dalyba}, {daugyba}")
+
