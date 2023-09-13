@@ -1,32 +1,32 @@
-#
-#
-# import  random
-#
-#
-#
-#
-# # mano komentaras
-# # """
-# # multi_line
-# # """
-# # vardas = "Jurgita"
-# # print(vardas)
-# # skaicius = 25
-# # print(skaicius)
-# # print("manos sugalvotas skaicius" + str(skaicius))
-#
-# # true_or_false = false
-# # print(type(true_or_false))
-# # fruits = ['apple', 'orange', 'kivi', 'watermelon']
-# # lietuvos_pilieis = {
-# # 'id': 1,
-# # 'vardas': 'Antanas',
-# # 'Amzius': 34,
-# # 'Miestas': 'Klaipeda'
-# # }
-# # print(lietuvos_pilieis)
-#
-#
+
+
+import  random
+
+
+
+
+# mano komentaras
+# """
+# multi_line
+# """
+# vardas = "Jurgita"
+# print(vardas)
+# skaicius = 25
+# print(skaicius)
+# print("manos sugalvotas skaicius" + str(skaicius))
+
+# true_or_false = false
+# print(type(true_or_false))
+# fruits = ['apple', 'orange', 'kivi', 'watermelon']
+# lietuvos_pilieis = {
+# 'id': 1,
+# 'vardas': 'Antanas',
+# 'Amzius': 34,
+# 'Miestas': 'Klaipeda'
+# }
+# print(lietuvos_pilieis)
+
+
 # # print(type(fruits))
 #
 #
@@ -630,16 +630,16 @@
 #
 #---------------PADARYTAS______________
 # 3. Sukurkite funkciją zodziu_kiekis(tekstas), kuri priima tekstą ir grąžina žodžių skaičių tekste. Žodžius galite laikyti atskirtais tarpais;
-
-Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
-# def zodziu_kiekis(sakinys):
-#     kiekis = len(sakinys.split())
-#     return kiekis
-# print('Zodziu sakinyje yra:', zodziu_kiekis(Tekstas))
-
-#---------------PADARYTAS______________
-# 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
-
+#
+# Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
+# # def zodziu_kiekis(sakinys):
+# #     kiekis = len(sakinys.split())
+# #     return kiekis
+# # print('Zodziu sakinyje yra:', zodziu_kiekis(Tekstas))
+#
+# #---------------PADARYTAS______________
+# # 4. Sukurkite funkciją didziausias_elementas(sarasas), kuri priima sąrašą skaičių ir grąžina didžiausią elementą;
+#
 # def didz_elementas(sarasas):
 #     max = sarasas[0]
 #     for skaicius in sarasas:
@@ -649,43 +649,43 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 # sk_sarasas = [9, 7, 4, 2, 3, 6, 8, 10, 21, 5]
 # print(sk_sarasas)
 # didz_elementas(sk_sarasas)
-
-#---------------PADARYTAS______________
-# 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
-# 1 VARIANTAS
-# kvadrato_krastine = 10
-# kvadrato_plotas = kvadrato_krastine*kvadrato_krastine
-# print('kvadrato plotas yra:', kvadrato_plotas)
-
-# 2 VARIANTAS
-# def kvadrato_plotas(S):
-#     return S * S
-# S = 10
-# plotas = kvadrato_plotas(S)
-# print('Kvadrato plotas yra:', (plotas))
-
-#---------------PADARYTAS______________
-# 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą.
-# Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
-
-# def suma_saraso(x):
-#     viso = 0
-#     for sarasas in x:
-#         viso = viso + sarasas
-#     return viso
-# sarasas_sk = [1,2,3,4,5,1,4,5]
-# print('Skaiciu saraso suma yra:', suma_saraso(sarasas_sk))
-
-#---------------PADARYTAS______________
-# 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
 #
-# def mano_sarasas(sarasas):
-#    sandauga = 1
-#    for skaicius in sarasas:
-#         sandauga *= skaicius
-#    return sandauga
-# sk_sarasas = [2, 4, 6, 8, 10]
-# print('Saraso skaiciu sandauga lygi:',mano_sarasas (sk_sarasas))
+# #---------------PADARYTAS______________
+# # 5. Sukurkite funkciją kvadrato_plotas(ilgis), kuri priima kvadrato kraštinės ilgį ir grąžina kvadrato plotą.
+# # 1 VARIANTAS
+# # kvadrato_krastine = 10
+# # kvadrato_plotas = kvadrato_krastine*kvadrato_krastine
+# # print('kvadrato plotas yra:', kvadrato_plotas)
+#
+# # 2 VARIANTAS
+# # def kvadrato_plotas(S):
+# #     return S * S
+# # S = 10
+# # plotas = kvadrato_plotas(S)
+# # print('Kvadrato plotas yra:', (plotas))
+#
+# #---------------PADARYTAS______________
+# # 6. Sukurkite funkciją sarasas_suma(sarasas), kuri priima sąrašą skaičių ir suskaičiuoja jų sumą.
+# # Leiskite vartotojui įvesti sąrašą skaičių ir išvesti jų sumą;
+#
+# # def suma_saraso(x):
+# #     viso = 0
+# #     for sarasas in x:
+# #         viso = viso + sarasas
+# #     return viso
+# # sarasas_sk = [1,2,3,4,5,1,4,5]
+# # print('Skaiciu saraso suma yra:', suma_saraso(sarasas_sk))
+#
+# #---------------PADARYTAS______________
+# # 7. Sukurkite funkciją, kuri priimtų skaičių sąrašą ir grąžintų visų sąrašo skaičių sandaugą.
+# #
+# # def mano_sarasas(sarasas):
+# #    sandauga = 1
+# #    for skaicius in sarasas:
+# #         sandauga *= skaicius
+# #    return sandauga
+# # sk_sarasas = [2, 4, 6, 8, 10]
+# # print('Saraso skaiciu sandauga lygi:',mano_sarasas (sk_sarasas))
 
 # 09-11 PAMOKA OBJEKTINIS PROGRAMAVIMAS
 # ***********************1. UZDUOTIS
@@ -1026,3 +1026,58 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 #
 # print(f"{suma}, {skirtumas}, {dalyba}, {daugyba}")
 
+# Sukurkite klasę "Klase", kuri turės savybę "pavadinimas" ir sąrašą "pamokos" (pamokų pavadinimai ir laikas).
+# Sukurkite klasę "Mokykla", kuri turės sąrašą klasių. Parašykite metodą, kuris išveda mokyklos tvarkaraštį su visomis pamokomis.
+
+# class Klase:
+#     def __init__(self, pavadinimas):
+#         self.pavadinimas = pavadinimas
+#         self.pamokos = []
+#
+#     def sukurti_pamoka(self, pavadinimas, laikas):
+#         self.pamokos.append((pavadinimas, laikas))
+#
+#     def tvarkarastis(self):
+#         tvarkarastis = f"Klase: {self.pavadinimas} \n"
+#         for pamoka in self.pamokos:
+#             pavadinimas, laikas = pamoka
+#             tvarkarastis += f"- {pavadinimas}, laikas: {laikas} \n"
+#         return tvarkarastis
+#
+# class Mokykla:
+#     def __init__(self, pavadinimas):
+#         self.pavadinimas = pavadinimas
+#         self.klases = []
+#
+#     def sukurti_klase(self, klase):
+#         self.klases.append(klase)
+#
+#     def Tvarkarastis_galutinis(self):
+#         galutinis = f"Mokykla: {self.pavadinimas} \n"
+#         for klase in self.klases:
+#             galutinis += klase.tvarkarastis()
+#         return galutinis
+#
+#
+#
+# klase1 = Klase("Ziopliu 9A")
+# klase1.sukurti_pamoka("Nosiakrap6tis", "8:00-8:45")
+# klase1.sukurti_pamoka("Kalbagrauzis", "9:00-9:45")
+#
+# klase2 = Klase("Smalsučiai gudručiai 1B")
+# klase2.sukurti_pamoka("Priešpiečiai", "10:00-10:45")
+# klase2.sukurti_pamoka("Kalbagrauzis", "11:00-11:45")
+#
+# mokykla =Mokykla("Tinginių pantys")
+#
+# mokykla.sukurti_klase(klase1)
+# mokykla.sukurti_klase(klase2)
+#
+# tvarkarastis = mokykla.Tvarkarastis_galutinis()
+#
+# print(mokykla.Tvarkarastis_galutinis())
+
+# Sukurkite klasę "Žaislas", kuri turėtų savybes, tokias kaip "pavadinimas" ir "amžiaus rekomendacija".
+# Tada sukurkite klasę "Vaikas", kuri turėtų vardą ir amžių.
+# Tada sukurkite klasę "VaikasSuZaislu", kuri turėtų šio vaiko objektą ir žaislo objektą.
+# Patikrinkite, ar vaiko amžius atitinka žaislo amžiaus rekomendaciją.
