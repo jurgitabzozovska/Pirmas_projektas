@@ -1,6 +1,6 @@
 
 
-import  random
+# import  random
 
 
 
@@ -1081,3 +1081,41 @@ import  random
 # Tada sukurkite klasę "Vaikas", kuri turėtų vardą ir amžių.
 # Tada sukurkite klasę "VaikasSuZaislu", kuri turėtų šio vaiko objektą ir žaislo objektą.
 # Patikrinkite, ar vaiko amžius atitinka žaislo amžiaus rekomendaciją.
+
+# class Zaislas:
+#     def __init__(self,pavadinimas, amziaus_rekomendacija):
+#         self.pavadinimas = pavadinimas
+#         self.amziaus_rekomendacija = amziaus_rekomendacija
+#
+# class Vaikas:
+#     def __init__(self, vardas, amzius):
+#         self.vardas = vardas
+#         self.amzius =amzius
+#
+# class VaikasSuZaislu:
+#     def __init__(self,vaikas, zaislas):
+#         self.vaikas = vaikas
+#         self.zaislas = zaislas
+#     def amziaus_tikrinimas(self):
+#         if self.vaikas.amzius >=self.zaislas.amziaus_rekomendacija:
+#             return f'{self.vaikas.vardas} gali zaisti su zaislu "{self.zaislas.pavadinimas}" '
+#         else:
+#             return f'{self.vaikas.vardas} negali zaisti su zaislu "{self.zaislas.pavadinimas}", nes turi paaugti '
+#
+#
+# zaislas1=Zaislas('Lego Betmen', 7)
+# zaislas2=Zaislas('burbulai', 15)
+# zaislas3=Zaislas('knyga', 8)
+#
+# vaikas1=Vaikas('Austeja',9)
+# vaikas2=Vaikas('Eidvile', 0.5)
+# vaikas3=Vaikas('Giedrius', 5)
+#
+# vaikas_su_zaislu1=VaikasSuZaislu(vaikas1, zaislas2)
+#
+# rezultatas = vaikas_su_zaislu1.amziaus_tikrinimas()
+# print(rezultatas)
+
+# Sukurkite programą, kuri leidžia vartotojui valdyti krepšinio komandą. Galite kurti klases, pvz., "Komanda", "Žaidėjas", "Treneris".
+# Kiekvienas žaidėjas turėtų turėti savo statistiką(taiklumas,pozicija), o treneris - instrukcijas ir strategiją(komandos sudeti).
+# Programa turi leisti vartotojui pridėti naujus žaidėjus, juos treniruoti ir valdyti komandos sudeti.
