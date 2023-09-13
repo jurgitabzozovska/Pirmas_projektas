@@ -921,17 +921,17 @@ Tekstas = 'Siandien yra sekmadienis ir as turiu daryti namu darbus'
 ####SUKURIAMI METODAI
 ####SUKURIAMAS OBJEKTAS
 
-class Prekybininkas:
-    def __init__(self,name):
-        self.name = name
-        self.prekes = []
-    def prideti_preke(self,preke):
-        self.prekes.append(preke)
-    def pasalinti_preke(self,preke):
-        for preke in self.prekes:
-            if preke['name'] == name:
-                return preke
-
+# class Prekybininkas:
+#     def __init__(self,name):
+#         self.name = name
+#         self.prekes = []
+#     def prideti_preke(self,preke):
+#         self.prekes.append(preke)
+#     def pasalinti_preke(self,preke):
+#         for preke in self.prekes:
+#             if preke['name'] == name:
+#                 return preke
+#
 
 
 
@@ -951,6 +951,11 @@ class Prekybininkas:
 #         self.vardas = vardas
 #         self.pareigos = pareigos
 #         self.alga = alga
+#
+#
+# darbuotojas1=Darbuotojas("Jonas", "vairuotojas", 500)
+# print(f"{darbuotojas1.vardas}, pareigos: {darbuotojas1.pareigos}, gaunama alga:{darbuotojas1.alga}")
+
 
 
 
@@ -962,3 +967,17 @@ class Prekybininkas:
 ####SUKURIAMAS KONSTRUKTORIUS
 ####SUKURIAMI METODAI
 ####SUKURIAMAS OBJEKTAS
+
+# class Skaiciuotuvas:
+#     def add(self, a, b):
+#        return a+b
+#     def subtract(self, a, b):
+#         return a-b
+#     def multiply(self, a, b):
+#         return a*b
+#     def divide(self, a,b):
+#         return a/b
+# a=3
+# b=2
+#
+# print(add)
