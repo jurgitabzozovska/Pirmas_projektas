@@ -1120,64 +1120,64 @@
 # Galite kurti klases, pvz., "Komanda", "Žaidėjas", "Treneris".
 # Kiekvienas žaidėjas turėtų turėti savo statistiką(taiklumas,pozicija), o treneris - instrukcijas ir strategiją(komandos sudeti).
 # Programa turi leisti vartotojui pridėti naujus žaidėjus, juos treniruoti ir valdyti komandos sudeti.
-class Treneris:
-    def __init__(self):
-        self.strategija = "ataka"
-    def keisti_strategija(self,nauja_strategija):
-        self.strategija = nauja_strategija
-
-    def strategijos_info(self):
-        return f'naudojama strategija {self.strategija}'
-class Zaidejas:
-    def __init__(self, pavarde, pozicija):
-        self.pavarde = pavarde
-        self.taiklumas = 30
-        self.pozicija = pozicija
-
-    def upgrade(self):
-        self.taiklumas += 5
-        if self.taiklumas > 100:
-            self.taiklumas = 100
-
-    def zaidejo_info(self):
-        return f'{self.pavarde}, zaidejo pozicija {self.pozicija}, ir jo taiklumas {self.taiklumas}%'
-class Komanda:
-    def __init__(self, pavadinimas):
-        self.komanda =[]
-        self.pavadinimas = pavadinimas
-        self.treneris = Treneris()
-    def prideti_zaideja(self,zaidejas):
-        self.komanda.append(zaidejas)
-
-    def isimti_zaideja(self, zaidejas):
-        if zaidejas in self.komanda:
-            self.komanda.remove(zaidejas)
-    def komandos_informacija(self):
-        print(f'{self.pavadinimas}, komandos zaidejai: ')
-        for zaidejas in self.komanda:
-            print(zaidejas.zaidejo_info())
-    def strategijos_info(self):
-        print (self.treneris.strategijos_info())
-
-    def pasirinkti_treneri(self, treneris):
-        self.komanda.append(treneris)
-
-    def pakeisti_treneri(self, treneris):
-        if treneris in self.komanda:
-            self.komanda.remove(treneris)
-
-komanda=Komanda("Puseles")
-zaidejas1=Zaidejas("Greitas", "puolejas")
-zaidejas2=Zaidejas("didelis", "saugas")
-zaidejas3=Zaidejas("vidutinis", "atsarginis")
-
-komanda.prideti_zaideja(zaidejas1)
-komanda.prideti_zaideja(zaidejas2)
-komanda.prideti_zaideja(zaidejas3)
-
-zaidejas1.upgrade()
-zaidejas1.upgrade()
-zaidejas3.upgrade()
-
-komanda.komandos_informacija()
-komanda.strategijos_info()
+# class Treneris:
+#     def __init__(self):
+#         self.strategija = "ataka"
+#     def keisti_strategija(self,nauja_strategija):
+#         self.strategija = nauja_strategija
+#
+#     def strategijos_info(self):
+#         return f'naudojama strategija {self.strategija}'
+# class Zaidejas:
+#     def __init__(self, pavarde, pozicija):
+#         self.pavarde = pavarde
+#         self.taiklumas = 30
+#         self.pozicija = pozicija
+#
+#     def upgrade(self):
+#         self.taiklumas += 5
+#         if self.taiklumas > 100:
+#             self.taiklumas = 100
+#
+#     def zaidejo_info(self):
+#         return f'{self.pavarde}, zaidejo pozicija {self.pozicija}, ir jo taiklumas {self.taiklumas}%'
+# class Komanda:
+#     def __init__(self, pavadinimas):
+#         self.komanda =[]
+#         self.pavadinimas = pavadinimas
+#         self.treneris = Treneris()
+#     def prideti_zaideja(self,zaidejas):
+#         self.komanda.append(zaidejas)
+#
+#     def isimti_zaideja(self, zaidejas):
+#         if zaidejas in self.komanda:
+#             self.komanda.remove(zaidejas)
+#     def komandos_informacija(self):
+#         print(f'{self.pavadinimas}, komandos zaidejai: ')
+#         for zaidejas in self.komanda:
+#             print(zaidejas.zaidejo_info())
+#     def strategijos_info(self):
+#         print (self.treneris.strategijos_info())
+#
+#     def pasirinkti_treneri(self, treneris):
+#         self.komanda.append(treneris)
+#
+#     def pakeisti_treneri(self, treneris):
+#         if treneris in self.komanda:
+#             self.komanda.remove(treneris)
+#
+# komanda=Komanda("Puseles")
+# zaidejas1=Zaidejas("Greitas", "puolejas")
+# zaidejas2=Zaidejas("didelis", "saugas")
+# zaidejas3=Zaidejas("vidutinis", "atsarginis")
+#
+# komanda.prideti_zaideja(zaidejas1)
+# komanda.prideti_zaideja(zaidejas2)
+# komanda.prideti_zaideja(zaidejas3)
+#
+# zaidejas1.upgrade()
+# zaidejas1.upgrade()
+# zaidejas3.upgrade()
+#
+# komanda.komandos_informacija()
+# komanda.strategijos_info()
