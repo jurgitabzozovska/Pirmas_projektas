@@ -95,8 +95,3 @@
 # # plt.ylabel('Populiacija')
 # # plt.title('Populiacija pagal miestu pavadinimus')
 # # plt.show()
-
-##Kazkas negerai su failo csv nuskaitymu
-#csv_failo_pav = 'data-table.csv'
-#df = pd. read_csv(csv_failo_pav)
-#print(df.read(5))
