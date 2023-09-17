@@ -1,6 +1,6 @@
-import pandas as pd
+# import pandas as pd
 
- 1 užduotis
+ # 1 užduotis
 # # Sukurkite Pandas duomenų lentelę su 5 eilutėmis ir 3 stulpeliais.
 # # Pavadinkite stulpelius "Vardas", "Amžius" ir "Miestas".
 # duomenys = {'Vardas': ['Romas', 'Petras', 'Ona', 'Ula', 'Tonas'],
@@ -48,7 +48,7 @@ import pandas as pd
 # plt.show ()
 
 
-2 užduotis
+# 2 užduotis
 # data = {'Miestas': ['Vilnius', 'Kaunas', 'Kaunas', 'Vilnius'],
 #         'Lytis':['Vyras', 'Vyras', 'Moteris', 'Vyras'],
 #         'Amzius': [25, 25, 22, 30]
@@ -58,40 +58,45 @@ import pandas as pd
 # print(vid_amzius_pagal_miesta)
 
 
-3 užduotis
-##Sukurkite Pandas DataFrame(4 miestai ir ju populiacija).
-# duomenys = {'Miestas': ['Vilnius', 'Kaunas', 'Klaip4da', 'Alytus'],
-#             'Populiacija': [300000, 250000, 200000, 150000]
-#             }
-# df = pd.DataFrame(duomenys)
-# print(df)
-# ##Filtravimas ir paieška:Filtruokite miestus, kurių populiacija yra didesnė nei 200 000 žmonių.
-# did_populiacija = df[df['Populiacija'] > 200000]
-# print(did_populiacija)
-#
-# ## Raskite miestą, turintį mažiausią populiaciją.
-# min_miestas = df[df['Populiacija']==df['Populiacija'].min()]
-# print(min_miestas)
-#
-# # Duomenų grupavimas ir agregavimas:
-# # Pridėkite stulpelį "Šalis" prie ankstesnio DataFrame, kuriame nurodoma, kuri šalis priklauso kiekvienam miestui (pvz., "Lietuva").
-# df['Salis'] = 'Lietuva'
-# print('Atnaujintas dataframe su salimi: ')
-# print(df)
-#
-# # Grupuokite duomenis pagal "Šalis" stulpelį ir apskaičiuokite bendrą populiaciją kiekvienai šaliai.
-# bendra_populiacija = df.groupby('Salis')['Populiacija'].sum()
-# print(bendra_populiacija)
-#
-# # Rikiuokite miestus pagal populiaciją mažėjimo tvarka.
-# miestai_pagal_populiacija = df.sort_values('Populiacija', ascending=False)
-# print(miestai_pagal_populiacija)
-#
-# ##Vaizinis atvaizdavimas
-# import matplotlib.pyplot as plt
-# plt.figure(figsize=(8,5))
-# plt.bar(df['Miestas'], df['Populiacija'], color='mediumturquoise')
-# plt.xlabel('Miestas')
-# plt.ylabel('Populiacija')
-# plt.title('Populiacija pagal miestu pavadinimus')
-# plt.show()
+# 3 užduotis
+# ##Sukurkite Pandas DataFrame(4 miestai ir ju populiacija).
+# # duomenys = {'Miestas': ['Vilnius', 'Kaunas', 'Klaip4da', 'Alytus'],
+# #             'Populiacija': [300000, 250000, 200000, 150000]
+# #             }
+# # df = pd.DataFrame(duomenys)
+# # print(df)
+# # ##Filtravimas ir paieška:Filtruokite miestus, kurių populiacija yra didesnė nei 200 000 žmonių.
+# # did_populiacija = df[df['Populiacija'] > 200000]
+# # print(did_populiacija)
+# #
+# # ## Raskite miestą, turintį mažiausią populiaciją.
+# # min_miestas = df[df['Populiacija']==df['Populiacija'].min()]
+# # print(min_miestas)
+# #
+# # # Duomenų grupavimas ir agregavimas:
+# # # Pridėkite stulpelį "Šalis" prie ankstesnio DataFrame, kuriame nurodoma, kuri šalis priklauso kiekvienam miestui (pvz., "Lietuva").
+# # df['Salis'] = 'Lietuva'
+# # print('Atnaujintas dataframe su salimi: ')
+# # print(df)
+# #
+# # # Grupuokite duomenis pagal "Šalis" stulpelį ir apskaičiuokite bendrą populiaciją kiekvienai šaliai.
+# # bendra_populiacija = df.groupby('Salis')['Populiacija'].sum()
+# # print(bendra_populiacija)
+# #
+# # # Rikiuokite miestus pagal populiaciją mažėjimo tvarka.
+# # miestai_pagal_populiacija = df.sort_values('Populiacija', ascending=False)
+# # print(miestai_pagal_populiacija)
+# #
+# # ##Vaizinis atvaizdavimas
+# # import matplotlib.pyplot as plt
+# # plt.figure(figsize=(8,5))
+# # plt.bar(df['Miestas'], df['Populiacija'], color='mediumturquoise')
+# # plt.xlabel('Miestas')
+# # plt.ylabel('Populiacija')
+# # plt.title('Populiacija pagal miestu pavadinimus')
+# # plt.show()
+
+##Kazkas negerai su failo csv nuskaitymu
+#csv_failo_pav = 'data-table.csv'
+#df = pd. read_csv(csv_failo_pav)
+#print(df.read(5))
