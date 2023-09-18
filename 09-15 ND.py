@@ -1,5 +1,5 @@
-# import pandas as pd
-
+import pandas as pd
+#
 #### ND_1
 ## Sukurkite DataFrame su mokinių pažymiais,kuriame yra stulpeliai "Vardas", "Pavardė" ir "Pažymys" (nuo 1 iki 10).
 # duomenys = {'Vardas': ['Petriukas', 'Onyte', 'Jonukas', 'Maryte', 'Antanas'],
@@ -82,8 +82,8 @@
 # print(Gyventoju_skaicius)
 
 ## Atrinkite miestus, kuriuose gyvena daugiau nei 200 000 gyventojų.
-# Gyventoju_virs_200000 = df[df['Reikšmė'] > 200000]
-# print(Gyventoju_virs_200000)
+Gyventoju_virs_200000 = df[df['Reikšmė'] > 200000]
+print(Gyventoju_virs_200000)
 
 ## Surikiuokite miestus pagal gyventojų skaičių nuo didžiausio iki mažiausio.
 # Miestai_pagal_gyventoju_sk = df.sort_values('Reikšmė', ascending=False)
