@@ -1,4 +1,4 @@
-# import pandas as pd
+import pandas as pd
 #
 #### ND_1
 ## Sukurkite DataFrame su mokinių pažymiais,kuriame yra stulpeliai "Vardas", "Pavardė" ir "Pažymys" (nuo 1 iki 10).
