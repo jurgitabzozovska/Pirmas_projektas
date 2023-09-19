@@ -1,8 +1,7 @@
+import pandas as pd
 from bs4 import BeautifulSoup
 import requests
-import pandas as pd
 import psycopg2
-import time
 
 def create_and_insert_product():
     connection = psycopg2.connect(
@@ -12,6 +11,7 @@ def create_and_insert_product():
         user="postgres",
         password="truputukas1982"
     )
+
     cursor = connection.cursor()
     create_table_query = """
         CREATE TABLE IF NOT EXISTS zaislai_products (
@@ -22,6 +22,7 @@ def create_and_insert_product():
     """
     cursor.execute(create_table_query)
     print('Table created successfully')
+
     url = 'https://www.1a.lt/c/zaislu-pasaulis-20-zaislams-su-kodu/87w'
     response = requests.get(url)
     print(response.status_code)
@@ -38,8 +39,8 @@ def create_and_insert_product():
         cursor.execute(insert_query, (product_name, product_price))
         print(f'Products inserted into list succesfully!')
         connection.commit()
-    df=pd.DataFrame(product_data, columns=['name', 'price'])
-    print(df)
+    # df=pd.DataFrame(product_data, columns=['name', 'price'])
+    # print(df)
     select_query = "SELECT * FROM zaislai_products"
     cursor.execute(select_query)
     rows = cursor.fetchall()
