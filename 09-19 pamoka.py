@@ -10,7 +10,7 @@ import psycopg2
 # week_days = soup.find_all('span', class_='date')
 # # ima kas antr1 temperatura
 # day_temperature = soup.find_all('span', class_='big up-from-zero')[1::2]
-# # print(week_days, day_temperature)
+# print(week_days, day_temperature)
 # filtered_week_days = [week_day.get_text().split(",")[0] for week_day in week_days]
 # day_temperatures= []
 # for temperature in day_temperature:
