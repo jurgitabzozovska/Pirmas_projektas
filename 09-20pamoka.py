@@ -66,6 +66,7 @@
 # import matplotlib.pyplot as plt
 # data = pd.read_csv('sales_data.csv', encoding = 'iso-8859-1')
 # df = pd.DataFrame(data)
+# print(df)
 # print(df.head(5))
 # # Apskaičiuokite vidutinę prekių kainą ir vidutinį pardavimų kiekį.
 # vidutine_kaina = df['PRICEEACH'].mean().round(2)
@@ -91,7 +92,9 @@
 
 
 ##UŽDUOTIS Nr. 2
-# Sukurkite du sąrašus: vienas su laiko žymėmis (mėnesiais nuo sausio iki gruodžio) ir kitas su kas mėnesį parduotų prekių kiekiu.
+# Sukurkite du sąrašus: vienas su laiko žymėmis (mėnesiais nuo sausio iki gruodžio) ir
+# kitas su kas mėnesį parduotų prekių kiekiu.
+
 
 # Pavaizduokite šiuos duomenis linijiniame grafike. Pridėkite ašių pavadinimus ir pavadinimą grafiko viršuje.
 
@@ -101,24 +104,38 @@
 
 ##UŽDUOTIS Nr. 3
 # Įkelkite kitą CSV failą su duomenimis apie studentų egzaminų rezultatus.
-import pandas as pd
-import matplotlib as pdb
-import matplotlib.pyplot as plt
-data = pd.read_csv('egzaminai.csv')
-df = pd.DataFrame(data)
-print(df.head(5))
+# import pandas as pd
+# import matplotlib as pdb
+# import matplotlib.pyplot as plt
+# data = pd.read_csv('egzaminai.csv')
+# df = pd.DataFrame(data)
+# print(df.head(5))
 
 # Pateikite histogramą, kuri atvaizduotų studentų matematikos egzaminų rezultatus.
-df.hist()
-plt.show(column='Math')
-
+## Sukurkite histogramą, kuri vaizduotų žmonių pasiskirstymą pagal amžių grupes.
+# pagal_studentus = df.groupby('Student ID')['Math Score'].sum()
+# plt.figure(figsize=(12,5))
+# plt.bar(pagal_studentus.index, pagal_studentus.values, color='green')
+# plt.show()
 # Nustatykite tinkamą stulpelių (bins) skaičių, kad histograma būtų aiški ir informatyvi.
 
 # Pridėkite ašių pavadinimus ir pavadinimą grafiko viršuje.
-
+plt.ylabel('Studentų sk')
+plt.xlabel('matematikos egz')
+plt.title('Studentų matematikos egzaminų rezultatus')
+# plt.show()
 # Duomenų grupavimas ir pie grafikas:
 
 # Grupuokite studentų egzaminų duomenis pagal lytį (vyrus ir moteris).
+# plt.figure(figsize=(12,5))
+x = df['Math Score', 'Science score', 'English score']
+y = df['Gender']
+plt.xlabel('Math Score', 'Science score', 'English score')
+plt.ylabel('Gender')
+plt.bar(x, y)
+plt.show()
+
+
 
 # Apskaičiuokite vidutinius rezultatus kiekvienoje grupėje.
 
@@ -127,8 +144,6 @@ plt.show(column='Math')
 
 
 ##UŽDUOTIS Nr. 5
-# Sukurkite tris linijinius grafikus viename paveiksle (subplots). Kiekvienas grafikas turėtų atvaizduoti skirtingus duomenų rinkinius (pavyzdžiui, kainas skirtinguose miestuose).
-
-# Kiekvienam grafikui priskirkite ašių pavadinimus, pavadinimus ir legendas.
-
-# Pateikite visus tris grafikus viename paveiksle.
+## Sukurkite tris linijinius grafikus viename paveiksle (subplots). Kiekvienas grafikas turėtų atvaizduoti skirtingus duomenų rinkinius (pavyzdžiui, kainas skirtinguose miestuose).
+## Kiekvienam grafikui priskirkite ašių pavadinimus, pavadinimus ir legendas.
+## Pateikite visus tris grafikus viename paveiksle.
