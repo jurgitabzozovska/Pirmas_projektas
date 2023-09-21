@@ -2,28 +2,28 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import psycopg2
-# def create_and_insert_product():
-#     connection = psycopg2.connect(
-#         host="localhost",
-#         port=5432,
-#         database="ZaislaiProducts",
-#         user="postgres",
-#         password="truputukas1982"
-#     )
-#     cursor = connection.cursor()
-#     create_table_query = """
-#         CREATE TABLE IF NOT EXISTS zaislai_products (
-#         id SERIAL PRIMARY KEY,
-#         name VARCHAR(255),
-#         price DECIMAL(10,2)
-#         )
-#     """
-#     cursor.execute(create_table_query)
-#     print('Table created successfully')
-#
-#     url = 'https://www.1a.lt/c/zaislu-pasaulis-20-zaislams-su-kodu/87w'
-#     response = requests.get(url)
-#     print(response.status_code)
+def create_and_insert_product():
+    connection = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="ZaislaiProducts",
+        user="postgres",
+        password="truputukas1982"
+    )
+    cursor = connection.cursor()
+    create_table_query = """
+        CREATE TABLE IF NOT EXISTS zaislai_products (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255),
+        price DECIMAL(10,2)
+        )
+    """
+    cursor.execute(create_table_query)
+    print('Table created successfully')
+
+    # url = 'https://www.1a.lt/c/zaislu-pasaulis-20-zaislams-su-kodu/87w'
+    # response = requests.get(url)
+    # print(response.status_code)
 #     soup = BeautifulSoup(response.content, 'html.parser')
 #     product_elements = soup.find_all('div', class_='catalog-taxons-products-container__grid-row')
 #     print(product_elements)
