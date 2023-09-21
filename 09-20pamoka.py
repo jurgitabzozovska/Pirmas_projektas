@@ -94,7 +94,7 @@
 ##UŽDUOTIS Nr. 2
 # Sukurkite du sąrašus: vienas su laiko žymėmis (mėnesiais nuo sausio iki gruodžio) ir
 # kitas su kas mėnesį parduotų prekių kiekiu.
-
+sales1=[ORDERDATE]
 
 # Pavaizduokite šiuos duomenis linijiniame grafike. Pridėkite ašių pavadinimus ir pavadinimą grafiko viršuje.
 
