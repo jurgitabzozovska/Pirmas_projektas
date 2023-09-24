@@ -45,17 +45,20 @@ import random
 # plt.show()
 
 ## 2 UŽDUOTIS
-# Išspausdinkite pirmas 5 eilutes;
-df = pd.read_csv('automobiliai.csv')
+##  Išspausdinkite pirmas 5 eilutes;
+## Filtruokite automobilius pagal jų kainą (pvz., kaina mažesnė nei 10 000). Išspausdinkite šiuos automobilius;
+##  Suskirstykite automobilius pagal gamintoją ir susumuokite kiekvieno gamintojo automobilių kiekius.
+##  Atvaizduokite stulpelinėje diagramoje automobilių kiekius;
+##  Išspausdinkite pirmas 5 eilutes;
+# df = pd.read_csv('automobiliai.csv')
 # print(df.head(5))
-# Filtruokite automobilius pagal jų kainą (pvz., kaina mažesnė nei 10 000). Išspausdinkite šiuos automobilius;
-df[df['Kaina']>10000]
+# df[df['Kaina']>10000]
 # print(df)
-# Suskirstykite automobilius pagal gamintoją ir susumuokite kiekvieno gamintojo automobilių kiekius.
-pagal_gamintoja=df.groupby('Markė').count()
+# pagal_gamintoja=df['Markė'].value_counts()
 # print(pagal_gamintoja)
-# Atvaizduokite stulpelinėje diagramoje automobilių kiekius;
-plt.figure(figsize=(8,5))
-
-plt.show()
+# pagal_gamintoja.plot(kind='bar', color = "red")
+# plt.xlabel('Gamintojas')
+# plt.ylabel('Kiekiai')
+# plt.title('Gamintojo automobilių kiekiai')
+# plt.show()
 
