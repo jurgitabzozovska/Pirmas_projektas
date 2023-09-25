@@ -63,7 +63,7 @@ import psycopg2
 # # print(df)
 # df.to_csv("knygos.csv")
 
-
+#
 # url = "https://www.worldometers.info/world-population/population-by-country/"
 # responce = requests.get(url)
 # # print(responce)
@@ -74,10 +74,11 @@ import psycopg2
 # for row in rows:
 #     dic = {}
 #     dic["Country"] = row.find_all("td")[1].text
-#     dic["Popoliacija"] = row.find_all("td")[2].text.replace(",", " ")
+# #     dic["Popoliacija"] = row.find_all("td")[2].text.replace(",", " ")
 #     Countries_list.append(dic)
-# # print(Countries_list)
+# print(Countries_list)
 # df = pd.DataFrame (Countries_list)
-# df.to_csv("Salys.csv", index=False)
+# print(df)
+# # df.to_csv("Salys.csv", index=False)
 
 

@@ -28,7 +28,8 @@ for i in headers:
      pavadinimai.append(pavadinimas)
      # print(pavadinimai)
 df=pd.DataFrame(columns=pavadinimai)
-# print(df)
+df=pd.DataFrame(columns=["Pavadinimas", "Kaina", "1h%","7h%","1d%"])
+print(df)
 rows = table.find_all('tr')
 # print(rows)
 for i in rows[1:]:
@@ -37,6 +38,7 @@ for i in rows[1:]:
     # print(duomenys)
     row=[tr.text for tr in duomenys]
     print(row[1:7])
+
 
 ## Atliekant duomenų tvarkymą, galite konvertuoti datą į tinkamą formatą,
 # df.to_csv(r"C:\Users\Kursai\export_dataframe.csv", index=False, header=True)
