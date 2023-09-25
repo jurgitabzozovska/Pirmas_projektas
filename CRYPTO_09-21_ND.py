@@ -14,23 +14,25 @@ import numpy as np
 ## Įkelkite gautus duomenis į Pandas DataFrame.
 
 url = 'https://coinmarketcap.com'
-response = requests.get(url)
-print(response.status_code)
-soup = BeautifulSoup(response.text, 'html.parser')
+atsakymas = requests.get(url)
+# print(atsakymas)
+soup = BeautifulSoup(atsakymas.text, 'lxml')
 # print(soup.prettify())
 table=soup.find("table", class_='sc-b28ea1c6-3 izgIsg cmc-table')
-pavadinimai = table.find_all('th')
-crypto_data =[]
-for i in pavadinimai:
-    pavadinimas = i.text
-    crypto_data.append(pavadinimas)
-    # print(antrasciu_pavadinimai)
-# print(pavadinimai)
-df=pd.DataFrame(columns=crypto_data)
+# print(table)
+headers = table.find_all('th')
+# print(headers)
+pavadinimai =[]
+for i in headers:
+     pavadinimas = i.text
+     pavadinimai.append(pavadinimas)
+     # print(pavadinimai)
+df=pd.DataFrame(columns=pavadinimai)
 # print(df)
 rows = table.find_all('tr')
 # print(rows)
 for i in rows[1:]:
+    # print(i.text)
     duomenys=i.find_all('td')
     # print(duomenys)
     row=[tr.text for tr in duomenys]

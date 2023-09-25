@@ -46,45 +46,45 @@ import pandas as pd
 #     print(df)
 
 ###VARIANTAS
-# url = 'https://coinmarketcap.com'
-# response = requests.get(url)
-# soup = BeautifulSoup(response.text, "html.parser")
-#
-# data = []
-# table = soup.find('table', attrs={'class':'cmc-table'})
-# cols = table.find('thead').find_all('th')
-# cols = [ele.text.strip() for ele in cols]
-# data.append([ele for ele in cols if ele])
-#
-# lentele = table.find('tbody')
-#
-# # print(lentele)
-#
-# rows = lentele.find_all('tr')
-# for row in rows:
-#     cols = row.find_all('td')
-#
-#     print(cols)
-#     colsTemp = []
-#
-#
-# #     #
-#     for i, col in enumerate(cols):
-#         if i == 2 and len(col.findAll('p')) > 1:
-#             colsTemp.append(col.findAll('p')[0].text + " " + col.findAll('p')[1].text)
-#         elif i == 7 and len(col.findAll('span')) > 0:
-#             span = col.findAll('span')
-#             colsTemp.append(span[1].text if len(span) > 1 else span[0].text)
-#         else:
-#             colsTemp.append(col.text.strip())
-#
-#     cols = colsTemp
-#     data.append([ele for ele in cols if ele]) # Get rid of empty values
-#
-# df = pd.DataFrame(data)
-#
-# print(df.head(n=20))
-#
+url = 'https://coinmarketcap.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+data = []
+table = soup.find('table', attrs={'class':'cmc-table'})
+cols = table.find('thead').find_all('th')
+cols = [ele.text.strip() for ele in cols]
+data.append([ele for ele in cols if ele])
+
+lentele = table.find('tbody')
+
+# print(lentele)
+
+rows = lentele.find_all('tr')
+for row in rows:
+    cols = row.find_all('td')
+
+    print(cols)
+    colsTemp = []
+
+
+#     #
+    for i, col in enumerate(cols):
+        if i == 2 and len(col.findAll('p')) > 1:
+            colsTemp.append(col.findAll('p')[0].text + " " + col.findAll('p')[1].text)
+        elif i == 7 and len(col.findAll('span')) > 0:
+            span = col.findAll('span')
+            colsTemp.append(span[1].text if len(span) > 1 else span[0].text)
+        else:
+            colsTemp.append(col.text.strip())
+
+    cols = colsTemp
+    data.append([ele for ele in cols if ele]) # Get rid of empty values
+
+df = pd.DataFrame(data)
+
+print(df.head(n=20))
+
 # df.to_csv('Crypto.csv', index=False)
 #
 # df = pd.read_csv('Crypto.csv')
