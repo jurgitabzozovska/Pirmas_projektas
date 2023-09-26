@@ -95,3 +95,82 @@
 # # plt.ylabel('Populiacija')
 # # plt.title('Populiacija pagal miestu pavadinimus')
 # # plt.show()
+
+# import pandas as pd
+# # data = {'Miestas': ['Vilnius', 'Kaunas', 'Kaunas', 'Vilnius'],
+# #         'Lytis': ['Vyras', 'Vyras', 'Moters', 'Vyras'],
+# #         'Amzius': [25,25,22,30]
+# #         }
+# # datal = pd.DataFrame(data)
+
+# # vid_amzius_pagal_miesta = datal.groupby('Miestas') ['Amzius'].mean()
+# # print(vid_amzius_pagal_miesta)
+
+
+# # #  Sukurkite Pandas DataFrame(4 miestai ir ju populiacija).
+# # #  Filtravimas ir paieška:
+# # #  a. Filtruokite miestus, kurių populiacija yra didesnė nei 200 000 žmonių.
+# # #  b. Raskite miestą, turintį mažiausią populiaciją.
+
+# # #  Duomenų grupavimas ir agregavimas:
+# # #  a. Pridėkite stulpelį "Šalis" prie ankstesnio DataFrame, kuriame nurodoma, kuri šalis priklauso kiekvienam miestui
+# # #  (pvz., "Lietuva").
+# # #  b. Grupuokite duomenis pagal "Šalis" stulpelį ir apskaičiuokite bendrą populiaciją kiekvienai šaliai.
+
+# # # Duomenų rikiavimas:
+# # # Rikiuokite miestus pagal populiaciją mažėjimo tvarka.
+
+# duomenys = {'Miestas': ['Vilnius', 'Ryga', 'Talinas'],
+# 'Populiacija': [541000, 621000, 454000]
+#             }
+
+# df = pd.DataFrame(duomenys)
+
+# populiacijos_filtravimas = df[df['Populiacija'] > 200000]
+# print(populiacijos_filtravimas)
+
+# min_miestas = df[df['Populiacija'] == df['Populiacija'].min()]
+# print(min_miestas)
+
+# df['Salis'] = ['Lietuva', 'Latvija', 'Estija']
+# print('Atnaujintas datarframe su nauju stulpeliu:')
+
+# bendra_populiacija = df.groupby('Salis')['Populiacija'].sum()
+# print(bendra_populiacija)
+
+# miestai_pagal_populiacija = df.sort_values('Populiacija',ascending=False)
+# print(miestai_pagal_populiacija)
+
+# # 1 Užduotis
+# # Sukurkite Pandas duomenų lentelę su 5 eilutėmis ir 3 stulpeliais.
+# # Pavadinkite stulpelius "Vardas","Amžius"ir"Miestas".
+# import pandas as pd
+# duomenys = {'Vardas': ['Romas', 'Petras', 'Ona', 'Ula', 'Tonas'],
+#             'Amzius': [21,25,35,62,25],
+#             'Miestas': ['Vilnius', 'Kaunas', 'Kaunas', 'Utena', 'Joniskis']}
+#
+# df = pd.DataFrame(duomenys)
+# # print(df)
+# # Įtraukite naują eilutę į lentelę su duomenimis: "Jonas", 30, "Vilnius".
+# df.loc[len(df.index)] = ['Jonas', 30, 'Vilnius']
+# print(df)
+# # Išspausdinkite pirmas 3 eilutes iš lentelės.
+# print(df[0:3])
+# # Išspausdinkite stulpelį "Amžius" visų eilučių atveju.
+# print(df.Amzius)
+# # Atrinkite visus žmones, kurių amžius yra mažesnis nei 25.
+# pagal_amziu= df[df['Amzius']<25]
+# print(pagal_amziu)
+# # Sukurkite naują stulpelį "Gimimo metai" pagal esamą stulpelį "Amžius". Paskaičiuokite gimimo metus pagal 2023 metus.
+# df['gimimo_metai'] = 2023 - df['Amzius']
+# print(df)
+# # Ištrinkite eilutę su "Jonas" iš lentelės.
+# df = df[df['Vardas'] != 'Jonas']
+# print(df)
+# # Išsaugokite lentelę į CSV failą pavadinimu "duomenys.csv".
+# df.to_csv('duomenys.csv')
+# # Atrinkite visus žmones, gyvenančius Vilniuje.
+# Vilniaus_gyventojai = df[df['Miestas']=='Vilnius']
+# print(Vilniaus_gyventojai)
+
+
