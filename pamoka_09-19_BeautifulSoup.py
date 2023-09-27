@@ -68,21 +68,21 @@ import psycopg2
 
 # Atvaizuokite kiekvieno mėnesio užsikrėtimų skaičių(procentaliai)lyginant su praėjusiu mėnesiu. PIE grafike;
 
-def create_and_insert_product():
-    connection = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="products",
-        user="postgres",
-        password="truputukas1982"
-    )
-    cursor = connection.cursor()
-    create_table_query = """
-        CREATE TABLE IF NOT EXISTS varle_products (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(255),
-        price DECIMAL(10,2),
-        quantity INT)
+# def create_and_insert_product():
+#     connection = psycopg2.connect(
+#         host="localhost",
+#         port=5432,
+#         database="products",
+#         user="postgres",
+#         password="truputukas1982"
+#     )
+#     cursor = connection.cursor()
+#     create_table_query = """
+#         CREATE TABLE IF NOT EXISTS varle_products (
+#         id SERIAL PRIMARY KEY,
+#         name VARCHAR(255),
+#         price DECIMAL(10,2),
+#         quantity INT)
     """
     cursor.execute(create_table_query)
     print('Table created successfully')

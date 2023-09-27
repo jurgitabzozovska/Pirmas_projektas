@@ -27,8 +27,9 @@ import numpy as np
 ## kad gautumėte kriptovaliutos kainų duomenis iš populiarios kriptovaliutų rinkos svetainės.
 ## Išgaukite kainų, laiko ir kitus susijusius duomenis iš svetainės.
 ## Įkelkite gautus duomenis į Pandas DataFrame.
+lupa-products
 
-url = 'https://coinmarketcap.com'
+url = 'https://www.pegasas.lt/knygos/'
 atsakymas = requests.get(url)
 # print(atsakymas)
 soup = BeautifulSoup(atsakymas.text, 'lxml')

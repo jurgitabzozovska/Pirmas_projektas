@@ -32,9 +32,9 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # REGRESIJOS
-# df = pd.DataFrame({'category':[2,4,6,8], 'reiksme':[1,2,3,4,]})
-# sns.lmplot(data=df, x='category', y='reiksme')
-# plt.show()
+df = pd.DataFrame({'category':[2,4,6,8], 'reiksme':[1,2,3,4,]})
+sns.lmplot(data=df, x='category', y='reiksme')
+plt.show()
 
 # HEATMAP
 # df2=np.random.rand(5,4)
@@ -51,14 +51,21 @@ import matplotlib.pyplot as plt
 ## vidutinį gauto mėnesinio mokesčio (tip) dydį;
 
 # data = sns.load_dataset('tips')
-# vidutine_saskaita = data['total_bill'].mean
+# print(data)
+# df = pd.DataFrame(data)
+# vidutine_saskaita = df['total_bill'].mean()
 # print(vidutine_saskaita)
-# vidutinis_mokestis = data["tip"].mean()
+# vidutinis_mokestis = df["tip"].mean()
 # print(vidutinis_mokestis)
+# sns.barplot(data=data, x="total_bill", y="day", hue="sex")
+# plt.show()
+
 
 ##UŽDUOTIS
 ## Naudojant "diamonds" duomenų rinkinį iš Seaborn, suskaičiuokite ir atvaizduokite vidutinį kainos (price) dydį
 ## pagal kiekvieną pjovimo (cut) grupę;
+
+
 
 # data_1 = sns.load_dataset('diamonds')
 # print(data_1)
@@ -112,13 +119,13 @@ import matplotlib.pyplot as plt
 # # kuriame būtų tik Empiriniai penguinai (species) ir kurie turi ne tuščią kiaušinio plotą (bill_length_mm).
 # # Tada sukurkite kreivės grafiką, kuris vaizduotų kiaušinio pločio (bill_length_mm) pasiskirstymą pagal rūšį (species).
 
-data_4 = sns.load_dataset('penguins')
-# print(data_4)
-df = pd.DataFrame(data_4)
-Sarasas_pagal_species_and_length = df.get('species', 'bill_length_mm')
-print(Sarasas_pagal_species_and_length)
-sns.lineplot(data=data_4, x= 'species', y="bill_length_mm")
-plt.title ('Kiaušinio pločio pasiskirstymą pagal rūšį')
-plt.show()
+# data_4 = sns.load_dataset('penguins')
+# # print(data_4)
+# df = pd.DataFrame(data_4)
+# Sarasas_pagal_species_and_length = df.get('species', 'bill_length_mm')
+# print(Sarasas_pagal_species_and_length)
+# sns.lineplot(data=data_4, x= 'species', y="bill_length_mm")
+# plt.title ('Kiaušinio pločio pasiskirstymą pagal rūšį')
+# plt.show()
 
 # sns.lineplot(data= df, x = "category", y = "reiksme")
