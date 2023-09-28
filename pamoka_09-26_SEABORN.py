@@ -6,6 +6,15 @@ import psycopg2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# ĮVAIRIŲ "PLOT" PVZ:
+# sns.lineplot(data= df, x = "category", y = "reiksme")
+# penguins = sns.load_dataset("penguins")
+# sns.histplot(data=penguins, x="flipper_length_mm", hue="species", multiple="stack")
+# sns.kdeplot(data=penguins, x="flipper_length_mm", hue="species", multiple="stack")
+# sns.displot(data=penguins, x="flipper_length_mm", hue="species", multiple="stack")
+# sns.displot(data=penguins, x="flipper_length_mm", hue="species", col="species")
+# plt.show()
+
 # BARPLOT
 # df = pd.DataFrame({"category": ["a", "b", "a", "b"], "reiksme":[1,2,3,4]})
 # sns.barplot(data=df, x = "category", y = "reiksme")
@@ -32,9 +41,9 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # REGRESIJOS
-df = pd.DataFrame({'category':[2,4,6,8], 'reiksme':[1,2,3,4,]})
-sns.lmplot(data=df, x='category', y='reiksme')
-plt.show()
+# df = pd.DataFrame({'category':[2,4,6,8], 'reiksme':[1,2,3,4,]})
+# sns.lmplot(data=df, x='category', y='reiksme')
+# plt.show()
 
 # HEATMAP
 # df2=np.random.rand(5,4)
@@ -128,4 +137,3 @@ plt.show()
 # plt.title ('Kiaušinio pločio pasiskirstymą pagal rūšį')
 # plt.show()
 
-# sns.lineplot(data= df, x = "category", y = "reiksme")

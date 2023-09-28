@@ -7,7 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import psycopg2
-# SIGITOS
+# I Variantas
 # def create_and_insert_product():
 #     connection = psycopg2.connect(
 #         host="localhost",
@@ -51,7 +51,9 @@ import psycopg2
 #     print(df)
 # if __name__ =='__main__':
 #     create_and_insert_product()
-# EUGENIJAUS
+
+
+# II Variantas
 # def create_and_insert_product():
 #     connection = psycopg2.connect(
 #         host = "localhost",
