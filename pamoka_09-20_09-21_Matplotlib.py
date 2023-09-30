@@ -1,7 +1,7 @@
-# import pandas as pd
-# import matplotlib
-# import matplotlib.pyplot as plt
-# import random
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import random
 #
 # # # Vizualizacijos 1.pvz
 # # x = [5, 8, 6, 4, 5]
@@ -61,15 +61,15 @@
 # ##UŽDUOTIS Nr. 1
 # # ## Įkelkite CSV failą, kuris turi duomenis apie prekių pardavimus.
 # # ## Išveskite pirmas 5 eilutes iš duomenų rinkinio, kad pamatytumėte, kaip atrodo duomenys.
-# # data = pd.read_csv('sales_data.csv', encoding = 'iso-8859-1')
-# # df = pd.DataFrame(data)
-# # print(df)
-# # print(df.head(5))
-# # # Apskaičiuokite vidutinę prekių kainą ir vidutinį pardavimų kiekį.
-# # vidutine_kaina = df['PRICEEACH'].mean().round(2)
-# # vid_pard_kiekis = df['QUANTITYORDERED'].mean()
-# # print('vidutin4 kaina', vidutine_kaina)
-# # print(f'\n vidutinis parduotas kiekis',  vid_pard_kiekis)
+data = pd.read_csv('sales_data.csv', encoding = 'iso-8859-1')
+df = pd.DataFrame(data)
+print(df)
+print(df.head(5))
+# # Apskaičiuokite vidutinę prekių kainą ir vidutinį pardavimų kiekį.
+vidutine_kaina = df['PRICEEACH'].mean().round(2)
+vid_pard_kiekis = df['QUANTITYORDERED'].mean()
+print('vidutin4 kaina', vidutine_kaina)
+print(f'\n vidutinis parduotas kiekis',  vid_pard_kiekis)
 #
 #
 # # # Pateikite grafiką, kuriame būtų pavaizduota prekių pardavimų kiekio kitimas laiko atžvilgiu.
