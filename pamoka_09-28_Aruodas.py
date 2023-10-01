@@ -72,11 +72,10 @@ import matplotlib.pyplot as plt
 #         create_and_insert_product()
 
 
-# DUOMENU ANALIZE:
+# DUOMENŲ ANALIZĖ:
 
 df = pd.read_csv('Aruodas.csv')
 # print(df.to_string())
-
 Butai_pagal_kaina_ASC = df.sort_values(by=['Kaina'], ascending=False)
 # print(Butai_pagal_kaina_ASC)
 
@@ -94,7 +93,7 @@ Kaina_pagal_kambariu_sk = df.groupby('Kambarius_sk')['Kaina'].mean()
 # print(Kaina_pagal_kambariu_sk)
 
 Daugiausia_parduodama_butu = df['Adresas'].mode()
-print(f'Daugiausia parduodama butu: {Daugiausia_parduodama_butu}')
+# print(f'Daugiausia parduodama butu: {Daugiausia_parduodama_butu}')
 
 max = np.max(df['Kaina'])
 min = np.min(df['Kaina'])
@@ -102,3 +101,4 @@ bendra_verte = np.sum(df['Kaina'])
 vidurkis = np.mean(df['Kaina'])
 mediana = np.median(df['Kaina'])
 # print(f'Statistika:\n Maksimali kaina: {max} €,\n Minimali kaina: {min} €,\n Vidutine kaina:{vidurkis} €, \n Mediana: {mediana}\n Visu butu verte: {bendra_verte} €')
+
