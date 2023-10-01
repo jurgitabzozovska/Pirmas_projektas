@@ -55,3 +55,6 @@ import matplotlib.pyplot as plt
 #         print(df)
 # df.to_csv("filmai.csv")
 
+df = pd.read_csv('filmai.csv')
+print(df.to_string())
+filmu_sk

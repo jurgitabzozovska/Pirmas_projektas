@@ -102,3 +102,7 @@ vidurkis = np.mean(df['Kaina'])
 mediana = np.median(df['Kaina'])
 # print(f'Statistika:\n Maksimali kaina: {max} €,\n Minimali kaina: {min} €,\n Vidutine kaina:{vidurkis} €, \n Mediana: {mediana}\n Visu butu verte: {bendra_verte} €')
 
+sns.barplot(data=df, x="Kaina", y="Adresas")
+# plt.show()
+sns.barplot(data=df, x="Kaina", y="Aukstas")
+plt.show()
