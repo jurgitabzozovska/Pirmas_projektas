@@ -70,22 +70,32 @@ import matplotlib.pyplot as plt
 #         # connection.close()
 # if __name__ =='__main__':
 #         create_and_insert_product()
-# STATISTIKA:
+
+
+# DUOMENU ANALIZE:
+
 df = pd.read_csv('Aruodas.csv')
 # print(df.to_string())
+
 Butai_pagal_kaina_ASC = df.sort_values(by=['Kaina'], ascending=False)
 # print(Butai_pagal_kaina_ASC)
+
 Brangiausias = df['Kaina'].max()
 Pigiausias = df['Kaina'].min()
 # print(f'Pigiausio buto verte: {Pigiausias}€ \nBrangiausio buto verte: {Brangiausias}€ ')
+
 Kainu_avg = df['Kaina'].mean()
 # print(f'Vidutinė buto kaina yra:', Kainu_avg, '€')
+
 Kainu_avg_pagal_adresa = df.groupby('Adresas')['Kaina'].mean().round(2)
 # print(Kainu_avg_pagal_adresa)
+
 Kaina_pagal_kambariu_sk = df.groupby('Kambarius_sk')['Kaina'].mean()
 # print(Kaina_pagal_kambariu_sk)
+
 Daugiausia_parduodama_butu = df['Adresas'].mode()
 print(f'Daugiausia parduodama butu: {Daugiausia_parduodama_butu}')
+
 max = np.max(df['Kaina'])
 min = np.min(df['Kaina'])
 bendra_verte = np.sum(df['Kaina'])
