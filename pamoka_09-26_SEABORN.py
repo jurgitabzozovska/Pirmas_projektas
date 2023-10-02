@@ -76,17 +76,17 @@ import matplotlib.pyplot as plt
 
 
 
-# data_1 = sns.load_dataset('diamonds')
-# print(data_1)
-# df = pd.DataFrame(data_1)
-# vidutinis_pagal_cut = df.groupby('cut')['price'].mean()
-# print(vidutinis_pagal_cut)
-# plt.figure(figsize=(12,5))
-# sns.barplot(x=vidutinis_pagal_cut.index, y=vidutinis_pagal_cut.values)
-# plt.title('Vidutins kainos dydis pagal pjovimo grupe')
-# plt.xlabel('Diamonds cut')
-# plt.ylabel('Vidutine kaina')
-# plt.show()
+data_1 = sns.load_dataset('diamonds')
+print(data_1)
+df = pd.DataFrame(data_1)
+vidutinis_pagal_cut = df.groupby('cut')['price'].mean()
+print(vidutinis_pagal_cut)
+plt.figure(figsize=(12,5))
+sns.barplot(x=vidutinis_pagal_cut.index, y=vidutinis_pagal_cut.values)
+plt.title('Vidutins kainos dydis pagal pjovimo grupe')
+plt.xlabel('Diamonds cut')
+plt.ylabel('Vidutine kaina')
+plt.show()
 
 ##UŽDUOTIS
 ## Panaudokite "tips" duomenų rinkinį, grupuokite duomenis pagal dienos dalį (time),

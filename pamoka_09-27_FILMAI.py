@@ -33,6 +33,9 @@ import matplotlib.pyplot as plt
 # plt.ylabel("Knygu skaicius")
 # plt.show()
 
+
+
+
 # NAUJAUSI/SENIAUSI FILMAI. 100 VNT. PAVADINIMAS. METAI. METASCORE
 
 # headers = {
@@ -52,9 +55,39 @@ import matplotlib.pyplot as plt
 #         Metascore = (filmas.find('div', class_ = 'c-finderProductCard_meta g-outer-spacing-top-auto').text.strip().replace('Metascore',''))
 #         Filmu_sarasas.append((Pavadinimas, Metai, Metascore))
 #         df = pd.DataFrame(Filmu_sarasas, columns=["Pavadinimas", "Metai", "Metascore"])
-#         print(df)
+# #         print(df)
 # df.to_csv("filmai.csv")
+#
+# df = pd.read_csv('filmai.csv')
+# print(df.to_string())
 
-df = pd.read_csv('filmai.csv')
-print(df.to_string())
-filmu_sk
+# DUOMENU ANALIZAVIMAS:
+# min = np.min(df["Metascore"])
+# max = np.max(df["Metascore"])
+# # print(f'Maksimalus ivertinimas: {max}\nMinimalus ivertinimas: {min}')
+
+# Naujausias_filmas = np.max(df["Metai"])
+# # print(f'Naujausio filmo isleidimo metai yra:{Naujausias_filmas}')
+
+# Seniausias_filmas = np.min(df["Metai"])
+# # print(f'Seniausiai isleistas filmas -{Naujausias_filmas}')
+
+# Vidutinis_ivertinimas = df['Metascore'].mean()
+# # print(Vidutinis_ivertinimas)
+
+# Filmai_pagal_metus_ASC = df.sort_values(by=['Metai'], ascending=False)
+# # print(Filmai_pagal_metus_ASC)
+
+# Kiek_filmu_ivertinta=df['Metascore'].value_counts()
+## print(Kiek_filmu_ivertinta)
+
+
+
+# Year =df["Metai"].str.split(',', expand=True)
+# # print(Year)
+# df["Metai"] = Metai
+# # print(df)
+
+
+
+
