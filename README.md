@@ -7,3 +7,5 @@ dgjsndg
 djnglsdjgn
 ljgbdalgjbl;
 Visi keliaujam į savaitgalį :D 
+
+keliaujam :) 
