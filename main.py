@@ -35,42 +35,24 @@ response = requests.get(url)
 # print(response.status_code)
 soup = BeautifulSoup(response.content, 'html.parser')
 data = []
-table = soup.find_all('table', class_='table-wrapper')
+table = soup.find('table', class_='table-wrapper')
+Year = soup.find_all('th', class_='header')
+
 # print(table)
-
-rows = []
-
-for row in rows[1:]:
-    columns = row.find_all('td')
-    Year = columns[0].text.strip()
+if table:
+    rows = table.find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        year = Year[0].text.strip()
+        # data = columns[0].text.strip()
     data.append({
-            'Year':Year
-                }) df = pd.DataFrame(data)
+            'Year': Year
+                })
 
-# table = soup.find('table')
-# rows = []
-# for i, row in enumerate(table.find_all('tr')):
-#     rows.append([value.text.strip() for value in row.find_all('td')])
+df = pd.DataFrame(data)
+print(df)
 
-# if table:
-#     # Initialize lists to store table data
-#     data = {
-#         'Year': [],
-#         'number': []
-#
-#     }
-#     # Find all rows in the table, skipping the header row
-#     rows = table.find_all('tr')[1:]
-#     for row in rows:
-#         # Extract data from each row
-#         columns = row.find_all('td')
-#         if len(columns) >= 5:
-#             Name = columns[1].text.strip()
-#             # Append the extracted data to the lists
-#             data['Year'].append('Year')
-#
-#     df = pd.DataFrame(data)
-#     print(df)
+
 
 
 
