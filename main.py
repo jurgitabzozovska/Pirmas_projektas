@@ -6,13 +6,13 @@ import numpy as np
 import seaborn as sns
 
 csv_failo_pavadinimas = 'eismo ivykiai.csv'
-df = pd.read_csv(csv_failo_pavadinimas)
+data = pd.read_csv(csv_failo_pavadinimas)
+# print(df)
+
+df = pd.DataFrame(data)
+df[['Metai', 'Menuo']] = df["Laikotarpis"].str.split('M', expand=True )
+
 print(df)
 
-df = pd.DataFrame(df)
 
 
-# Year =df["Metai"].str.split(',', expand=True)
-# # print(Year)
-# df["Metai"] = Metai
-# # print(df)
