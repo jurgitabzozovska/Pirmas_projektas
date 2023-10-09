@@ -12,4 +12,7 @@ print(df)
 df = pd.DataFrame(df)
 
 
-
+# Year =df["Metai"].str.split(',', expand=True)
+# # print(Year)
+# df["Metai"] = Metai
+# # print(df)
