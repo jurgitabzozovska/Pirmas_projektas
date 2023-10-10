@@ -6,26 +6,34 @@ import numpy as np
 import seaborn as sns
 
 #
-# csv_failo_pavadinimas = 'eismo ivykiai.csv'
-# data1 = pd.read_csv(csv_failo_pavadinimas)
-# # print(df)
-# #
-# df1 = pd.DataFrame(data1)
-# df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True )
-# # print(df1)
-# # filtravimas = df1[df1['Reikšmė'] ==df1['Reikšmė'].max()]
-# # print(f"Daugiausiu eismo ivykiu: {filtravimas}")
+csv_failo_pavadinimas = 'eismo ivykiai.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+# print(df)
 #
+df1 = pd.DataFrame(data1)
+df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True )
+# print(df1)
 # csv_failo_pavadinimas = 'neblaiviu asmenu kalte pagal apsk.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # # print(data2)
 # df2 = pd.DataFrame(data2)
-# # filtravimas = df2[df2['Reikšmė'] ==df2['Reikšmė'].max()]
-# # print(f"Daugiausiu eismo ivykiu del neblaiviu: {filtravimas}")
+# #sujungimas dviejų csv failų
+# sujungimas = pd.concat([df1, df2],ignore_index =True)
+# # print(sujungimas)
+# sujungimas.dropna()
+#
+#
+# sujungimas.to_csv('sujungimas.csv', index=False)
+# print("CSV file sukurtas")
+
+
+
+# filtravimas = df2[df2['Reikšmė'] ==df2['Reikšmė'].max()]
+# print(f"Daugiausiu eismo ivykiu del neblaiviu: {filtravimas}")
 #
 # sujungimas = df1.append(df2, ignore_index=True)
 # max_value_row = sujungimas.loc[sujungimas['Reikšmė'].idxmax()]
-#
+
 # print(f"Daugiausiu eismo ivykiu: {max_value_row}")
 #
 # # csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
@@ -46,7 +54,7 @@ import seaborn as sns
 
 
 
-# Latvijos žuvusiųjų žmonių skaičius
+# # Latvijos žuvusiųjų žmonių skaičius
 url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
 response = requests.get(url)
 # print(response.status_code)
@@ -70,14 +78,23 @@ for row in rows:
         'From 01.01': from_date
     })
 
-df = pd.DataFrame(data, columns=titles)
-print(df)
-df.drop('From')
-# df.to_csv('Latvija.csv', index=False)
+df2 = pd.DataFrame(data, columns=titles)
+# print(df2)
+# df2.drop('From')
+df2.to_csv('Latvija.csv', index=False)
+print("CSV file sukurtas")
+
+
+
+
+
+
+df3 = pd.read_csv('estijos ivykiai.csv')
+print(df3)
+
+# #sujungimas tris csv failus
+# sujungimas = pd.concat([df1, df2, df3],ignore_index =True)
+# print(sujungimas)
+# sujungimas.to_csv('sujungimas.csv', index=False)
 # print("CSV file sukurtas")
 
-#
-# df = pd.read_excel('Estija_ivykiai.xlsx', index_col=0)
-#
-# grupavimas = df.groupby('Accidents').sum()
-# print(grupavimas)
