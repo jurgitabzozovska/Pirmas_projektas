@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import numpy as np
 import seaborn as sns
+
 #
 # csv_failo_pavadinimas = 'eismo ivykiai.csv'
 # data = pd.read_csv(csv_failo_pavadinimas)
@@ -57,11 +58,10 @@ import seaborn as sns
 # df.to_csv('Latvija.csv', index=False)
 # print("CSV file sukurtas")
 
-df = pd.read_excel('Estija_ivykiai.xlsx')
+# df = pd.read_excel('Estija_ivykiai.xlsx')
 # print(df)
-df.dropna(inplace=True)
-print(df)
 
+df = pd.read_excel('Estija_ivykiai.xlsx', index_col=0, header=0)
 
-
-
+grupavimas = df.groupby('Accidents').sum()
+print(grupavimas)
