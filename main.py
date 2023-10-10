@@ -15,27 +15,60 @@ df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
 df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
 df1.to_csv('eismo_ivykiai.csv', index=False)
 # print(df1)
-df1= df1.groupby('Metai')['Reikšmė'].sum()
-# print(df1)
-#max pagal metus
-df1.groupby('Metai')['Reikšmė'].mean()
-print(max_ivykiai)
+df1 = df1.groupby('Metai')['Reikšmė'].sum()
+print(df1)
+# vid pagal metus
+# vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
+# print(vid)
+
+
+
+
 #
-# max_grupavimas = df1.groupby('Laikotarpis')['Reikšmė'].max()
-# print(max_grupavimas)
-
-
-
-
-# metai_su_max_reiksme = data1[data1 == max_ivykiai].index[0]
-# print(metai_su_max_reiksme )
-# #
 # plt.figure(figsize=(12,5))
 # plt.bar(df1.index, df1.values, color='blue')
 # plt.xlabel('Metai')
 # plt.ylabel('Reikšmė')
 # plt.title('Kelių eismo įvykiai pagal metus')
 # plt.show()
+# # # data = df1['kiekis']
+# # # data1 = df1['Metai']
+# # data2 = df1['vid']
+# #
+# sns.barplot(data=df1, x='Metai', y='Reikšmė')
+# plt.show()
+
+n_group = len(df1)
+Metai = df1['Metai']
+Reikšmė = df1['Reikšmė']
+vid = df1['vid']
+
+plt.bar(index, Reikšmė)
+
+#
+# plt.xlabel('Metai')
+# plt.ylabel('Reikšmė')
+#
+# plt.title('+')
+# plt.xticks(index + bar_width, ('vid'))
+# plt.legend()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
