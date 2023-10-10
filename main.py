@@ -28,6 +28,7 @@ import seaborn as sns
 # print(data2)
 # df = pd.DataFrame(data2)
 
+#
 url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
 #
 #
@@ -35,22 +36,29 @@ response = requests.get(url)
 # print(response.status_code)
 soup = BeautifulSoup(response.content, 'html.parser')
 data = []
-table = soup.find('table', class_='table-wrapper')
-Year = soup.find_all('th', class_='header')
+table = soup.find('div', class_='table-wrapper')
+headers = table.find_all("th")
+# print(headers)
+titles = [header.text.strip() for header in headers]
+rows = table.find_all('tr')[1:]
+for row in rows:
 
-# print(table)
-if table:
-    rows = table.find_all('tr')
-    for row in rows[1:]:
-        columns = row.find_all('td')
-        year = Year[0].text.strip()
-        # data = columns[0].text.strip()
+    columns = row.find_all('td')
+    year = columns[0].text.strip()
+    from_date_columns = columns[1:2]
+    from_date = ' '.join([col.text.strip() for col in from_date_columns])
+    from_date_numbers = from_date.split()
+
     data.append({
-            'Year': Year
-                })
+        'Year': year,
+        'From 01.01': from_date
+    })
 
-df = pd.DataFrame(data)
-print(df)
+df = pd.DataFrame(data, columns=titles)
+
+df.to_csv('Latvija.csv', index=False)
+print("CSV file sukurtas")
+
 
 
 
