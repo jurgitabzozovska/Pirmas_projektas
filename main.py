@@ -28,38 +28,39 @@ import seaborn as sns
 # print(data2)
 # df = pd.DataFrame(data2)
 
+#Latvijos žuvusiųjų žmonių skaičius
+# url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
+# response = requests.get(url)
+# # print(response.status_code)
+# soup = BeautifulSoup(response.content, 'html.parser')
+# data = []
+# table = soup.find('div', class_='table-wrapper')
+# headers = table.find_all("th")
+# # print(headers)
+# titles = [header.text.strip() for header in headers]
+# rows = table.find_all('tr')[1:]
+# for row in rows:
 #
-url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
+#     columns = row.find_all('td')
+#     year = columns[0].text.strip()
+#     from_date_columns = columns[1:2]
+#     from_date = ' '.join([col.text.strip() for col in from_date_columns])
+#     from_date_numbers = from_date.split()
 #
+#     data.append({
+#         'Year': year,
+#         'From 01.01': from_date
+#     })
 #
-response = requests.get(url)
-# print(response.status_code)
-soup = BeautifulSoup(response.content, 'html.parser')
-data = []
-table = soup.find('div', class_='table-wrapper')
-headers = table.find_all("th")
-# print(headers)
-titles = [header.text.strip() for header in headers]
-rows = table.find_all('tr')[1:]
-for row in rows:
+# df = pd.DataFrame(data, columns=titles)
+#
+# df.to_csv('Latvija.csv', index=False)
+# print("CSV file sukurtas")
 
-    columns = row.find_all('td')
-    year = columns[0].text.strip()
-    from_date_columns = columns[1:2]
-    from_date = ' '.join([col.text.strip() for col in from_date_columns])
-    from_date_numbers = from_date.split()
-
-    data.append({
-        'Year': year,
-        'From 01.01': from_date
-    })
-
-df = pd.DataFrame(data, columns=titles)
-
-df.to_csv('Latvija.csv', index=False)
-print("CSV file sukurtas")
-
-
+df = pd.read_excel('Estija_ivykiai.xlsx')
+# print(df)
+df.dropna(inplace=True)
+print(df)
 
 
 
