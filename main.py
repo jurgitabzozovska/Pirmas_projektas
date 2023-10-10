@@ -5,7 +5,7 @@ import requests
 import numpy as np
 import seaborn as sns
 
-#
+# #
 # csv_failo_pavadinimas = 'eismo ivykiai.csv'
 # data = pd.read_csv(csv_failo_pavadinimas)
 # # print(df)
@@ -15,7 +15,7 @@ import seaborn as sns
 # # print(df)
 # filtravimas = df[df['Reikšmė'] ==df['Reikšmė'].max()]
 # # print(f"Daugiausiu eismo ivykiu: {filtravimas}")
-#
+
 # csv_failo_pavadinimas = 'neblaiviu asmenu kalte pagal apsk.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # # print(data2)
@@ -27,7 +27,20 @@ import seaborn as sns
 # csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # print(data2)
-# df = pd.DataFrame(data2)
+
+
+
+csv_failo_pavadinimas = 'Apskritis.csv'
+data2 = pd.read_csv(csv_failo_pavadinimas)
+# print(data2)
+
+
+
+
+
+
+
+
 
 #Latvijos žuvusiųjų žmonių skaičius
 # url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
@@ -58,10 +71,8 @@ import seaborn as sns
 # df.to_csv('Latvija.csv', index=False)
 # print("CSV file sukurtas")
 
-# df = pd.read_excel('Estija_ivykiai.xlsx')
-# print(df)
-
-df = pd.read_excel('Estija_ivykiai.xlsx', index_col=0, header=0)
-
-grupavimas = df.groupby('Accidents').sum()
-print(grupavimas)
+#
+# df = pd.read_excel('Estija_ivykiai.xlsx', index_col=0)
+#
+# grupavimas = df.groupby('Accidents').sum()
+# print(grupavimas)
