@@ -6,37 +6,54 @@ import numpy as np
 import seaborn as sns
 
 # #Visi keliu esimo ivykiai pagal metus(LT)
-# csv_failo_pavadinimas = 'eismo ivykiai.csv'
-# data1 = pd.read_csv(csv_failo_pavadinimas)
-# # print(df)
-# # #
-# df1 = pd.DataFrame(data1)
-# df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
-# df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
-# df1.to_csv('eismo_ivykiai.csv', index=False)
-# # print(df1)
-# Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
-# # print(Suminis_grupavimas)
-# # vid pagal metus
-# vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
-# # print(vid)
-# w = 0.4
-# Metai = df1['Metai']
-# Kiekis = df1['Reikšmė']
-# Vid = vid
-#
-# cse_bar = np.arange(len(Metai))
-# # print(cse_bar)
-# plt.figure(figsize=(12,5))
-# #Kelių eismo įvykiu kiekis ir vidurkis
-# plt.bar(cse_bar - w/2, Kiekis, width=w, label='Kiekis')
-# plt.bar(cse_bar + w/2, Vid, width=w, label='Vidurkis', alpha=0.5)
-# plt.xlabel('Metai')
-# plt.ylabel('Reikšmė')
-# plt.title('Kelių eismo įvykiai pagal metus')
-# plt.xticks(cse_bar, Metai, rotation=45)
-#
-# plt.show()
+csv_failo_pavadinimas = 'eismo ivykiai.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+# print(df)
+# #
+df1 = pd.DataFrame(data1)
+df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
+df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
+df1.to_csv('eismo_ivykiai.csv', index=False)
+# print(df1)
+Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
+print(Suminis_grupavimas)
+# vid pagal metus
+vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
+print(vid)
+
+print(type(vid))
+
+
+w = 0.4
+Metai = vid.index.to_numpy().astype(int)
+print(Metai)
+total = Suminis_grupavimas.values
+print(total)
+mean = vid.values
+print(mean)
+print(type(Metai))
+print(Metai+w)
+
+plt.figure(figsize=(12,5))
+#Kelių eismo įvykiu kiekis ir vidurkis
+Metai1 = Metai
+Metai2 = Metai-w
+bar1 = plt.bar(Metai1, total, width=w, label='Kiekis')
+for bar in bar1:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval + 0.5, round(yval, 2),ha='center', va='bottom')
+
+bar2 = plt.bar(Metai2, mean, width=w, label='Vidurkis', alpha=0.5)
+for bar in bar2:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval + 0.5, round(yval, 2),ha='center', va='bottom')
+
+plt.xlabel('Metai')
+plt.ylabel('Reikšmė')
+plt.legend(loc = 'upper left')
+plt.title('Kelių eismo įvykiai pagal metus')
+plt.xticks(Metai,  Metai, rotation=90)
+plt.show()
 
 
 #
@@ -76,28 +93,28 @@ import seaborn as sns
 #
 #
 #
-csv_failo_pavadinimas = 'Apskritis.csv'
-data2 = pd.read_csv(csv_failo_pavadinimas)
-# print(data2)
-df2 = pd.DataFrame(data2)
-
-print(df2)
-#pagal lytis grupavimas
-grupavimas = df2.groupby(['Laikotarpis','Lytis'])['Reikšmė'].sum()
-# print(grupavimas)
-#pagal amžių
-
-# Amzius = df2.groupby(['Laikotarpis','Amžius','Rodiklis'])['Reikšmė'].sum()
-# print(Amzius)
-
-Apskritis = df2.groupby(['Laikotarpis','Administracinė teritorija'])['Reikšmė'].sum()
-# print(Apskritis)
-
-#per 3 metus
-Apskritis2 = df2.groupby(['Administracinė teritorija'])['Reikšmė'].sum()
-print(Apskritis2)
+# csv_failo_pavadinimas = 'Apskritis.csv'
+# data2 = pd.read_csv(csv_failo_pavadinimas)
+# # print(data2)
+# df2 = pd.DataFrame(data2)
 #
-zuvusieji
+# print(df2)
+# #pagal lytis grupavimas
+# grupavimas = df2.groupby(['Laikotarpis','Lytis'])['Reikšmė'].sum()
+# # print(grupavimas)
+# #pagal amžių
+#
+# # Amzius = df2.groupby(['Laikotarpis','Amžius','Rodiklis'])['Reikšmė'].sum()
+# # print(Amzius)
+#
+# Apskritis = df2.groupby(['Laikotarpis','Administracinė teritorija'])['Reikšmė'].sum()
+# # print(Apskritis)
+#
+# #per 3 metus
+# Apskritis2 = df2.groupby(['Administracinė teritorija'])['Reikšmė'].sum()
+# print(Apskritis2)
+#
+
 #
 # # # # Latvijos žuvusiųjų žmonių skaičius
 # url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
@@ -130,7 +147,7 @@ zuvusieji
 # print("CSV file sukurtas")
 
 
-
+#
 # df3 = pd.read_csv('estijos ivykiai.csv')
 # # print(df3)
 # df3 = pd.DataFrame(df3)
