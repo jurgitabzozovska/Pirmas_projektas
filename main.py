@@ -55,7 +55,7 @@ import plotly.graph_objs as go
 # plt.xticks(Metai,  Metai)
 # plt.show()
 #
-
+linijine
 # csv_failo_pavadinimas = 'neblaiviu asmenu kalte pagal apsk.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # # print(data2)
@@ -110,56 +110,56 @@ V_group = vyru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
 
 
 M_Age = M_group.index.to_numpy()
-# print(M_Age)
+print(M_Age)
 V_Age = V_group.index.to_numpy()
-# print(V_Age)
+print(V_Age)
 total_M = M_group.values
-# print(total_M)
+print(total_M)
 total_V = V_group.values
-# print(total_V)
-
-# Create the male and female bar traces
-Vyrai = go.Bar(x=V_group.values,
-y=V_group.index,
-name="Vyrai",
-marker=dict(color="#1f77b4"))
-
-Moterys = go.Bar(x=M_group.values,
-y=M_group.index,
-name="Moterys",
-marker=dict(color="#1f77b4"))
-
-# Create the layout
-layout = (go.Layout(
-title="Eismo įvykiai pagal amžių",
-xaxis=dict(title="Count"),
-yaxis=dict(title="Age"),
-barmode="overlay",
-bargap=0.1))
-
-# Create the figure
-fig = go.Figure(data=[Vyrai, Moterys], layout=layout)
-
-# Show the plot
-fig.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(total_V)
+#
+# # Create the male and female bar traces
+# Vyrai = go.Bar(x=V_group.values,
+# y=V_group.index,
+# name="Vyrai",
+# marker=dict(color="#1f77b4"))
+#
+# Moterys = go.Bar(x=M_group.values,
+# y=M_group.index,
+# name="Moterys",
+# marker=dict(color="#1f77b4"))
+#
+# # Create the layout
+# layout = (go.Layout(
+# title="Eismo įvykiai pagal amžių",
+# xaxis=dict(title="Count"),
+# yaxis=dict(title="Age"),
+# barmode="overlay",
+# bargap=0.1))
+#
+# # Create the figure
+# fig = go.Figure(data=[Vyrai, Moterys], layout=layout)
+#
+# # Show the plot
+# fig.show()
+#
+#
+#transporto priemones pie
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 #
 # population_df = pd.DataFrame({"Age": M_Age, "Male": total_V, "Female": total_M})
 #
@@ -197,7 +197,7 @@ fig.show()
 # plt.ylabel("Age Range", fontsize=16, fontweight="bold")
 # plt.title("Eismo įvykiai pagal amžių ir lytį", loc="left", pad=20, fontsize=25, fontweight="bold")
 # plt.show()
-#
+
 
 
 
