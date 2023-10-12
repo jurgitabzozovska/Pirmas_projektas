@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_64181dc8de702f599736fae08e4e0747 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_64181dc8de702f599736fae08e4e0747" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_64181dc8de702f599736fae08e4e0747 = L.map(
+                "map_64181dc8de702f599736fae08e4e0747",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b3030a47e64bfab37f8af83d7c3acd60 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+            var marker_5e6f865ae357c7d5f8b322e7fc5f8c95 = L.marker(
+                [55.85769555597272, 21.201016443516764],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_c997387ed3733f8456dfed5a8c19cc32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cc709017476d19e533a8076483f186e = $(`<div id="html_3cc709017476d19e533a8076483f186e" style="width: 100.0%; height: 100.0%;">Klaipedos_apskritis</div>`)[0];
+                popup_c997387ed3733f8456dfed5a8c19cc32.setContent(html_3cc709017476d19e533a8076483f186e);
+            
+        
+
+        marker_5e6f865ae357c7d5f8b322e7fc5f8c95.bindPopup(popup_c997387ed3733f8456dfed5a8c19cc32)
+        ;
+
+        
+    
+    
+            marker_5e6f865ae357c7d5f8b322e7fc5f8c95.bindTooltip(
+                `<div>
+                     Klaipedos_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f4f398d5bb67be328aff25c4090ee5d = L.marker(
+                [55.93541715494644, 23.314281451279456],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_8e18c0605229d1389219103599d1c388 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b5219a0f14c16a4a7b84d678cc030cbd = $(`<div id="html_b5219a0f14c16a4a7b84d678cc030cbd" style="width: 100.0%; height: 100.0%;">Siauliu_apskritis</div>`)[0];
+                popup_8e18c0605229d1389219103599d1c388.setContent(html_b5219a0f14c16a4a7b84d678cc030cbd);
+            
+        
+
+        marker_7f4f398d5bb67be328aff25c4090ee5d.bindPopup(popup_8e18c0605229d1389219103599d1c388)
+        ;
+
+        
+    
+    
+            marker_7f4f398d5bb67be328aff25c4090ee5d.bindTooltip(
+                `<div>
+                     Siauliu_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a13db1d728af8a8bdda11b5bfccf9398 = L.marker(
+                [54.987061474233016, 23.95325788817995],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_2e363a38a5602d58d857f08d1d21f63e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4860184bad803901b8f8d1312dee8471 = $(`<div id="html_4860184bad803901b8f8d1312dee8471" style="width: 100.0%; height: 100.0%;">Kauno_apskritis</div>`)[0];
+                popup_2e363a38a5602d58d857f08d1d21f63e.setContent(html_4860184bad803901b8f8d1312dee8471);
+            
+        
+
+        marker_a13db1d728af8a8bdda11b5bfccf9398.bindPopup(popup_2e363a38a5602d58d857f08d1d21f63e)
+        ;
+
+        
+    
+    
+            marker_a13db1d728af8a8bdda11b5bfccf9398.bindTooltip(
+                `<div>
+                     Kauno_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_162e3c343adb3269f71e36e4f0cf6de1 = L.marker(
+                [54.29787234367851, 24.08204682928195],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_ccff000409d7f3de4a41101aae5ca7e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4b8e6c43eb159eee24fd7343bf7c80a = $(`<div id="html_b4b8e6c43eb159eee24fd7343bf7c80a" style="width: 100.0%; height: 100.0%;">Alytaus_apskritis</div>`)[0];
+                popup_ccff000409d7f3de4a41101aae5ca7e8.setContent(html_b4b8e6c43eb159eee24fd7343bf7c80a);
+            
+        
+
+        marker_162e3c343adb3269f71e36e4f0cf6de1.bindPopup(popup_ccff000409d7f3de4a41101aae5ca7e8)
+        ;
+
+        
+    
+    
+            marker_162e3c343adb3269f71e36e4f0cf6de1.bindTooltip(
+                `<div>
+                     Alytaus_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_087510bcb7cadbf93e5df3a16fc38742 = L.marker(
+                [54.55393386606704, 23.354531619269398],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_89370ca2d3d7302c7d837c01035e16e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32e90848ade49d853b8d4e268b4d6df7 = $(`<div id="html_32e90848ade49d853b8d4e268b4d6df7" style="width: 100.0%; height: 100.0%;">Marijampolės_apskritis</div>`)[0];
+                popup_89370ca2d3d7302c7d837c01035e16e4.setContent(html_32e90848ade49d853b8d4e268b4d6df7);
+            
+        
+
+        marker_087510bcb7cadbf93e5df3a16fc38742.bindPopup(popup_89370ca2d3d7302c7d837c01035e16e4)
+        ;
+
+        
+    
+    
+            marker_087510bcb7cadbf93e5df3a16fc38742.bindTooltip(
+                `<div>
+                     Marijampolės_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a59989a5ae042da8bff9058dd27dde3f = L.marker(
+                [55.9751616402609, 25.0798177183858],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_8b7d8e42046414605cc4c1c02612fd3b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0365f8dcfbb9f20577ef7b1becb2756 = $(`<div id="html_a0365f8dcfbb9f20577ef7b1becb2756" style="width: 100.0%; height: 100.0%;">Panevežio_apskritis</div>`)[0];
+                popup_8b7d8e42046414605cc4c1c02612fd3b.setContent(html_a0365f8dcfbb9f20577ef7b1becb2756);
+            
+        
+
+        marker_a59989a5ae042da8bff9058dd27dde3f.bindPopup(popup_8b7d8e42046414605cc4c1c02612fd3b)
+        ;
+
+        
+    
+    
+            marker_a59989a5ae042da8bff9058dd27dde3f.bindTooltip(
+                `<div>
+                     Panevėžio_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8d463f32f2eeae93547364e638fabfd1 = L.marker(
+                [55.24825227738376, 22.29501453149007],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_790741d615baad95c05781d9471f4fed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b125dd8e7e225b5bb7d60c87afd0ac3d = $(`<div id="html_b125dd8e7e225b5bb7d60c87afd0ac3d" style="width: 100.0%; height: 100.0%;">Tauragės_apskritis</div>`)[0];
+                popup_790741d615baad95c05781d9471f4fed.setContent(html_b125dd8e7e225b5bb7d60c87afd0ac3d);
+            
+        
+
+        marker_8d463f32f2eeae93547364e638fabfd1.bindPopup(popup_790741d615baad95c05781d9471f4fed)
+        ;
+
+        
+    
+    
+            marker_8d463f32f2eeae93547364e638fabfd1.bindTooltip(
+                `<div>
+                     Tauragės_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7fef66e069b9dc94eb091af1db9b355a = L.marker(
+                [55.9790078321016, 22.25038452365091],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_ed78ff2fa9ef2a93185c6fc9811f9b0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c3adb7c2d70afddd85a035eb09bd198 = $(`<div id="html_9c3adb7c2d70afddd85a035eb09bd198" style="width: 100.0%; height: 100.0%;">Telšių_apskritis</div>`)[0];
+                popup_ed78ff2fa9ef2a93185c6fc9811f9b0a.setContent(html_9c3adb7c2d70afddd85a035eb09bd198);
+            
+        
+
+        marker_7fef66e069b9dc94eb091af1db9b355a.bindPopup(popup_ed78ff2fa9ef2a93185c6fc9811f9b0a)
+        ;
+
+        
+    
+    
+            marker_7fef66e069b9dc94eb091af1db9b355a.bindTooltip(
+                `<div>
+                     Telšių_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_05ab366da89f06c70cc8fac9d915db05 = L.marker(
+                [55.49987587972921, 25.60791218551143],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_bb6f555a88a1cce75d43be62a69107ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72b27160edfb13b3025ad2df6141d23f = $(`<div id="html_72b27160edfb13b3025ad2df6141d23f" style="width: 100.0%; height: 100.0%;">Utenos_apskritis</div>`)[0];
+                popup_bb6f555a88a1cce75d43be62a69107ed.setContent(html_72b27160edfb13b3025ad2df6141d23f);
+            
+        
+
+        marker_05ab366da89f06c70cc8fac9d915db05.bindPopup(popup_bb6f555a88a1cce75d43be62a69107ed)
+        ;
+
+        
+    
+    
+            marker_05ab366da89f06c70cc8fac9d915db05.bindTooltip(
+                `<div>
+                     Utenos_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_726e1477e6e14eac49a5bcea1f7d9d3e = L.marker(
+                [54.808622296543824, 25.217868210446827],
+                {}
+            ).addTo(map_64181dc8de702f599736fae08e4e0747);
+        
+    
+        var popup_c21d469460fdb3bb349e964ae274af71 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e34a3552e2c50b34fb1de9c76a936f25 = $(`<div id="html_e34a3552e2c50b34fb1de9c76a936f25" style="width: 100.0%; height: 100.0%;">Vilnius_apskritis</div>`)[0];
+                popup_c21d469460fdb3bb349e964ae274af71.setContent(html_e34a3552e2c50b34fb1de9c76a936f25);
+            
+        
+
+        marker_726e1477e6e14eac49a5bcea1f7d9d3e.bindPopup(popup_c21d469460fdb3bb349e964ae274af71)
+        ;
+
+        
+    
+    
+            marker_726e1477e6e14eac49a5bcea1f7d9d3e.bindTooltip(
+                `<div>
+                     Vilniaus_apskritis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
