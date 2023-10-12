@@ -4,9 +4,11 @@ from bs4 import BeautifulSoup
 import requests
 import numpy as np
 import seaborn as sns
-import plotly.graph_objs as go
 
-# # #Visi keliu esimo ivykiai pagal metus(LT)
+
+
+
+# # 1#Visi keliu esimo ivykiai pagal metus(LT)
 # csv_failo_pavadinimas = 'eismo ivykiai.csv'
 # data1 = pd.read_csv(csv_failo_pavadinimas)
 # # # print(df)
@@ -55,7 +57,8 @@ import plotly.graph_objs as go
 # plt.xticks(Metai,  Metai)
 # plt.show()
 #
-linijine
+
+# linijine
 # csv_failo_pavadinimas = 'neblaiviu asmenu kalte pagal apsk.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # # print(data2)
@@ -68,115 +71,78 @@ linijine
 # sujungimas.to_csv('sujungimas.csv', index=False)
 # print("CSV file sukurtas")
 
-
-
-# filtravimas = df2[df2['Reikšmė'] ==df2['Reikšmė'].max()]
-# print(f"Daugiausiu eismo ivykiu del neblaiviu: {filtravimas}")
-#
-# sujungimas = df1.append(df2, ignore_index=True)
-# max_value_row = sujungimas.loc[sujungimas['Reikšmė'].idxmax()]
-
-# print(f"Daugiausiu eismo ivykiu: {max_value_row}")
-#
-# # csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
-# # data2 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data2)
 #
 #
-# #
-csv_failo_pavadinimas = 'Lytis.csv'
-data2 = pd.read_csv(csv_failo_pavadinimas)
+#
+# # # #
+# 2csv_failo_pavadinimas = 'Lytis.csv'
+# data2 = pd.read_csv(csv_failo_pavadinimas)
 # print(data2)
-df2 = pd.DataFrame(data2)
-
+# df2 = pd.DataFrame(data2)
 # print(df2)
-
-Suminis_grupavimas = df2.groupby(["Amžius", 'Lytis'])['Reikšmė'].sum()
-# print(Suminis_grupavimas)
-
-moteru_grupavimas = df2[df2['Lytis'] == 'Moterys']
-# print(moteru_grupavimas)
-
-M_group = moteru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
-# # print(vid)
-# print(M_group)
-
-vyru_grupavimas = df2[df2['Lytis'] == 'Vyrai']
-# print(vyru_grupavimas)
-
-V_group = vyru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
-# # print(vid)
-# print(V_group)
-
-
-M_Age = M_group.index.to_numpy()
-print(M_Age)
-V_Age = V_group.index.to_numpy()
-print(V_Age)
-total_M = M_group.values
-print(total_M)
-total_V = V_group.values
-print(total_V)
+# #
+# Suminis_grupavimas = df2.groupby(["Amžius", 'Lytis'])['Reikšmė'].sum()
+# # # print(Suminis_grupavimas)
+# #
+# moteru_grupavimas = df2[df2['Lytis'] == 'Moterys']
+# # # print(moteru_grupavimas)
+# M_group = moteru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
+# # # # print(vid)
+# # # print(M_group)
+# #
+# vyru_grupavimas = df2[df2['Lytis'] == 'Vyrai']
+# # # print(vyru_grupavimas)
+# V_group = vyru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
+# # # print(vid)
+# # # print(V_group)
 #
-# # Create the male and female bar traces
-# Vyrai = go.Bar(x=V_group.values,
-# y=V_group.index,
-# name="Vyrai",
-# marker=dict(color="#1f77b4"))
+# M_Age = M_group.index.to_numpy()
+# print(M_Age)
+# V_Age = V_group.index.to_numpy()
+# print(V_Age)
+# total_M = M_group.values
+# print(total_M)
+# total_V = V_group.values
+# print(total_V)
 #
-# Moterys = go.Bar(x=M_group.values,
-# y=M_group.index,
-# name="Moterys",
-# marker=dict(color="#1f77b4"))
+# age = ['0-6','6–9','10–14','15–17','18–20','21–24','25–34','35–44','45–54','55–64',
+# '65+']
+# Male = [130, 162, 278, 385, 364, 436, 1118, 895, 699, 630, 527]
+# Female = [92, 133, 234, 203, 231, 312, 551, 518, 585, 643, 948]
 #
-# # Create the layout
-# layout = (go.Layout(
-# title="Eismo įvykiai pagal amžių",
-# xaxis=dict(title="Count"),
-# yaxis=dict(title="Age"),
-# barmode="overlay",
-# bargap=0.1))
-#
-# # Create the figure
-# fig = go.Figure(data=[Vyrai, Moterys], layout=layout)
-#
-# # Show the plot
-# fig.show()
-#
-#
-#transporto priemones pie
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-# population_df = pd.DataFrame({"Age": M_Age, "Male": total_V, "Female": total_M})
-#
+# population_df = pd.DataFrame({"Age": age, "Male": Male, "Female": Female})
 # population_df["Female_Left"] = 0
 # population_df["Female_Width"] = population_df["Female"]
-#
 # population_df["Male_Left"] = -population_df["Male"]
 # population_df["Male_Width"] = population_df["Male"]
-#
 # print(population_df)
 #
+# female_color = '#ee7a87'
+# male_color = '#4682b4'
+# #
 # fig = plt.figure(figsize=(15,10))
-#
+# #
 # plt.barh(y=population_df["Age"], width=population_df["Female_Width"], color="#ee7a87", label="Female");
+#
 # plt.barh(y=population_df["Age"], width=population_df["Male_Width"], left=population_df["Male_Left"],
 #         color="#4682b4", label="Male");
+# # plt.show()
+# #
+# # plt.xticks(1200, "Male", fontsize=25, fontweight="bold");
+# # plt.xticks(1200,  "Female", fontsize=25, fontweight="bold");
+# plt.xticks(range(-1200,1201,100));
+# plt.show()
+# # #
+# #
+# plt.xlabel('sužeistųjų ir žuvusiųjų skaičius',fontsize=10, fontweight="bold")
+# plt.ylabel('Amžius',fontsize=10, fontweight="bold")
+# plt.title("Kelių eismo įvykiuose sužeistųjų ir žuvusiųjų skaičius pagal amžių",loc="left", pad=20, fontsize=25, fontweight="bold")
+# plt.xlim(-1200,1200);
 #
+# plt.xticks(range(-1200,1201), ["{} %". format(i) for i in range(-1200,1201)]);
+# plt.legend(loc="best");
+#
+# plt.show()
 # plt.text(-5, 17, "Male", fontsize=25, fontweight="bold");
 # plt.text(4, 17, "Female", fontsize=25, fontweight="bold");
 #
@@ -197,6 +163,48 @@ print(total_V)
 # plt.ylabel("Age Range", fontsize=16, fontweight="bold")
 # plt.title("Eismo įvykiai pagal amžių ir lytį", loc="left", pad=20, fontsize=25, fontweight="bold")
 # plt.show()
+
+
+
+csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+print(data1)
+
+grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
+print(grupuojame)
+print(len(grupuojame))
+print(type(grupuojame))
+
+first_table = grupuojame.loc['Sužeistieji']
+print(first_table)
+second_table = grupuojame.loc['Žuvusieji']
+print(second_table)
+
+# define Seaborn color palette to use
+palette_color = sns.color_palette('dark')
+
+plt.figure(figsize=(10, 10))
+plt.subplot(1,2,1)
+plt.pie(first_table, colors=palette_color, autopct='%.0f%%')
+plt.title('Kelių naudotojai')
+plt.subplot(1,2,2)
+plt.pie(second_table, colors=palette_color, autopct='%.0f%%')
+plt.title('Kelių naudotojai2')
+plt.legend(loc='upper left', labels=first_table.index, borderpad=0, bbox_to_anchor=(0.1, 0.1))
+
+
+
+plt.show()
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -251,12 +259,12 @@ print(total_V)
 
 #
 # Apskritis = df2.groupby(['Laikotarpis','Administracinė teritorija'])['Reikšmė'].sum()
-# # print(Apskritis)
-#
-# #per 3 metus
+# print(Apskritis)
+
+#per 3 metus
 # Apskritis2 = df2.groupby(['Administracinė teritorija'])['Reikšmė'].sum()
 # print(Apskritis2)
-# #
+# # #
 
 #
 # # # # Latvijos žuvusiųjų žmonių skaičius
