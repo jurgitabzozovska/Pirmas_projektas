@@ -1,6 +1,8 @@
-Baigiamojo darbo tema:
-"Lietuvos, Latvijos ir Estijos kelių eismo įvykių palyginimas, 2020-2022 m."
+Atliko: Diana ir Jurgita Bžozovska
 
+Baigiamojo darbo tema: 2020-2022 m. eismo įvykių statistika Lietuvoje ir jos palyginimas su Latvija ir Estija
+
+Pagrindinis baigiamojo darbo tikslas - iš
 Baigiamajame darbe naudotos Python bibliotekos:
 * Pandas
 * Matplotlib
@@ -9,11 +11,6 @@ Baigiamajame darbe naudotos Python bibliotekos:
 * Numpy
 * Seaborn
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from bs4 import BeautifulSoup
-import requests
-import numpy as np
-import seaborn as sns
+
 
 
