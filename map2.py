@@ -7,12 +7,12 @@ locations = [
     {
         'coordinates': [55.85769555597272, 21.201016443516764],
         'tooltip': 'Klaipedos_apskritis',
-        'įvykiai': 1360,
+        'value': 1360,
     },
     {
         'coordinates': [55.93541715494644, 23.314281451279456],
         'tooltip': 'Siauliu_apskritis',
-        'įvykiai': 924,
+        'value': 924,
     },
     {
         'coordinates': [54.987061474233016, 23.95325788817995],
@@ -59,7 +59,7 @@ locations = [
 for location in locations:
     folium.Marker(
         location=location['coordinates'],
-        popup=f"Value: {location['įvykiai']}",
+        popup=f"Įvykiai: {location['value']}",
         tooltip=location['tooltip'],
 
     ).add_to(m)
@@ -67,7 +67,7 @@ for location in locations:
 
 folium.Marker(
         location=location['coordinates'],
-        icon=folium.DivIcon(html=f'<div>{location["įvykiai"]}</div>'),
+        icon=folium.DivIcon(html=f'<div>{location["value"]}</div>'),
     ).add_to(m)
 
 m.save('name2.html')
