@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import requests
 import numpy as np
-import seaborn as sns
+import seaborn as sn
 import folium
 m = folium.Map()
 # (location =[55.74522103685154, 21.115998695107294], zoom_start=9))
