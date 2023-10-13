@@ -5,7 +5,7 @@ import requests
 import numpy as np
 import seaborn as sns
 import folium
-m = folium.Map()
+m = folium.Map(location=[55.55267395452089, 23.962904604687534], zoom_start=8)
 # (location =[55.74522103685154, 21.115998695107294], zoom_start=9))
 
 
@@ -21,7 +21,7 @@ tooltip_9 = 'Utenos_apskritis'
 tooltip_10 = 'Vilniaus_apskritis'
 
 
-folium.Marker([55.85769555597272, 21.201016443516764], popup ='Klaipedos_apskritis', tooltip=tooltip).add_to(m)
+folium.Marker([55.85769555597272, 21.201016443516764], popup ='Klaipedos_apskritis', tooltip=tooltip, values=1360).add_to(m)
 folium.Marker([55.93541715494644, 23.314281451279456], popup ='Siauliu_apskritis', tooltip=tooltip_2).add_to(m)
 folium.Marker([54.987061474233016, 23.95325788817995], popup = 'Kauno_apskritis', tooltip = tooltip_3).add_to(m)
 folium.Marker([54.29787234367851, 24.08204682928195], popup = 'Alytaus_apskritis', tooltip = tooltip_4).add_to(m)
@@ -34,16 +34,7 @@ folium.Marker([54.808622296543824, 25.217868210446827], popup = 'Vilnius_apskrit
 
 
 m.save('name.html')
-#55.74522103685154, 21.115998695107294
-#55.93541715494644, 23.314281451279456
-# 54.899226753963404, 23.90700517624643
-# 54.40144587269272, 24.0402348014765
-# 54.55393386606704, 23.354531619269398
-# 55.73413071383902, 24.36117277569358
-# 55.24825227738376, 22.29501453149007
-# 55.9790078321016, 22.250384523650915
-# 55.49987587972921, 25.60791218551143
-# 55.93189532554277, 23.310371928321867
+
 
 df2 = pd.read_csv('Apskritis.csv')
 # print(df2)

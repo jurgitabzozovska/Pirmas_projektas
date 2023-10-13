@@ -4,27 +4,27 @@ from bs4 import BeautifulSoup
 import requests
 import numpy as np
 import seaborn as sns
-
-
-
-
-# # 1#Visi keliu esimo ivykiai pagal metus(LT)
-# csv_failo_pavadinimas = 'eismo ivykiai.csv'
-# data1 = pd.read_csv(csv_failo_pavadinimas)
-# # # print(df)
-
-# df1 = pd.DataFrame(data1)
-# df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
-# df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
-# df1.to_csv('eismo_ivykiai.csv', index=False)
-# # # print(df1)
-
-# Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
-# # print(Suminis_grupavimas)
-# # # vid pagal metus
-# vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
-# # print(vid)
+#
+#
+#
 # #
+# # # 1#Visi keliu esimo ivykiai pagal metus(LT)
+csv_failo_pavadinimas = 'eismo ivykiai.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+# print(data1)
+
+df1 = pd.DataFrame(data1)
+df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
+df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
+df1.to_csv('eismo_ivykiai.csv', index=False)
+# print(df1)
+# #
+Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
+print(Suminis_grupavimas)
+# # vid pagal metus
+vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
+# print(vid)
+# # #
 # # print(type(vid))
 # #
 # #change values type
@@ -175,41 +175,75 @@ import seaborn as sns
 #
 # #
 # # # # Latvijos žuvusiųjų žmonių skaičius
-# url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
-# response = requests.get(url)
-# # print(response.status_code)
-# soup = BeautifulSoup(response.content, 'html.parser')
-# data = []
-# table = soup.find('div', class_='table-wrapper')
-# headers = table.find_all("th")
-# # print(headers)
-# titles = [header.text.strip() for header in headers]
-# rows = table.find_all('tr')[1:]
-# for row in rows:
+url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
+response = requests.get(url)
+# print(response.status_code)
+soup = BeautifulSoup(response.content, 'html.parser')
+data = []
+table = soup.find('div', class_='table-wrapper')
+# print(table)
+headers = table.find_all("th")
+# print(headers)
+titles = [header.text.strip() for header in headers][:2]
+# print(titles)
+rows = table.find_all('tr')[1:]
+# print(rows)
+rows = rows[:-1]
+for row in rows[1:]:
+
+
+    columns = row.find_all('td')
+    year = columns[0].text.strip()
+    from_date_columns = columns[1:]
+    from_date = ' '.join([col.text.strip() for col in from_date_columns])
+    from_date_numbers = from_date.split()
+
+    # print(from_date)
+    # print(from_date_numbers)
+    # break
+
+    data.append({
+        'Year': year,
+        'From 01.01': from_date_numbers[1]
+    })
 #
-#     columns = row.find_all('td')
-#     year = columns[0].text.strip()
-#     from_date_columns = columns[2:]
-#     from_date = ' '.join([col.text.strip() for col in from_date_columns])
-#     from_date_numbers = from_date.split()
-#
-#     data.append({
-#         'Year': year,
-#         'From 01.01': from_date
-#     })
-#
-# df2 = pd.DataFrame(data, columns=titles)
-# print(df2)
+df2 = pd.DataFrame(data, columns=titles)
+df2 = df2.tail(3)
+print(df2)
 # df2 = df2.drop(0)
 # print(df2)
 # df2.to_csv('Latvija.csv', index=False)
 # print("CSV file sukurtas")
 
 
-#
-# df3 = pd.read_csv('estijos ivykiai.csv')
-# # print(df3)
-# df3 = pd.DataFrame(df3)
-# # print(df3)
-# df3 = df3.drop(0)
+
+df3 = pd.read_csv('estijos ivykiai.csv')
 # print(df3)
+df3 = pd.DataFrame(df3)
+# print(df3)
+df3 = df3.drop(0)
+# print(df3)
+Sum = df3.groupby('Indicator').sum()
+sum = pd.DataFrame(Sum)
+sum.drop('Month',axis=1, inplace=True)
+sum = sum.transpose()
+print(sum.columns)
+# print(sum)
+
+
+
+Metai = Suminis_grupavimas.index
+print(Metai)
+Lietuva = Suminis_grupavimas.values
+print(Lietuva)
+
+Latvija = df2["From 01.01"].to_numpy().astype(int)
+print(Latvija)
+
+Estija = [i[0] for i in sum.values]
+print(Estija)
+
+plt.figure(figsize=(12,5))
+Metai1 = Metai
+Metai2 = Metai-w
+Metai3 = Metai +w
