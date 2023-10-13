@@ -1,35 +1,30 @@
-import pandas as pd
+
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import requests
 import numpy as np
 import seaborn as sns
-import folium
 import pandas as pd
 import folium
 
-
-
-# # # # 1#Visi keliu esimo ivykiai pagal metus(LT)
+# # # # # 1#Visi keliu esimo ivykiai pagal metus(LT)
 # csv_failo_pavadinimas = 'eismo ivykiai.csv'
 # data1 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data1)
+# print(data1)
 #
 # df1 = pd.DataFrame(data1)
 # df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
 # df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
-# df1.to_csv('eismo_ivykiai.csv', index=False)
-# # print(df1)
-# # #
+# print(df1)
+# # # #
 # Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
 # print(Suminis_grupavimas)
 # # vid pagal metus
 # vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
-# # print(vid)
-# # # #
-# # print(type(vid))
-# #
-# #change values type
+# print(vid)
+# # # # #
+# # # print(type(vid))
+# # #change values type
 # w = 0.4
 # Metai = vid.index.to_numpy().astype(int)
 # print(Metai)
@@ -61,15 +56,15 @@ import folium
 # plt.show()
 
 
-#2. neblaiviu ivykiai pagal metus nuo min iki max
+# #2. neblaiviu ivykiai pagal metus nuo min iki max
 # csv_failo_pavadinimas = 'neblaiviu_ivykiai_pagal menesius_metus.csv'
 # data3 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data3)
+# print(data3)
 # df3 = pd.DataFrame(data3)
 # df3[['Metai', 'Menuo']] = df3["Laikotarpis"].str.split('M', expand=True)
-# # print(df3)
+# print(df3)
 # df3 = df3.drop(['Laikotarpis'], axis=1)
-# # print(df3)
+# print(df3)
 # x = df3['Metai']
 # y = df3['Reikšmė']
 # plt.plot(x, y, label = 'įvykiai', color = 'pink', linestyle = '', marker = 'o')
@@ -79,28 +74,26 @@ import folium
 # plt.title('Kelių eismo įvykiai, kuriuose nukentėjo žmonės dėl neblaivių asmenų')
 # plt.show()
 
-
-#3 ivykiai pagal lyti ir amziu
+#
+# #3 ivykiai pagal lyti ir amziu
 # csv_failo_pavadinimas = 'Lytis.csv'
 # data2 = pd.read_csv(csv_failo_pavadinimas)
 # print(data2)
 # df2 = pd.DataFrame(data2)
 # print(df2)
-
+#
 # Suminis_grupavimas = df2.groupby(["Amžius", 'Lytis'])['Reikšmė'].sum()
-# # # print(Suminis_grupavimas)\
-
+# # # print(Suminis_grupavimas)
 # moteru_grupavimas = df2[df2['Lytis'] == 'Moterys']
 # # # print(moteru_grupavimas)
 # M_group = moteru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
-# # # # print(vid)
-# # # print(M_group)
-# #
+# print(M_group)
+# # #
 # vyru_grupavimas = df2[df2['Lytis'] == 'Vyrai']
 # # # print(vyru_grupavimas)
 # V_group = vyru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
 # # # print(vid)
-# # # print(V_group)
+# print(V_group)
 #
 # M_Age = M_group.index.to_numpy()
 # print(M_Age)
@@ -141,38 +134,39 @@ import folium
 #
 # plt.text(-5, 17, "Male", fontsize=25, fontweight="bold");
 # plt.text(4, 17, "Female", fontsize=25, fontweight="bold");
-# # plt.show()
-#
-#
+# plt.show()
+# #
+# #
 # # #4suzeistuju ir zuvusiuju skaicius per 3 metus pagal dalyvius
-# # csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
-# # data1 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data1)
-# #
-# # grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
-# # print(grupuojame)
+# csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
+# data1 = pd.read_csv(csv_failo_pavadinimas)
+# print(data1)
+# # #
+# grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
+# print(grupuojame)
 # # print(len(grupuojame))
-# # print(type(grupuojame))
-# #
-# # first_table = grupuojame.loc['Sužeistieji']
-# # print(first_table)
-# # second_table = grupuojame.loc['Žuvusieji']
-# # print(second_table)
-# #
-# # # define Seaborn color palette to use
-# # palette_color = sns.color_palette('colorblind')
-# # ex=(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
-# # plt.figure(figsize=(12,12))
-# # plt.subplot(1,2,1)
-# # plt.pie(first_table, colors=palette_color, autopct='%.0f%%', explode = ex)
-# # # plt.title('Kelių eismo įvykiuose sužeistųjų skaičius',fontsize=12)
+# print(type(grupuojame))
+#
+# first_table = grupuojame.loc['Sužeistieji']
+# print(first_table)
+# second_table = grupuojame.loc['Žuvusieji']
+# print(second_table)
 # # #
-# # # plt.subplot(1,2,2)
-# # # plt.pie(second_table, colors=palette_color, autopct='%.0f%%',explode = ex)
-# # # plt.title('Kelių eismo įvykiuose žuvusiųjų skaičius',fontsize = 12)
-# # # plt.legend(loc='upper center', labels=first_table.index, borderpad=0, bbox_to_anchor=(0.1, 0.1))
-# # # plt.show()
-# # #
+# # define Seaborn color palette to use
+# palette_color = sns.color_palette('colorblind')
+# ex=(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
+# plt.figure(figsize=(12,12))
+# plt.subplot(1,2,1)
+# plt.pie(first_table, colors=palette_color, autopct='%.0f%%', explode = ex)
+# plt.title('Kelių eismo įvykiuose sužeistųjų skaičius',fontsize=12)
+#
+# plt.subplot(1,2,2)
+# plt.pie(second_table, colors=palette_color, autopct='%.0f%%',explode = ex)
+# plt.title('Kelių eismo įvykiuose žuvusiųjų skaičius',fontsize = 12)
+# plt.legend(loc='upper center', labels=first_table.index, borderpad=0, bbox_to_anchor=(0.1, 0.1))
+# plt.show()
+# # # #
+# #5 eismo įvykių per 3 metus pagal apskritis
 # df2 = pd.read_csv('Apskritis.csv')
 # # print(df2)
 # df2 = pd.DataFrame(df2)
@@ -249,110 +243,108 @@ import folium
 #     ).add_to(m)
 #
 # m.save('name2.html')
+
+
+# 5# Žuvusiujų skaičius Baltijos šalyse per...
 #
 #
-# # 5# Žuvusiujų skaičius Baltijos šalyse per...
+# # # # Latvijos žuvusiųjų žmonių skaičius
+url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
+response = requests.get(url)
+# print(response.status_code)
+soup = BeautifulSoup(response.content, 'html.parser')
+data = []
+table = soup.find('div', class_='table-wrapper')
+# print(table)
+headers = table.find_all("th")
+# print(headers)
+titles = [header.text.strip() for header in headers][:2]
+# print(titles)
+rows = table.find_all('tr')[1:]
+# print(rows)
+rows = rows[:-1]
+for row in rows[1:]:
+
+
+    columns = row.find_all('td')
+    year = columns[0].text.strip()
+    from_date_columns = columns[1:]
+    from_date = ' '.join([col.text.strip() for col in from_date_columns])
+    from_date_numbers = from_date.split()
+
+    # print(from_date)
+    # print(from_date_numbers)
+    # break
+
+    data.append({
+        'Year': year,
+        'From 01.01': from_date_numbers[1]
+    })
 #
-#
-# # # # # Latvijos žuvusiųjų žmonių skaičius
-# url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
-# response = requests.get(url)
-# # print(response.status_code)
-# soup = BeautifulSoup(response.content, 'html.parser')
-# data = []
-# table = soup.find('div', class_='table-wrapper')
-# # print(table)
-# headers = table.find_all("th")
-# # print(headers)
-# titles = [header.text.strip() for header in headers][:2]
-# # print(titles)
-# rows = table.find_all('tr')[1:]
-# # print(rows)
-# rows = rows[:-1]
-# for row in rows[1:]:
-#
-#
-#     columns = row.find_all('td')
-#     year = columns[0].text.strip()
-#     from_date_columns = columns[1:]
-#     from_date = ' '.join([col.text.strip() for col in from_date_columns])
-#     from_date_numbers = from_date.split()
-#
-#     # print(from_date)
-#     # print(from_date_numbers)
-#     # break
-#
-#     data.append({
-#         'Year': year,
-#         'From 01.01': from_date_numbers[1]
-#     })
-# #
-# df2 = pd.DataFrame(data, columns=titles)
-# df2 = df2.tail(3)
-# # print(df2)
-# # df2 = df2.drop(0)
-# # print(df2)
-# # df2.to_csv('Latvija.csv', index=False)
-# # print("CSV file sukurtas")
+df2 = pd.DataFrame(data, columns=titles)
+df2 = df2.tail(3)
+print(df2)
+
+
 #
 # #
 # #
 #
-# df3 = pd.read_csv('estijos zuve.csv')
-# # # print(df3)
-# df3 = pd.DataFrame(df3)
-# # # print(df3)
-# df3 = df3.drop(0)
-# # # print(df3)
-# Sum = df3.groupby('Indicator').sum()
-# sum = pd.DataFrame(Sum)
-# sum.drop('Month',axis=1, inplace=True)
-# sum = sum.transpose()
-# # print(sum.columns)
-# # print(sum)
+df3 = pd.read_csv('estijos zuve.csv')
+# # print(df3)
+df3 = pd.DataFrame(df3)
+# # print(df3)
+df3 = df3.drop(0)
+# # print(df3)
+Sum = df3.groupby('Indicator').sum()
+sum = pd.DataFrame(Sum)
+sum.drop('Month',axis=1, inplace=True)
+sum = sum.transpose()
+# print(sum.columns)
+print(sum)
 #
 #
-# data4 = pd.read_csv('Lietuvos zuve.csv')
-# # print(data4)
+data4 = pd.read_csv('Lietuvos zuve.csv')
+# print(data4)
+
+df4 = pd.DataFrame(data4)
+# print(df4)
+df4[['Metai', 'Menuo']] = df4["Laikotarpis"].str.split('M', expand=True)
+# print(df4)
+df4 = df4.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
+# print(df4)
+Suminis_grupavimas2 = df4.groupby('Metai')['Reikšmė'].sum()
+print(Suminis_grupavimas2)
+
 #
-# df4 = pd.DataFrame(data4)
-# # print(df4)
-# df4[['Metai', 'Menuo']] = df4["Laikotarpis"].str.split('M', expand=True)
-# # print(df4)
-# df4 = df4.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
-# # print(df4)
-# Suminis_grupavimas2 = df4.groupby('Metai')['Reikšmė'].sum()
-# # print(Suminis_grupavimas2)
 #
+Metai = Suminis_grupavimas2.index.astype(int)
+print(Metai)
+Lietuva = Suminis_grupavimas2.values
+print(Lietuva)
 #
+Latvija = df2["From 01.01"].to_numpy().astype(int)
+print(Latvija)
 #
-# Metai = Suminis_grupavimas2.index.astype(int)
-# print(Metai)
-# Lietuva = Suminis_grupavimas2.values
-# print(Lietuva)
+Estija = [i[0] for i in sum.values]
+print(Estija)
 # #
-# Latvija = df2["From 01.01"].to_numpy().astype(int)
-# print(Latvija)
-# #
-# Estija = [i[0] for i in sum.values]
-# print(Estija)
-# # #
-# plt.figure(figsize=(8,8))
-# w = 0.4
-# Metai1 = Metai
-# Metai2 = Metai - w
-# Metai3 = Metai + w
-#
-# bar1 = plt.bar(Metai, Lietuva, width=w, label='Lietuva', color='mediumseagreen')
-# bar2= plt.bar(Metai - w, Latvija, width=w, label='Latvija', color='tomato')
-# bar3 = plt.bar(Metai + w, Estija, width=w, label='Estija', color='royalblue')
-# for bars in [bar1, bar2, bar3]:
-#     for bar in bars:
-#         yval = bar.get_height()
-#         plt.text(bar.get_x() + bar.get_width() / 2, yval + 0.5, round(yval, 2), ha='center', va='bottom')
-# plt.xlabel('Metai')
-# plt.ylabel('Ivykiai')
-# plt.legend(loc='upper left')
-# plt.title('2022 -2020 m. Baltijos šalių eismo įvykių žuvusiųjų skaičius')
-# plt.xticks(Metai,  Metai)
-# plt.show()
+plt.figure(figsize=(8,8))
+w = 0.4
+Metai1 = Metai
+Metai2 = Metai - w
+Metai3 = Metai + w
+
+bar1 = plt.bar(Metai, Lietuva, width=w, label='Lietuva', color='mediumseagreen')
+bar2= plt.bar(Metai - w, Latvija, width=w, label='Latvija', color='tomato')
+bar3 = plt.bar(Metai + w, Estija, width=w, label='Estija', color='royalblue')
+for bars in [bar1, bar2, bar3]:
+    for bar in bars:
+        yval = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width() / 2, yval + 0.5, round(yval, 2), ha='center', va='bottom')
+plt.xlabel('Metai')
+plt.ylabel('Ivykiai')
+plt.legend(loc='upper left')
+plt.title('2022 -2020 m. Baltijos šalių eismo įvykių žuvusiųjų skaičius')
+plt.xticks(Metai,  Metai)
+plt.show()
