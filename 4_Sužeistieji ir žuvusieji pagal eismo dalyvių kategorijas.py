@@ -8,13 +8,13 @@ import numpy as np
 import seaborn as sns
 
 # #  CSV FAILO ĮKĖLIMAS
-
+#
 # csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
 # data1 = pd.read_csv(csv_failo_pavadinimas)
 # print(data1)
 #
-# #  DUOMENŲ GRUPAVIMAS
-#
+# # #  DUOMENŲ GRUPAVIMAS
+# #
 # grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
 # print(grupuojame)
 # # print(len(grupuojame))
@@ -25,8 +25,8 @@ import seaborn as sns
 # second_table = grupuojame.loc['Žuvusieji']
 # print(second_table)
 #
-# # DUOMENŲ GRAFINIS ATVAIZDAVIMAS
-#
+# # # DUOMENŲ GRAFINIS ATVAIZDAVIMAS
+# #
 # palette_color = sns.color_palette('colorblind')
 # ex=(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
 #

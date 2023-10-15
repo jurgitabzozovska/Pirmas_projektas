@@ -18,7 +18,7 @@ import seaborn as sns
 # table = soup.find('div', class_='table-wrapper')
 # # print(table)
 # headers = table.find_all("th")
-# print(headers)
+# # print(headers)
 # titles = [header.text.strip() for header in headers][:2]
 # # print(titles)
 # rows = table.find_all('tr')[1:]
@@ -33,19 +33,19 @@ import seaborn as sns
 #     # print(from_date)
 #     # print(from_date_numbers)
 #     # break
-##     data.append({
+#     data.append({
 #         'Year': year,
 #         'From 01.01': from_date_numbers[1]
 #     })
 # #
 # df2 = pd.DataFrame(data, columns=titles)
 # df2 = df2.tail(3)
-# # print(df2)
+# print(df2)
 
 
 #
 # # #  ESTIJOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
-#
+
 # df3 = pd.read_csv('estijos zuve.csv')
 # # print(df3)
 # df3 = pd.DataFrame(df3)
@@ -62,9 +62,9 @@ import seaborn as sns
 # # print(f'Bendras Estijos įvykių skaičius:{Viso_EE}')
 # #
 # # # #   LIETUVOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
-# # data4 = pd.read_csv('Lietuvos zuve.csv')
-# # # print(data4)
-# # df4 = pd.DataFrame(data4)
+# data4 = pd.read_csv('Lietuvos zuve.csv')
+# # print(data4)
+# df4 = pd.DataFrame(data4)
 #
 # # # DUOMENŲ TVARKYMAS
 # # print(df4)
@@ -80,15 +80,15 @@ import seaborn as sns
 # # print(Metai)
 # Lietuva = Suminis_grupavimas2.values
 # # print(Lietuva)
-# Viso_LT = df4['Reikšmė'].sum()
+# # Viso_LT = df4['Reikšmė'].sum()
 # # print(f'Bendras Lietuvos įvykių skaičius:{Viso_LT}')
 # #
 # Latvija = df2["From 01.01"].to_numpy().astype(int)
-# print(Latvija)
+# # print(Latvija)
 # Estija = [i[0] for i in sum.values]
-# print(Estija)
-#
-# # # # GRAFINIS ATVAIZDAVIMAS
+# # print(Estija)
+
+# # # GRAFINIS ATVAIZDAVIMAS
 # plt.figure(figsize=(8,8))
 # w = 0.4
 # Metai1 = Metai
@@ -105,6 +105,6 @@ import seaborn as sns
 # plt.xlabel('Metai')
 # plt.ylabel('Ivykiai')
 # plt.legend(loc='upper left')
-# plt.title('Žuvusių kelių eismo įvykiuose 2020-2022 m. Baltijos šalyse skaičiaus palyginimas')
+# plt.title('2022 -2020 m. Baltijos šalių eismo įvykių žuvusiųjų skaičius')
 # plt.xticks(Metai,  Metai)
 # plt.show()

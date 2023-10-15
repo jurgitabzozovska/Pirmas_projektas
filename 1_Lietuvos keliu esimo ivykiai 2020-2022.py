@@ -13,17 +13,17 @@ import seaborn as sns
 # data1 = pd.read_csv(csv_failo_pavadinimas)
 # print(data1)
 #
-
+#
 # # # DUOMENŲ IŠSKAIDYMAS
-
+#
 # df1 = pd.DataFrame(data1)
 # df1[['Metai', 'Menuo']] = df1["Laikotarpis"].str.split('M', expand=True)
 # df1 = df1.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
 # df1.to_csv('eismo_ivykiai.csv', index=False)
 # print(df1)
-
+#
 # # #  DUOMENŲ GRUPAVIMAS
-
+#
 # Suminis_grupavimas = df1.groupby('Metai')['Reikšmė'].sum()
 # print(Suminis_grupavimas)
 # # # vid pagal metus
@@ -31,10 +31,10 @@ import seaborn as sns
 # print(vid)
 # # #
 # print(type(vid))
-
-
-# # #  DUOMENŲ TIPO PAKEITIMAS
-
+#
+#
+# # # #  DUOMENŲ TIPO PAKEITIMAS
+#
 # w = 0.4
 # Metai = vid.index.to_numpy().astype(int)
 # print(Metai)
@@ -47,8 +47,9 @@ import seaborn as sns
 
 # # #  DUOMENŲ GRAFINIS ATVAIZDAVIMAS
 
+
+#Kelių eismo įvykiu kiekis ir vidurkis
 # plt.figure(figsize=(12,5))
-# #Kelių eismo įvykiu kiekis ir vidurkis
 # Metai1 = Metai
 # Metai2 = Metai-w
 # bar1 = plt.bar(Metai1, total, width=w, label='Visi kelių eismo įvykiai')
