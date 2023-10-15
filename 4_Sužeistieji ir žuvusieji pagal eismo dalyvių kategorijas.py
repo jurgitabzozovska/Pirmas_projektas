@@ -1,4 +1,4 @@
-# # 4. SUŽEISTŲJŲ IR ŽUVUSIŲJŲ SKAIČIUS 2020-2022 M. PAGAL EISMO DALYVIUS
+# # 4. SUŽEISTŲJŲ IR ŽUVUSIŲJŲ SKAIČIUS 2020-2022 M. PAGAL EISMO DALYVIŲ KATEGORIJAS
 
 import pandas as pd
 import matplotlib.pyplot as plt

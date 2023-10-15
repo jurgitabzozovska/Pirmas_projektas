@@ -24,7 +24,8 @@ ___
 ### *Išvados:*
 1. Eismo įvykių, kuriuose nukentėjo (žuvo ar buvo sužeisti) žmonės, palyginimas parodė, kad daugiausiai įvykių 
 įvyko 2022 m. (2861), mažiausiai 2021 m. (2784).
-2. MAN REIKIA KURIAIS METAIS BUVO MAX ir KURIAIS METAIS MAŽIAUSIAI
+2. Išanalizavus neblaivių asmenų kelių eismo įvykius, kuriuose nukentėjo žmonės, nustatyta kad įvykių kasmet mažėja.
+2020 metais įvyko 239, 2021 metais - 183, o 2022 metais 177 kelių eismo įvykiai.
 3. 2020-2022 m.  eismo įvykiuose sužalotų ir žuvusių asmenys pagal amžiaus grupes pasiskirstė sekančiai: 
    * Daugiausiai nukentėjo moterų - 5624, vyrų - 4450.
    * Pagal amžiaus grupę - daugiausiąi įvykių patyrė vyrai, kurie priklauso 25–34 grupei (1118) 
