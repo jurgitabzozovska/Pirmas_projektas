@@ -3,20 +3,21 @@
 ___
 ### *Autoriai:* Diana Balan ir Jurgita Bžozovska
 ___
-### *Tikslas -* išanalizuoti statistinius Lietuvos kelių eismo įvykių rodiklius, įvertinti jų kitimą 2020 ir 2022 metų laikotarpyje ir palyginti žuvusių kelių eismo įvykiuose situaciją su Latvija ir Estija.
+### *Tikslas -* išanalizuoti statistinius Lietuvos kelių eismo įvykių rodiklius, įvertinti jų kitimą 2020 - 2022 metų laikotarpyje ir palyginti žuvusių kelių eismo įvykiuose situaciją su Latvija ir Estija.
 ___
 ### *Darbo eiga:*
-1. Atliktas su Python.
+1. Darbas atliktas naudojantis Python.
 2. Importuotos bibliotekos: Pandas, Request, Beautyfulsoup, Matplotlib, Seaborn, Numpy, Folium.
 3. Naudoti duomenys:
-   * CSV failai: [Lietuvos](https://www.stat.gov.lt/) ir [Estijos](https://www.stat.ee/) duomenys.
-   * Internetinio tinklapio duomenys - [Latvijos](https://www.csdd.lv/) statistinė informacija.
-4. Duomenų parengimas analizei:
-   * Importuoti CSV failai į Python ir nuskaityti duomenys iš internetinio tinklapio.
-   * Duomenų suvarkymas: pašalinti nereikalingos stulpeliai, eilutės, klaidingos reikšmės.
-   * Duomenų agregavimas: grupuoti ir filtruoti duomenys, apjungtos lentelės, statistinių operacijų atlikimas.
-5. Grafinis duomenų atvaizdavimas.
-6. Duomenų interpretavimas ir išvadų pateikimas.
+
+![img.png](img.png)  ![img_1.png](img_1.png)
+4. Parengti duomenys analizei:
+   * Atsisiųsti ir importuoti [Lietuvos](https://www.stat.gov.lt/) ir [Estijos](https://www.stat.ee/) statistiniai duomenys CSV formatu.
+   * Nuskaityti [Latvijos](https://www.csdd.lv/) HTML duomenys ir išsaugoti CSV formatu.
+   * Suvarkyti duomenys: pašalinti nereikalingi stulpeliai, eilutės, klaidingos reikšmės.
+   * Agreguoti duomenys: grupuoti bei filtruoti duomenys, apjungtos lentelės, atliktos statistinės operacijos.
+5. Grafiškai atvaizduoti duomenys.
+6. Interpretuoti duomenys ir pateiktos išvados.
 ___
 ### *Išvados:*
 1. Eismo įvykių, kuriuose nukentėjo (žuvo ar buvo sužeisti) žmonės, palyginimas parodė, kad daugiausiai įvykių 
@@ -28,7 +29,7 @@ ___
 ir moterys, kurios priklauso 65+ (948)
 4. Sužeistieji   Dviračių vairuotojai ir keleiviai -2358 žuvusių - Pėstieji -111
 5. Įvertinus 2020-2022 m. eismo įvykių pagal apskritis duomenis, daugiausiai jų įvyko Vilniaus apskrityje:
-[2590 įvykiai](http://localhost:63342/main.py/name2.html?_ijt=v7qtj8uc8s8j7gpff9tcbp32p&_ij_reload=RELOAD_ON_SAVE).
-6. Pagal 2020-2022 m. duomenis daugiausiai žuvusių eismo įvykiuose yra Lietuvoje, mažiausiai - Estijoje.
+[2590 įvykiai](http://localhost:63342/main.py/name2.html?_ijt=e632ukjv2ijn9pghll7f5nrq3r&_ij_reload=RELOAD_ON_SAVE).
+6. Pagal 2020-2022 m. duomenis daugiausiai žuvusių kelių eismo įvykiuose yra Lietuvoje (455), mažiausiai - Estijoje (146).
     
 
