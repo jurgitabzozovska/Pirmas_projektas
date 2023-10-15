@@ -10,7 +10,7 @@ ___
 2. Importuotos bibliotekos: Pandas, Request, Beautyfulsoup, Matplotlib, Seaborn, Numpy, Folium.
 3. Naudoti duomenys:
 
-![img_4.png](img_4.png) ![html (2).png](..%2F..%2F..%2FDownloads%2Fhtml%20%282%29.png)
+![img_4.png](img_4.png) ![img.png](img.png)
 
 4. Parengti duomenys analizei:
    * Atsisiųsti ir importuoti [Lietuvos](https://www.stat.gov.lt/) ir [Estijos](https://www.stat.ee/) statistiniai duomenys CSV formatu.
