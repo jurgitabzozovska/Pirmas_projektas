@@ -11,6 +11,7 @@ ___
 3. Naudoti duomenys:
 
 ![img.png](img.png)  ![img_1.png](img_1.png)
+
 4. Parengti duomenys analizei:
    * Atsisiųsti ir importuoti [Lietuvos](https://www.stat.gov.lt/) ir [Estijos](https://www.stat.ee/) statistiniai duomenys CSV formatu.
    * Nuskaityti [Latvijos](https://www.csdd.lv/) HTML duomenys ir išsaugoti CSV formatu.
