@@ -3,8 +3,7 @@
 ___
 ### *Autoriai:* Diana Balan ir Jurgita Bžozovska
 ___
-### *Tikslas -* išanalizuoti statistinius Lietuvos kelių eismo įvykių rodiklius, įvertinti jų kitimą 2020 - 2022 metų 
-### laikotarpyje ir palyginti žuvusių kelių eismo įvykiuose situaciją su Latvija ir Estija.
+### *Tikslas -* išanalizuoti statistinius Lietuvos kelių eismo įvykių rodiklius, įvertinti jų kitimą 2020 - 2022 metų laikotarpyje ir palyginti žuvusių kelių eismo įvykiuose situaciją su Latvija ir Estija.
 ___
 ### *Darbo eiga:*
 1. Darbas atliktas naudojantis Python.

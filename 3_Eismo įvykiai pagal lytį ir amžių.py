@@ -22,14 +22,14 @@ import seaborn as sns
 # moteru_grupavimas = df2[df2['Lytis'] == 'Moterys']
 # # print(moteru_grupavimas)
 # M_group = moteru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
-# # # print(vid)
+
 # # print(M_group)
 #
 # # # #  VYRŲ GRUPAVIMAS
 # vyru_grupavimas = df2[df2['Lytis'] == 'Vyrai']
 # # print(vyru_grupavimas)
 # V_group = vyru_grupavimas.groupby(['Amžius'])['Reikšmė'].sum().astype(int)
-# # # print(vid)
+
 # # print(V_group)
 #
 # M_Age = M_group.index.to_numpy()

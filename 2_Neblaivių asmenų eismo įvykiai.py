@@ -33,7 +33,7 @@ plt.title('Kelių eismo įvykiai, kuriuose nukentėjo žmonės dėl neblaivių a
 plt.show()
 
 
-# # mano bandymas
+# # Kitoks atvaizdavimas
 # plt.figure(figsize=(8,8))
 # Laikotarpis = ['Gruodis', 'Lapkritis', 'Spalis', 'Rugsėjis',	'Rugpjūtis',	'Liepa',	'Birželis',	'Gegužė',	'Balandis', 'Kovas',	'Vasaris',	'Sausis']
 # metai2022 = [7,11,13,14,19,12,16,21,22,14,14,14]

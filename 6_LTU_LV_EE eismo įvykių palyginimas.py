@@ -33,8 +33,7 @@ import seaborn as sns
 #     # print(from_date)
 #     # print(from_date_numbers)
 #     # break
-#
-#     data.append({
+##     data.append({
 #         'Year': year,
 #         'From 01.01': from_date_numbers[1]
 #     })
