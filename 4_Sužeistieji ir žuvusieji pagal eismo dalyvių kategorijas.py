@@ -2,29 +2,31 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 from bs4 import BeautifulSoup
 import requests
 import numpy as np
+import seaborn as sns
 
-# # #  CSV FAILO ĮKĖLIMAS
+# #  CSV FAILO ĮKĖLIMAS
+#
 csv_failo_pavadinimas = 'Darbo_failai/Pagal transporto priemones.csv'
 data1 = pd.read_csv(csv_failo_pavadinimas)
-# print(data1)
+print(data1)
 
-# # #  DUOMENŲ GRUPAVIMAS/TVARKYMAS
+# #  DUOMENŲ GRUPAVIMAS
+#
 grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
-# print(grupuojame)
+print(grupuojame)
 # print(len(grupuojame))
 # print(type(grupuojame))
 
 first_table = grupuojame.loc['Sužeistieji']
-# print(first_table)
+print(first_table)
 second_table = grupuojame.loc['Žuvusieji']
-# print(second_table)
-#
-# # # DUOMENŲ GRAFINIS ATVAIZDAVIMAS
+print(second_table)
 
+# # DUOMENŲ GRAFINIS ATVAIZDAVIMAS
+#
 palette_color = sns.color_palette('colorblind')
 ex=(0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
 

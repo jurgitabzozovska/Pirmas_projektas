@@ -1,13 +1,15 @@
 # # 6. DĖL NEBLAIVIŲ ASMENŲ ŽUVUSIŲJŲ KELIŲ EISMO ĮVYKIUOSE 2020-2022 M. LIETUVOJE, LATVIJOJE IR ESTIJOJE SKAIČIAUS
 # # PALYGINIMAS
-import requests
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
+import requests
 import numpy as np
 import seaborn as sns
 
-# #  FAILO IŠ INTERNETINIO TINKLAPIO NUSKAITYMAS IR DUOMENŲ TVARKYMAS
+
+# #  FAILO IŠ INTERNETINIO TINKLAPIO NUSKAITYMAS
 url = 'https://www.csdd.lv/en/road-accidents/the-road-traffic-safety-statistics'
 response = requests.get(url)
 # print(response.status_code)
@@ -35,15 +37,17 @@ for row in rows[1:]:
         'Year': year,
         'From 01.01': from_date_numbers[1]
     })
+#
 df2 = pd.DataFrame(data, columns=titles)
 df2 = df2.tail(3)
-# print(df2)
+print(df2)
 
 
-# # #  ESTIJOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS IR DUOMENŲ TVARKYMAS
+#
+# # #  ESTIJOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
 
 df3 = pd.read_csv('Darbo_failai/estijos zuve.csv')
-# print(df3)
+print(df3)
 df3 = pd.DataFrame(df3)
 # print(df3)
 df3 = df3.drop(0)
@@ -56,20 +60,20 @@ sum = sum.transpose()
 # print(sum)
 Viso_EE = sum['Traffic accidents with fatalities'].sum()
 # print(f'Bendras Estijos įvykių skaičius:{Viso_EE}')
-
-
-# # # #   LIETUVOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS IR DUOMENŲ TVARKYMAS
+#
+# # # #   LIETUVOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
 data4 = pd.read_csv('Darbo_failai/Lietuvos zuve.csv')
-# print(data4)
+print(data4)
 df4 = pd.DataFrame(data4)
-# print(df4)
-
+#
+# # # DUOMENŲ TVARKYMAS
+# # print(df4)
 df4[['Metai', 'Menuo']] = df4["Laikotarpis"].str.split('M', expand=True)
-# print(df4)
+# # print(df4)
 df4= df4.drop(['Laikotarpis','Rodiklis','Matavimo vienetai'], axis=1)
-# print(df4)
-
-# # # DUOMENŲ GRUPAVIMAS
+# # print(df4)
+#
+# # # DUOMENŲ GRUPAVIMAS IR JUNGIMAS
 Suminis_grupavimas2 = df4.groupby('Metai')['Reikšmė'].sum()
 # print(Suminis_grupavimas2)
 Metai = Suminis_grupavimas2.index.astype(int)
@@ -78,12 +82,11 @@ Lietuva = Suminis_grupavimas2.values
 # print(Lietuva)
 Viso_LT = df4['Reikšmė'].sum()
 # print(f'Bendras Lietuvos įvykių skaičius:{Viso_LT}')
-
+# #
 Latvija = df2["From 01.01"].to_numpy().astype(int)
-# print(Latvija)
-
+# # print(Latvija)
 Estija = [i[0] for i in sum.values]
-# print(Estija)
+# # print(Estija)
 
 # # # GRAFINIS ATVAIZDAVIMAS
 plt.figure(figsize=(8,8))
