@@ -12,12 +12,12 @@ import folium
 
 df2 = pd.read_csv('Darbo_failai/Apskritis.csv')
 print(df2)
-# df2 = pd.DataFrame(df2)
-# Apskritis = df2.groupby(['Administracinė teritorija'])['Reikšmė'].sum().astype(int)
-# # print(Apskritis)
-# Daugiausiai_įvykių=max(Apskritis)
-# Mažiausiai_įvykių=min(Apskritis)
-# print(f'Įvykių statistika:\n Daugiausiai:{Daugiausiai_įvykių} \n Mažiausiai:{Mažiausiai_įvykių}')
+df2 = pd.DataFrame(df2)
+Apskritis = df2.groupby(['Administracinė teritorija'])['Reikšmė'].sum().astype(int)
+# print(Apskritis)
+Daugiausiai_įvykių=max(Apskritis)
+Mažiausiai_įvykių=min(Apskritis)
+print(f'Įvykių statistika:\n Daugiausiai:{Daugiausiai_įvykių} \n Mažiausiai:{Mažiausiai_įvykių}')
 # #  KOORDINAČIŲ ĮKĖLIMAS
 #
 m = folium.Map(location=[55.55267395452089, 23.962904604687534], zoom_start=8)
