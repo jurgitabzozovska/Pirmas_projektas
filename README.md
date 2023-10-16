@@ -1,4 +1,4 @@
-![img_6.png](Darbo_failai/0_Title_LT_LV_EE.png)
+![img_6.png](Darbo_failai/0_Title_LT_LV_EE.png) 
 # *Baigiamojo darbo tema:* "2022-2020 m. Lietuvos kelių eismo įvykių apžvalga ir Baltijos šalių lyginamoji analizė"
 ___
 ### *Autoriai:* Diana Balan ir Jurgita Bžozovska
@@ -9,6 +9,7 @@ ___
 1. Darbas atliktas naudojantis Python.
 2. Importuotos bibliotekos: Pandas, Request, Beautyfulsoup, Matplotlib, Seaborn, Numpy, Folium.
 3. Naudoti duomenys:
+
 ![img_4.png](Darbo_failai/logo CSV.png) ![img.png](Darbo_failai/logo HTML.png)
 
 4. Parengti duomenys analizei:
@@ -41,7 +42,7 @@ ir moterys, kurios priklauso 65+ (948)
 <p align="center">
 <img src='Darbo_failai/4_ivykiai pagal dalyvius.png' width='40%' height='40%'>
 
-5. Įvertinus 2020-2022 m. kelių eismo įvykius pagal [apskritis:](http://localhost:63342/main.py/name2.html?_ijt=1elab0vuko8mo0be5orhiv0nf0&_ij_reload=RELOAD_ON_SAVE)
+5. Įvertinus 2020-2022 m. kelių eismo įvykius pagal apskritis:
    * daugiausiai įvykių įvyko Vilniaus apskrityje - 2590.
    * mažiausiai įvyko Tauragės apskrityje - 280 kelių eismo įvykiai.
 
