@@ -1,5 +1,5 @@
 ![img_6.png](Darbo_failai/0_Title_LT_LV_EE.png)
-# *Baigiamojo darbo tema:* "2020-2022 m. Lietuvos kelių eismo įvykių statistika ir jos palyginimas su Latvija ir Estija"
+# *Baigiamojo darbo tema:* "2022-2020 m. Lietuvos kelių eismo įvykių apžvalga ir Baltijos šalių lyginamoji analizė"
 ___
 ### *Autoriai:* Diana Balan ir Jurgita Bžozovska
 ___
@@ -14,7 +14,7 @@ ___
 4. Parengti duomenys analizei:
    * Atsisiųsti ir importuoti [Lietuvos](https://www.stat.gov.lt/) ir [Estijos](https://www.stat.ee/) statistiniai duomenys CSV formatu.
    * Nuskaityti [Latvijos](https://www.csdd.lv/) HTML duomenys ir išsaugoti CSV formatu.
-   * Suvarkyti duomenys: pašalinti nereikalingi stulpeliai, eilutės, klaidingos reikšmės.
+   * Sutvarkyti duomenys: pašalinti nereikalingi stulpeliai, eilutės, klaidingos reikšmės.
    * Agreguoti duomenys: grupuoti bei filtruoti duomenys, apjungtos lentelės, atliktos statistinės operacijos.
 5. Grafiškai atvaizduoti duomenys.
 6. Interpretuoti duomenys ir pateiktos išvados.

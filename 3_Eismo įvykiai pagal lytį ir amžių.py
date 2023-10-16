@@ -8,9 +8,9 @@ import numpy as np
 import seaborn as sns
 
 #  CSV FAILO ĮKĖLIMAS
-# csv_failo_pavadinimas = 'Lytis.csv'
-# data2 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data2)
+csv_failo_pavadinimas = 'Darbo_failai/Lytis.csv'
+data2 = pd.read_csv(csv_failo_pavadinimas)
+print(data2)
 # df2 = pd.DataFrame(data2)
 # # print(df2)
 #

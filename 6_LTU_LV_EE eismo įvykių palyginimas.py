@@ -45,9 +45,9 @@ import seaborn as sns
 
 #
 # # #  ESTIJOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
-
-# df3 = pd.read_csv('estijos zuve.csv')
-# # print(df3)
+#
+# df3 = pd.read_csv('Darbo_failai/estijos zuve.csv')
+# print(df3)
 # df3 = pd.DataFrame(df3)
 # # print(df3)
 # df3 = df3.drop(0)
@@ -62,8 +62,8 @@ import seaborn as sns
 # # print(f'Bendras Estijos įvykių skaičius:{Viso_EE}')
 # #
 # # # #   LIETUVOS ĮVYKIŲ CSV FAILO ĮKĖLIMAS
-# data4 = pd.read_csv('Lietuvos zuve.csv')
-# # print(data4)
+data4 = pd.read_csv('Darbo_failai/Lietuvos zuve.csv')
+print(data4)
 # df4 = pd.DataFrame(data4)
 #
 # # # DUOMENŲ TVARKYMAS

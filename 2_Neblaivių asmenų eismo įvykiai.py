@@ -7,10 +7,10 @@ import requests
 import numpy as np
 import seaborn as sns
 
-#  CSV FAILO ĮKĖLIMAS
-# csv_failo_pavadinimas = 'neblaiviu_ivykiai_pagal menesius_metus.csv'
+ # CSV FAILO ĮKĖLIMAS
+# csv_failo_pavadinimas = 'Darbo_failai/neblaiviu_ivykiai_pagal menesius_metus.csv'
 # data3 = pd.read_csv(csv_failo_pavadinimas)
-# # print(data3)
+# print(data3)
 #
 # # #  DUOMENŲ IŠSKAIDYMAS
 # df3 = pd.DataFrame(data3)

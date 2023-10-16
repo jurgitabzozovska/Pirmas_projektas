@@ -1,4 +1,4 @@
-# # # 1 Visi 2020-2022 m. Lietovos kelių eismo įvykiai
+# # # 1 Visi 2020-2022 m. Lietuvos kelių eismo įvykiai
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,9 +9,9 @@ import seaborn as sns
 
 # # # CSV FAILO ĮKĖLIMAS
 
-# csv_failo_pavadinimas = 'eismo ivykiai.csv'
-# data1 = pd.read_csv(csv_failo_pavadinimas)
-# print(data1)
+csv_failo_pavadinimas = 'Darbo_failai/eismo ivykiai.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+print(data1)
 #
 #
 # # # DUOMENŲ IŠSKAIDYMAS

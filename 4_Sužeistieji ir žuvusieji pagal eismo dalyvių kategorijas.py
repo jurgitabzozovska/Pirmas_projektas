@@ -9,10 +9,10 @@ import seaborn as sns
 
 # #  CSV FAILO ĮKĖLIMAS
 #
-# csv_failo_pavadinimas = 'Pagal transporto priemones.csv'
-# data1 = pd.read_csv(csv_failo_pavadinimas)
-# print(data1)
-#
+csv_failo_pavadinimas = 'Darbo_failai/Pagal transporto priemones.csv'
+data1 = pd.read_csv(csv_failo_pavadinimas)
+print(data1)
+
 # # #  DUOMENŲ GRUPAVIMAS
 # #
 # grupuojame = data1.groupby(['Nukentėjusiųjų tipas','Kelių naudotojai'])['Reikšmė'].sum().astype(int)
