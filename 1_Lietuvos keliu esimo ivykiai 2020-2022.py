@@ -31,10 +31,7 @@ vid = df1.groupby('Metai')['Reikšmė'].mean().round(0).astype(int)
 print(vid)
 # # #
 # print(type(vid))
-
-
 # # #  DUOMENŲ TIPO PAKEITIMAS
-
 w = 0.4
 Metai = vid.index.to_numpy().astype(int)
 print(Metai)
@@ -46,7 +43,6 @@ print(type(Metai))
 print(Metai+w)
 
 # # #  DUOMENŲ GRAFINIS ATVAIZDAVIMAS
-
 
 #Kelių eismo įvykiu kiekis ir vidurkis
 plt.figure(figsize=(12,5))
